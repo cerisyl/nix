@@ -1,0 +1,147 @@
+configuration {
+  display-drun: "APPLICATIONS";
+  display-filebrowser: "FILES & FOLDERS";
+  display-clipboard: "CLIPBOARD";
+  /* Theme config */
+  font: "Inter Regular 11";
+  icon-theme: "osx-icons";
+  /* TODO: This is here until home-manager supports filebrowser settings. */
+  filebrowser {
+    directory: "/home/ceri";
+    directories-first: true;
+    show-hidden: false;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+  /* Theme colors */
+  bg: #ffffff;
+  selected: #4b90ff;
+  fg-lite: #f2f2f7;
+  comment: #909090;
+  accent: @selected;
+  background-color: transparent;
+  scrollbar-bg: @fg-lite;
+  scrollbar-fg: @comment;
+}
+
+element-icon, element-text, scrollbar {
+  cursor: pointer;
+}
+
+window {
+  location: center;
+  width: 840px;
+  height: 620px;
+  background-color: @bg;
+  border: 1px solid;
+  border-color: #aaaaaa;
+  border-radius: 8px;
+}
+
+mainbox {
+  children: [ inputbar, mode-switcher, listview];
+}
+
+mode-switcher {
+  background-color: @fg-lite;
+  padding: 12px 24px;
+}
+
+button {
+  font: "Inter Regular 10";
+  horizontal-align: 0;
+  text-color: @comment;
+  margin: -12px 0;
+}
+
+button selected {
+  text-color: black;
+  enabled: true;
+}
+
+textbox {
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}
+
+textbox-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+
+inputbar {
+  children: [ searchbar ];
+  border: 0 0 solid 1px 0;
+  border-color: #aaaaaa;
+}
+
+searchbar {
+  children: [ textbox-search, entry ];
+  padding: 16px 24px;
+  spacing: 0.5em;
+  spacing: 20px;
+  orientation: horizontal;
+  expand: true;
+}
+
+textbox-search {
+  expand: false;
+  content: "";
+  font: "JetBrainsMono Nerd Font 24";
+  padding: 0 12px 0 0;
+  margin: 0 -4px 0 0;
+  text-color: @comment;
+}
+
+entry {
+  placeholder: "Type here to search";
+  placeholder-color: @comment;
+  cursor: text;
+  font: "Inter Regular 24";
+}
+
+listview {
+  columns: 1;
+  fixed-height: true;
+  fixed-columns: true;
+  scrollbar: true;
+}
+
+scrollbar {
+  handle-width: 4px;
+  margin: 16px 8px;
+  handle-color: @scrollbar-fg;
+  border-radius: 100%;
+  background-color: @scrollbar-bg;
+  handle-rounded-corners: false;
+}
+
+element {
+  spacing: 25px;
+  padding: 6px 20px;
+}
+
+element selected {
+  background-color: @selected;
+  text-color: @text-selected;
+}
+
+element selected urgent {
+  background-color: @accent;
+  text-color: @text-selected;
+}
+
+element-text selected {
+  text-color: white;
+}
+
+element-icon {
+  size: 24px;
+}
+
+element-text {
+  text-color: inherit;
+}

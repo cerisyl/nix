@@ -1,0 +1,156 @@
+configuration {
+  display-drun: "";
+  display-filebrowser: "";
+  display-clipboard: "";
+  /* Theme config */
+  font: "Roboto Regular 11";
+  icon-theme: "note-icons";
+  /* TODO: This is here until home-manager supports filebrowser settings. */
+  filebrowser {
+    directory: "/home/ceri";
+    directories-first: true;
+    show-hidden: false;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+  /* Theme colors */
+  bg-dark: #1a2028;
+  bg: #20262c;
+  selected: #263039;
+  fg: #b8b8c7;
+  fg-lite: #f2f3f5;
+  comment: #465866;
+  accent: #0088ff;
+  background-color: transparent;
+  scrollbar-bg: @selected;
+  scrollbar-fg: @comment;
+  text-color: @fg;
+  text-selected: @fg;
+}
+
+element-icon, element-text, scrollbar {
+  cursor: pointer;
+}
+
+window {
+  location: center;
+  width: 620px;
+  height: 682px;
+
+  background-color: @bg;
+  border-radius: 8px;
+}
+
+mainbox {
+  padding: 16px;
+  spacing: 8px;
+}
+
+textbox {
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}
+
+textbox-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+
+inputbar {
+  children: [ searchbar, mode-switcher ];
+  spacing: 8px;
+}
+
+searchbar {
+  children: [ textbox-search, entry ];
+  padding: 8px 12px;
+  border: 2px;
+  border-color: @accent;
+  border-radius: 100%;
+  background-color: @bg-dark;
+  spacing: 0.5em;
+  spacing: 18px;
+  orientation: horizontal;
+  expand: true;
+}
+
+textbox-search {
+  expand: false;
+  content: "";
+  font: "JetBrainsMono Nerd Font 12";
+  padding: 0 6px 0 0;
+}
+
+entry {
+  placeholder: "Type here to search";
+  placeholder-color: @comment;
+  cursor: text;
+}
+
+mode-switcher {
+  spacing: 8px;
+}
+
+button {
+  padding: 10px 19px 10px 13px;
+  border-radius: 999px;
+  background-color: @selected;
+  cursor: pointer;
+  font: "JetBrainsMono Nerd Font 12";
+}
+
+button selected {
+  background-color: @accent;
+  text-color: @fg-lite;
+}
+
+listview {
+  columns: 4;
+  cycle: true;
+  dynamic: true;
+  layout: vertical;
+  flow: horizontal;
+  reverse: false;
+  fixed-height: true;
+  fixed-columns: true;
+  scrollbar: true;
+}
+
+scrollbar {
+  handle-width: 4px;
+  margin: 0 0 0 4px;
+  handle-color: @scrollbar-fg;
+  border-radius: 100%;
+  background-color: @scrollbar-bg;
+}
+
+element {
+  spacing: 4px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  orientation: vertical;
+}
+
+element selected {
+  background-color: @selected;
+  text-color: @text-selected;
+}
+
+element selected urgent {
+  background-color: @accent;
+  text-color: @text-selected;
+}
+
+element-icon {
+  size: 56px;
+}
+
+element-text {
+  text-color: inherit;
+  horizontal-align: 0.5;
+  font: "Roboto Regular 10";
+  width: 900px;
+}

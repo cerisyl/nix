@@ -1,0 +1,101 @@
+{
+  "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1752175309,
+        "narHash": "sha256-g/f7sW8EH5qRRJF95+hwWj+AzOMlw4zs04Ei5DWSRlU=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "524da5f6c0bf11bb0d5590046276423a28b9453e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-25.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1751943650,
+        "narHash": "sha256-7orTnNqkGGru8Je6Un6mq1T8YVVU/O5kyW4+f9C1mZQ=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "88983d4b665fb491861005137ce2b11a9f89f203",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-legacy": {
+      "locked": {
+        "lastModified": 1750994206,
+        "narHash": "sha256-3u6rEbIX9CN/5A5/mc3u0wIO1geZ0EhjvPBXmRDHqWM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "80d50fc87924c2a0d346372d242c27973cf8cdbf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "80d50fc87924c2a0d346372d242c27973cf8cdbf",
+        "type": "github"
+      }
+    },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1751984180,
+        "narHash": "sha256-LwWRsENAZJKUdD3SpLluwDmdXY9F45ZEgCb0X+xgOL0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9807714d6944a957c2e036f84b0ff8caf9930bc0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-legacy": "nixpkgs-legacy",
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "zmod": "zmod"
+      }
+    },
+    "zmod": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1751081422,
+        "narHash": "sha256-R2DISs4euRRbnoGR06YIy3uVn92/7EXqxfQxgN1XLm0=",
+        "owner": "zarzob",
+        "repo": "Simply-Love-SM5",
+        "rev": "59a272cd37683b5b8b970b71848a4005fe9f9792",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zarzob",
+        "ref": "itgmania-release",
+        "repo": "Simply-Love-SM5",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
