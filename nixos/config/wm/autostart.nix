@@ -11,6 +11,7 @@
     lux     = [ "battery" ] ++ exclude.work;
     nova    = [ "steam" "telegram" ] ++ exclude.work;
     astore  = [ "battery" "discord" ] ++ exclude.work ++ exclude.lesser;
+    medea   = [ "discord" ] ++ exclude.work ++ exclude.lesser;
     engrit  = [ "discord" ] ++ exclude.lesser;
     vm      = [ "battery" ] ++ exclude.work ++ exclude.lesser;
   };
