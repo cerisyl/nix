@@ -102,6 +102,7 @@ l.... |   | puddletag
 lname |   | qdirstat
 lname |   | qdiskinfo
 l.a.e |   | rclone
+l...e | * | remmina
 l.... |   | rubyripper
 lname |   | tesseract
 l.a.e |   | testdisk
@@ -154,7 +155,6 @@ lname |   | xmousepasteblock
 ....e | * | onedrive
 ....e | * | openconnect
 ....e | * | powershell
-....e | * | remmina
 ....e | * | slack
 ....e | * | teams-for-linux
 ....e | * | zoom-us
