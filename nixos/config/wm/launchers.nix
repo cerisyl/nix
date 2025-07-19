@@ -1,6 +1,5 @@
 { config, pkgMap, theme, getThemeFile, myHostname, homedir, lib, ... }: let
   removeLaunchers = [
-    "birdtray"
     "btop"
     "cups"
     "kitty"
@@ -38,22 +37,23 @@
   # These files go into .local/share/applications
   overwrite = name: filename: exec: { inherit name filename exec; };
   overwriteLaunchers = [
-    #overwrite Name                     .desktop file                   Exec (true if == .desktop file)
-    (overwrite "Accessibility"          "xfce4-accessibility-settings"  true)
-    (overwrite "Appearance"             "xfce-ui-settings"              "xfce4-appearance-settings")
-    (overwrite "Color Profiles"         "xfce4-color-settings"          true)
-    (overwrite "Default Applications"   "xfce4-mime-settings"           true)
-    (overwrite "Keyboard"               "xfce-keyboard-settings"        "xfce4-keyboard-settings")
-    (overwrite "Log Out"                "xfce4-session-logout"          true)
-    (overwrite "Mail Reader"            "xfce4-mail-reader"             "exo-open --launch MailReader %u")
-    (overwrite "Mouse and Touchpad"     "xfce-mouse-settings"           "xfce4-mouse-settings")
-    (overwrite "Session and Startup"    "xfce-session-settings"         "xfce4-session-settings")
-    (overwrite "Settings Editor"        "xfce4-settings-editor"         true)
-    (overwrite "Settings Manager"       "xfce4-settings-manager"        true)
-    (overwrite "Web Browser"            "xfce4-web-browser"             "exo-open --launch WebBrowser %u")
-    (overwrite "Rofi"                   "rofi"                          "rofi -show")
-    (overwrite "Rofi Theme Selector"    "rofi-theme-selector"           true)
-    (overwrite "Syncthing Tray"         "syncthingtray"                 "syncthingtray --wait --single-instance")
+    #overwrite Name                     .desktop file                     Exec (true if == .desktop file)
+    (overwrite "Accessibility"          "xfce4-accessibility-settings"    true)
+    (overwrite "Appearance"             "xfce-ui-settings"                "xfce4-appearance-settings")
+    (overwrite "Birdtray"               "com.ulduzsoft.Birdtray.desktop" "birdtray")
+    (overwrite "Color Profiles"         "xfce4-color-settings"            true)
+    (overwrite "Default Applications"   "xfce4-mime-settings"             true)
+    (overwrite "Keyboard"               "xfce-keyboard-settings"          "xfce4-keyboard-settings")
+    (overwrite "Log Out"                "xfce4-session-logout"            true)
+    (overwrite "Mail Reader"            "xfce4-mail-reader"               "exo-open --launch MailReader %u")
+    (overwrite "Mouse and Touchpad"     "xfce-mouse-settings"             "xfce4-mouse-settings")
+    (overwrite "Session and Startup"    "xfce-session-settings"           "xfce4-session-settings")
+    (overwrite "Settings Editor"        "xfce4-settings-editor"           true)
+    (overwrite "Settings Manager"       "xfce4-settings-manager"          true)
+    (overwrite "Web Browser"            "xfce4-web-browser"               "exo-open --launch WebBrowser %u")
+    (overwrite "Rofi"                   "rofi"                            "rofi -show")
+    (overwrite "Rofi Theme Selector"    "rofi-theme-selector"             true)
+    (overwrite "Syncthing Tray"         "syncthingtray"                   "syncthingtray --wait --single-instance")
   ];
   mappedOverwrites = builtins.listToAttrs (map (obj: {
     name = "applications/${obj.filename}.desktop";

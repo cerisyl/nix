@@ -1,6 +1,6 @@
 { config, pkgMap, theme, getThemeFile, lib, ... }: let
   mediaPlayer = "vlc.desktop";
-  imgViewer   = "imv-dir.desktop";
+  imgViewer   = "xnviewmp.desktop";
   browser     = "floorp.desktop";
   editor      = "code.desktop";
   archiver    = "engrampa.desktop";

@@ -32,11 +32,11 @@ lname |   | floorp
 lname | * | gnome-keyring
 lna.e | * | keepassxc
 lname | * | kitty
-lname |   | imv
 lnam. |   | rustdesk
 lna.e | * | syncthing
 lna.e | * | syncthingtray
 ln... | * | thunderbird
+lname |   | xnviewmp
 
 # create: Programs for creative output.
 l.... |   | blender
@@ -104,6 +104,7 @@ lname |   | qdiskinfo
 l.a.e |   | rclone
 l.... |   | rubyripper
 lname |   | tesseract
+l.a.e |   | testdisk
 ln... |   | wineWowPackages.stable
 ln... |   | winetricks
 ln... |   | xcolor
