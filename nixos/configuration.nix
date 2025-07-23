@@ -104,7 +104,8 @@ in {
       mang = {
         isSystemUser  = true;
         shell         = pkgsUnstable.zsh;
-        extraGroups   = [ "deluge" "libvirtd" "share" ];
+        group         = "share";
+        extraGroups   = [ "deluge" "libvirtd" ];
       };
     } else {});
   };

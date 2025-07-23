@@ -10,11 +10,10 @@ if myHostname == "lux" then {
       UseDns          = true;
       X11Forwarding   = false;
       PermitRootLogin = "no";
-      allowSFTP       = true;
-      extraConfig     = ''
-        Match Address 192.168.200.245,192.168.200.246
-          PasswordAuthentication yes
-      '';
     };
+    extraConfig     = ''
+      Match Address 192.168.200.245,192.168.200.246
+        PasswordAuthentication yes
+    '';
   };
 } else {}
