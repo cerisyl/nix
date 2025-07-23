@@ -10,7 +10,7 @@ lname |   | killall
 lname |   | libnotify
 lname |   | micro
 lname | * | oh-my-posh
-..a.. |   | openssh
+l.a.. |   | openssh
 lname |   | pciutils |-> lspci
 lname |   | p7zip
 lname |   | tealdeer
