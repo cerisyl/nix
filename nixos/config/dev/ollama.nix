@@ -6,9 +6,5 @@ if myHostname == "lux" then {
       package       = pkgMap.ollama;
       acceleration  = "cuda";
     };
-    open-webui = {
-      enable = true;
-      port  = 10000;
-    };
   };
 } else {}
