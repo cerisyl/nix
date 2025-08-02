@@ -48,8 +48,8 @@ l.... |   | reaper
 
 # dev : Development tools.
 lna.e | * | bun
-l.... |   | ollama
-l.... |   | open-webui
+l.... | * | ollama
+l.... | * | open-webui
 l.... | * | nodejs_24 |-> parcel
 ln... |   | python311 |-> 9ornull
 lna.e |   | python313
