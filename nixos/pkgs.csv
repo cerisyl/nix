@@ -32,6 +32,7 @@ lname |   | floorp
 lname | * | gnome-keyring
 lna.e | * | keepassxc
 lname | * | kitty
+ln..e | * | obsidian
 lnam. |   | rustdesk
 lna.e | * | syncthing
 lna.e | * | syncthingtray
@@ -47,6 +48,7 @@ l.... |   | reaper
 
 # dev : Development tools.
 lna.e | * | bun
+l.... |   | ollama
 l.... | * | nodejs_24 |-> parcel
 ln... |   | python311 |-> 9ornull
 lna.e |   | python313
@@ -96,7 +98,6 @@ ln... |   | jmtpfs
 l.a.e |   | jpeginfo
 # ln... |   | libreoffice-fresh
 ln..e |   | meld
-ln..e | * | obsidian
 l.... |   | openrgb
 lname |   | partclone
 l.... |   | puddletag
