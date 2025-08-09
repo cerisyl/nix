@@ -49,7 +49,6 @@ l.... |   | reaper
 # dev : Development tools.
 lna.e | * | bun
 l.... | * | ollama
-l.... | * | open-webui
 l.... | * | nodejs_24 |-> parcel
 ln... |   | python311 |-> 9ornull
 lna.e |   | python313
@@ -97,7 +96,7 @@ lname |   | imagemagick
 ln... | * | imgbrd-grabber
 ln... |   | jmtpfs
 l.a.e |   | jpeginfo
-# ln... |   | libreoffice-fresh
+ln..e |   | libreoffice-fresh
 ln..e |   | meld
 l.... |   | openrgb
 lname |   | partclone
@@ -105,7 +104,7 @@ l.... |   | puddletag
 lname |   | qdirstat
 lname |   | qdiskinfo
 l.a.e |   | rclone
-l...e | * | remmina
+....e | * | remmina
 l.... |   | rubyripper
 lname |   | tesseract
 l.a.e |   | testdisk
@@ -133,7 +132,6 @@ lname |   | haskellPackages.greenclip
 lname |   | lightdm
 lname |   | networkmanager
 lname |   | networkmanagerapplet
-# lname |   | nody-greeter |-> still on the fence about using this
 lname |   | plymouth
 lname |   | pulseaudio
 lname | * | rofi
