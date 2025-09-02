@@ -130,6 +130,7 @@ l.... |   | samba
 
 # wm: Window manager tools and add-ins.
 lname |   | feh
+lname |   | gdm
 lname |   | gvfs
 lname |   | haskellPackages.greenclip
 lname |   | i3-rounded
