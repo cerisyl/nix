@@ -30,13 +30,14 @@ l.... |   | ungoogled-chromium |-> Specifically for WebFSR
 lname | * | mate.engrampa
 lname |   | floorp
 lname | * | gnome-keyring
-lna.e | * | keepassxc
+lname | * | keepassxc
 lname | * | kitty
 ln..e | * | obsidian
 lnam. |   | rustdesk
 lna.e | * | syncthing
 lna.e | * | syncthingtray
 ln... | * | thunderbird
+lname |   | xfce.thunar
 lname |   | xnviewmp
 
 # create: Programs for creative output.
@@ -71,6 +72,7 @@ lname |   | vlc
 # firmware: Firmware/drivers and applications to interact with them.
 .n.me |   | blueman
 ....e |   | bolt
+.n.me |   | brightnessctl
 ....e |   | dbus
 ....e |   | displaylink
 ....e |   | linux-firmware
@@ -127,12 +129,15 @@ l.... |   | samba
 .n..e |   | virtiofsd
 
 # wm: Window manager tools and add-ins.
+lname |   | feh
 lname |   | gvfs
 lname |   | haskellPackages.greenclip
-lname |   | lightdm
+lname |   | i3-rounded
 lname |   | networkmanager
 lname |   | networkmanagerapplet
+lname |   | picom
 lname |   | plymouth
+lname |   | polybar
 lname |   | pulseaudio
 lname | * | rofi
 lname |   | rofimoji
@@ -141,14 +146,7 @@ lname |   | wmctrl
 lname |   | xclip
 lname |   | xfce.thunar-archive-plugin
 lname |   | xfce.thunar-media-tags-plugin
-.n.me |   | xfce.xfce4-battery-plugin
-lname |   | xfce.xfce4-docklike-plugin
-lname |   | xfce.xfce4-genmon-plugin
-lname |   | xfce.xfce4-mailwatch-plugin
-lname |   | xfce.xfce4-notifyd
-lname |   | xfce.xfce4-pulseaudio-plugin
 lname |   | xfce.xfce4-screenshooter
-lname |   | xfce.xfwm4
 lname |   | xmousepasteblock
 
 # work: Work-related applications.

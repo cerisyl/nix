@@ -5,7 +5,12 @@
 { role }: let
   # Exlude specific .nix configurations
   excludedFiles = [
-    #"file.nix"
+    "autostart.nix"
+    "battery.nix"
+    "displays.nix"
+    "shortcuts.nix"
+    "taskbar.nix"
+    "xfce.nix"
   ];
 
   baseDir = ./.;

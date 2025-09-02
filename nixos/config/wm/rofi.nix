@@ -33,12 +33,12 @@
     # Greenclip config
     "greenclip.toml".text = ''
       [greenclip]
-        blacklisted_applications = []
+        blacklisted_applications = [ keepassxc ]
         enable_image_support = true
         history_file = "~/.cache/greenclip.history"
         image_cache_directory = "/tmp/greenclip"
-        max_history_length = 10000
-        max_selection_size_bytes = 0
+        max_history_length = 200
+        max_selection_size_bytes = 500
         static_history = []
         trim_space_from_selection = false
         use_primary_selection_as_input = false

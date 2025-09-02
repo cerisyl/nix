@@ -125,6 +125,7 @@
       chatter = "cd ~/code/sites/chatter && npm run dev";
       dalle   = "for file in *; do mv \"$file\" \"${file:0:26}.png\"; done";
       package = "~/itg/package.sh";
+      budg    = "code ~/sync/main/code/neobudget";
 
       # NPM
       npmi    = "npm install";
