@@ -25,18 +25,18 @@ lname | * | zsh-fzf-tab
 lname | * | zsh-syntax-highlighting
 
 # core: Essential GUI programs for everyday use.
-ln... |   | birdtray
+ln..e |   | birdtray
 l.... |   | ungoogled-chromium |-> Specifically for WebFSR
+lname |   | kdePackages.dolphin
 lname | * | mate.engrampa
 lname |   | floorp
-lname | * | gnome-keyring
 lname | * | keepassxc
 lname | * | kitty
 ln..e | * | obsidian
 lnam. |   | rustdesk
 lna.e | * | syncthing
 lna.e | * | syncthingtray
-ln... | * | thunderbird
+ln..e | * | thunderbird
 lname |   | xfce.thunar
 lname |   | xnviewmp
 
@@ -146,13 +146,13 @@ lname |   | xfce.xfce4-screenshooter
 lname |   | xmousepasteblock
 
 # wm.i3: i3-specific add-ins
-lname |   | dconf
-lname |   | feh
-lname |   | gdm
-lname |   | i3-rounded
-lname |   | picom
-lname |   | polybar
-lname |   | xdg-user-dirs
+# lname |   | dconf
+# lname |   | feh
+# lname |   | gdm
+# lname |   | i3-rounded
+# lname |   | picom
+# lname |   | polybar
+# lname |   | xdg-user-dirs
 
 # wm.xfce: xfwm-specific add-ins
 lname |   | lightdm

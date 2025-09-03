@@ -89,7 +89,7 @@
   customLaunchers = [
     #custom init      Name                      .desktop file                     Exec (true if == .desktop file)                       Icon (true if == .desktop file)
     # core
-    (custom "ln..."   "Email"                   "thunderbird"                     true                                                  "ceri-email")
+    (custom "ln..e"   "Email"                   "thunderbird"                     true                                                  "ceri-email")
     (custom "lname"   "KeePassXC"               "org.keepassxc.KeePassXC"         "keepassxc"                                           "ceri-pass")
     (custom "lname"   "Lock"                    "lock"                            "xflock4"                                             "ceri-lock")
     (custom "lname"   "Restart"                 "restart"                         "reboot"                                              "ceri-reboot")

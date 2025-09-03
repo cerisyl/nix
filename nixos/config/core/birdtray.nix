@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: let
+{ config, pkgMap, theme, getThemeFile, myHostname, lib, ... }: let
 
   trayIcon = {
     aero    = "";
@@ -16,10 +16,9 @@
     note    = "";
     osx     = "";
   };
-in if pkgMap ? "birdtray" then {
-  home.file.".config/birdtray-config.json".text = ''
-  {
-    "accounts": [
+
+  accounts = (if myHostname != "engrit"
+    then ''
       {
         "color": "#4ade80",
         "path": "/home/ceri/.thunderbird/main/ImapMail/imap.gmail.com/INBOX.msf"
@@ -32,7 +31,13 @@ in if pkgMap ? "birdtray" then {
         "color": "#c084fc",
         "path": "/home/ceri/.thunderbird/main/ImapMail/imap.mailbox.org/INBOX.msf"
       }
-    ],
+    ''
+    else "");
+
+in if pkgMap ? "birdtray" then {
+  home.file.".config/birdtray-config.json".text = ''
+  {
+    "accounts": [${accounts}],
     "advanced/blinkingusealpha": false,
     "advanced/forcedRereadInterval": 0,
     "advanced/ignoreNetWMhints": false,
