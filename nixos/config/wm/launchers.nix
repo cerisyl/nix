@@ -56,7 +56,7 @@
     (overwrite "Syncthing Tray"         "syncthingtray"                   "syncthingtray --wait --single-instance")
   ];
   mappedOverwrites = builtins.listToAttrs (map (obj: {
-    name = "applications/${obj.filename}.desktop";
+    name = ".local/share/applications/${obj.filename}.desktop";
     value.text = ''
       [Desktop Entry]
       Name=${obj.name}
@@ -128,7 +128,7 @@
 
   # TODO: Maybe combine this into one command
   mappedCustoms = builtins.listToAttrs (map (obj: {
-    name = "applications/${obj.filename}.desktop";
+    name = ".local/share/applications/${obj.filename}.desktop";
     value.text = ''
       [Desktop Entry]
       Name=${obj.name}
