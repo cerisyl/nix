@@ -1,5 +1,5 @@
 { config, pkgMap, theme, getThemeFile, homedir, lib, ... }: {
-  xdg.configFile."deluge/gtk3ui.conf".text = ''
+  home.file.".config/deluge/gtk3ui.conf".text = ''
     {
       "file": 1,
       "format": 1

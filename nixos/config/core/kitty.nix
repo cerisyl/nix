@@ -1,7 +1,7 @@
 { config, pkgMap, theme, getThemeFile, lib, ... }: {
-  xdg.configFile = {
-    "kitty/${theme}.conf".text = builtins.readFile (getThemeFile "kitty.conf");
-    "kitty/diff.conf".text = builtins.readFile (getThemeFile "kitty-diff.conf");
+  home.file = {
+    ".config/kitty/${theme}.conf".text = builtins.readFile (getThemeFile "kitty.conf");
+    ".config/kitty/diff.conf".text = builtins.readFile (getThemeFile "kitty-diff.conf");
   };
   programs.kitty = {
     enable    = true;

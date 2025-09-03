@@ -101,7 +101,8 @@
 
       # Package management
       rebuild = ''(sudo nixos-rebuild switch --flake ~/.nix/. &> ~/.switch.log || 
-      (cat ~/.switch.log | grep --color error && false)) && xfce4-panel -r'';
+      (cat ~/.switch.log | grep --color error && false))'';
+      # (cat ~/.switch.log | grep --color error && false)) && xfce4-panel -r'';
       rbl     = "rebuild";
       upgrade = ''cd ~/.nix && (sudo nix flake update && git commit -am "Update flake" && rebuild) ||
       (echo "Some error occured! Check ~/.switch.log!")'';

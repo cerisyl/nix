@@ -129,11 +129,12 @@ l.... |   | samba
 .n..e |   | virtiofsd
 
 # wm: Window manager tools and add-ins.
+lname |   | dconf
 lname |   | feh
 lname |   | gdm
 lname |   | gvfs
 lname |   | haskellPackages.greenclip
-lname |   | i3-rounded
+lname | * | i3-rounded
 lname |   | networkmanager
 lname |   | networkmanagerapplet
 lname |   | picom
@@ -145,6 +146,7 @@ lname |   | rofimoji
 lname |   | volctl
 lname |   | wmctrl
 lname |   | xclip
+lname |   | xdg-user-dirs
 lname |   | xfce.thunar-archive-plugin
 lname |   | xfce.thunar-media-tags-plugin
 lname |   | xfce.xfce4-screenshooter

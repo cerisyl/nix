@@ -1,5 +1,5 @@
 { config, pkgMap, theme, getThemeFile, lib, ... }: {
-  xdg.configFile."btop/themes/${theme}.theme".text = builtins.readFile (getThemeFile "btop.theme");
+  home.file.".config/btop/themes/${theme}.theme".text = builtins.readFile (getThemeFile "btop.theme");
   programs.btop = {
     enable    = true;
     package   = pkgMap.btop;

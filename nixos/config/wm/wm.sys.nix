@@ -7,15 +7,14 @@
       xfce.enable = false;
     };
 
+    windowManager.i3.enable = true;
     excludePackages = [ pkgs.xterm ];
   };
 
   nixpkgs.config.pulseaudio = true;
   services.displayManager = {
     defaultSession = "none+i3";
-    gdm.enable = true;
   };
-  windowManager.i3.enable = true;
 
   #environment.xfce.excludePackages = with pkgs.xfce // pkgs; [
 	# mousepad

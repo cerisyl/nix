@@ -10,7 +10,6 @@
     "displays.nix"
     "shortcuts.nix"
     "taskbar.nix"
-    "xfce.nix"
   ];
 
   baseDir = ./.;

@@ -90,15 +90,13 @@
     # TODO: direct open win11 vm for things like xlsx?
   };
 in {
-  xdg = {
-    mimeApps = {
-      enable = true;
-      associations.added  = fileAssociations;
-      defaultApplications = fileAssociations;
-    };
-    configFile."xfce4/helpers.rc".text = ''
-      TerminalEmulator=kitty
-      WebBrowser=custom-WebBrowser
-    '';
+  xdg.mimeApps = {
+    enable = true;
+    associations.added  = fileAssociations;
+    defaultApplications = fileAssociations;
   };
+  home.file.".config/xfce4/helpers.rc".text = ''
+    TerminalEmulator=kitty
+    WebBrowser=custom-WebBrowser
+  '';
 }

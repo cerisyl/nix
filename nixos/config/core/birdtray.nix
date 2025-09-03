@@ -17,7 +17,7 @@
     osx     = "";
   };
 in if pkgMap ? "birdtray" then {
-  xdg.configFile."birdtray-config.json".text = ''
+  home.file.".config/birdtray-config.json".text = ''
   {
     "accounts": [
       {

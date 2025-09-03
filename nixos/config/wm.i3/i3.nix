@@ -1,8 +1,7 @@
-{ config, pkgMap, theme, getThemeFile, myHostname, lib, ... }: let
+{ config, pkgMap, theme, getThemeFile, homedir, myHostname, lib, ... }: let
 
   # Define autostarts
   autostart = {
-    birdtray    = "birdtray";
     discord     = "discord --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling";
     greenclip   = "greenclip daemon";
     keepassxc   = "keepassxc";
@@ -14,16 +13,17 @@
     tdx         = "floorp https://help.uillinois.edu/TDNext/Home/Desktop/Default.aspx";
     teams       = "teams-for-linux";
     telegram    = "Telegram -startintray";
+    thunderbird = "thunderbird";
     volctl      = "volctl";
   };
   autostartAll  = with autostart; [ greenclip keepassxc pasteblock syncthing volctl ];
 
   # Set autostarts per host
   hostAutostarts = {
-    lux     = with autostart; [ birdtray discord steam telegram ];
-    nova    = with autostart; [ birdtray discord ];
-    astore  = with autostart; [ ];
-    medea   = with autostart; [ ];
+    lux     = with autostart; [ discord steam telegram thunderbird ];
+    nova    = with autostart; [ discord thunderbird ];
+    astore  = [ ];
+    medea   = [ ];
     engrit  = with autostart; [ outlook slack tdx teams ];
     vm      = with autostart; [ discord ];
   };
@@ -31,7 +31,7 @@
   # Create a string of all autostarts to inject into config file
   myAutostarts = builtins.concatStringsSep "\n" (map (entry:
     "exec --no-startup-id ${entry}"
-  ) (autostartAll // hostAutostarts."${myHostname}"));
+  ) (autostartAll ++ hostAutostarts."${myHostname}"));
 
   # Set monitor configurations (xrandr --output)
   hostDisplays = {
@@ -60,7 +60,7 @@
   iconMail    = if myHostname != "engrit" then "" else "󰴢";
 
 in {
-  environment.etc."".text = ''
+  home.file.".config/i3/config".text = ''
     # Set mod key
     set $mod Mod4
     set $alt Mod1
@@ -80,6 +80,9 @@ in {
 
     # Set compositor
     exec_always picom
+
+    # Start polybar
+    exec_always --no-startup-id polybar
 
     # Use Mouse+$mod to drag floating windows to their wanted position
     floating_modifier $mod
@@ -111,7 +114,7 @@ in {
     # change container layout (stacked, tabbed, toggle split)
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+p layout toggle split
 
     # toggle tiling / floating
     bindsym $mod+Shift+space floating toggle
@@ -126,16 +129,16 @@ in {
     #bindsym $mod+d focus child
 
     # Define names for default workspaces
-    set $ws1  "${iconSocial}₁" # socials 
-    set $ws2  "₂" # vms
-    set $ws3  "${iconMail}₃" # email
-    set $ws4  "₄" # code
-    set $ws5  "5"
-    set $ws6  "6"
-    set $ws7  "7"
-    set $ws8  "8"
-    set $ws9  "9"
-    set $ws10 "󰗮₀" # tauon
+    set $ws1  1 "${iconSocial}₁" # socials 
+    set $ws2  2 "₂" # vms
+    set $ws3  3 "${iconMail}₃" # email
+    set $ws4  4 "₄" # code
+    set $ws5  5 "5"
+    set $ws6  6 "6"
+    set $ws7  7 "7"
+    set $ws8  8 "8"
+    set $ws9  9 "9"
+    set $ws10 10 "󰗮₀" # tauon
 
     # forced loading on workspaces
     assign [class="discord"] $ws1
@@ -147,28 +150,28 @@ in {
     assign [class="tauonmb"] $ws10
 
     # switch to workspace
-    bindsym $mod+1 workspace $ws1
-    bindsym $mod+2 workspace $ws2
-    bindsym $mod+3 workspace $ws3
-    bindsym $mod+4 workspace $ws4
-    bindsym $mod+5 workspace $ws5
-    bindsym $mod+6 workspace $ws6
-    bindsym $mod+7 workspace $ws7
-    bindsym $mod+8 workspace $ws8
-    bindsym $mod+9 workspace $ws9
-    bindsym $mod+0 workspace $ws10
+    bindsym $mod+1 workspace number $ws1
+    bindsym $mod+2 workspace number $ws2
+    bindsym $mod+3 workspace number $ws3
+    bindsym $mod+4 workspace number $ws4
+    bindsym $mod+5 workspace number $ws5
+    bindsym $mod+6 workspace number $ws6
+    bindsym $mod+7 workspace number $ws7
+    bindsym $mod+8 workspace number $ws8
+    bindsym $mod+9 workspace number $ws9
+    bindsym $mod+0 workspace number $ws10
 
     # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace $ws1
-    bindsym $mod+Shift+2 move container to workspace $ws2
-    bindsym $mod+Shift+3 move container to workspace $ws3
-    bindsym $mod+Shift+4 move container to workspace $ws4
-    bindsym $mod+Shift+5 move container to workspace $ws5
-    bindsym $mod+Shift+6 move container to workspace $ws6
-    bindsym $mod+Shift+7 move container to workspace $ws7
-    bindsym $mod+Shift+8 move container to workspace $ws8
-    bindsym $mod+Shift+9 move container to workspace $ws9
-    bindsym $mod+Shift+0 move container to workspace $ws10
+    bindsym $mod+Shift+1 move container to workspace number $ws1
+    bindsym $mod+Shift+2 move container to workspace number $ws2
+    bindsym $mod+Shift+3 move container to workspace number $ws3
+    bindsym $mod+Shift+4 move container to workspace number $ws4
+    bindsym $mod+Shift+5 move container to workspace number $ws5
+    bindsym $mod+Shift+6 move container to workspace number $ws6
+    bindsym $mod+Shift+7 move container to workspace number $ws7
+    bindsym $mod+Shift+8 move container to workspace number $ws8
+    bindsym $mod+Shift+9 move container to workspace number $ws9
+    bindsym $mod+Shift+0 move container to workspace number $ws10
 
     # always boot into blank workspace (5)
     exec --no-startup-id i3-msg workspace 5
@@ -192,18 +195,19 @@ in {
       bindsym Escape mode "default"
       bindsym $mod+r mode "default"
     }
-    bindsym $mod+alt+Left   resize shrink width 10 px or 10 ppt  # shrink width
-    bindsym $mod+alt+Down   resize grow height 10 px or 10 ppt   # grow height
-    bindsym $mod+alt+Up     resize shrink height 10 px or 10 ppt   # shrink height
-    bindsym $mod+alt+Right  resize grow width 10 px or 10 ppt   # grow width
+    bindsym $mod+$alt+Left   resize shrink width 10 px or 10 ppt  # shrink width
+    bindsym $mod+$alt+Down   resize grow height 10 px or 10 ppt   # grow height
+    bindsym $mod+$alt+Up     resize shrink height 10 px or 10 ppt   # shrink height
+    bindsym $mod+$alt+Right  resize grow width 10 px or 10 ppt   # grow width
 
     bindsym $mod+r mode "resize"
 
     # Move workspace to next monitor
     bindsym $mod+Shift+m move workspace to output next
 
-    # Start polybar
-    exec_always --no-startup-id ${homedir}/.config/polybar/launch.sh
+    # Cycle workspaces
+    bindsym $alt+Tab workspace next
+    bindsym $alt+Shift+Tab workspace prev
 
     # Shortcuts ----------------------------------------------------------------
 
@@ -212,11 +216,11 @@ in {
     # btop / Task manager
     bindsym Ctrl+Shift+Escape exec kitty --hold btop
     # Windows key (toggle rofi "start menu")
-    bindsym $mod exec rofi -show
+    bindsym --release 133 exec rofi -show
     # Emoji/symbol picker (rofimoji)
     bindsym $mod+e exec "rofimoji"
     # Show clipboard history (rofi-greenclip)
-    bindsym $mod+c exec "rofi -modi \"clipboard:greenclip print\" -show clipboard -no-show-icons"
+    bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -no-show-icons
     # Show desktop toggle (toggle blank workspace)
     #bindsym $mod+d exec "sh ${homedir}/.nix/extra/panel/showdesktop.sh"
     # Start file explorer
@@ -225,10 +229,10 @@ in {
     bindsym $mod+Return exec kitty
 
     # Screenshots
-    bindsym Ctrl+Shift+3   exec "${homedir}/.nix/extra/screenshot/capture-full.sh";
-    bindsym Ctrl+Shift+4   exec "${homedir}/.nix/extra/screenshot/capture-partial.sh";
-    bindsym Ctrl+Shift+o   exec "${homedir}/.nix/extra/screenshot/ocr.sh";
-    bindsym $mod+$alt+c    exec "${homedir}/.nix/extra/screenshot/color-picker.sh";
+    bindsym Ctrl+Shift+3  exec "${homedir}/.nix/extra/screenshot/capture-full.sh";
+    bindsym Ctrl+Shift+4  exec "${homedir}/.nix/extra/screenshot/capture-partial.sh";
+    bindsym Ctrl+Shift+o  exec "${homedir}/.nix/extra/screenshot/ocr.sh";
+    bindsym $mod+$alt+c   exec "${homedir}/.nix/extra/screenshot/color-picker.sh";
 
     # Volume
     bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
@@ -253,27 +257,28 @@ in {
     default_floating_border pixel 1
 
     # Gaps
-    gaps inner 12
-    gaps outer 12
+    gaps inner 16
+    gaps outer 16
 
-    # Border
+    # Borders
     border_radius 8
 
     # Smart features
     smart_gaps inverse_outer
     smart_borders no_gaps
 
+    # Don't follow pointer window to window
+    focus_follow_mouse no
+
     # colors
     set $bg          #1a1a1f
     set $act         #855ee8
     set $act_text    #b8b8c7
-    set $inact       #855ee800
+    set $inact       #515167
     set $inact_text  #515167
     set $urg         #e8d572
     set $urg_text    #1a1a1f
     set $ind         #f2f3f5
-
-    output * bg $bg solid_color
 
     # class                 border  backgr. text         indicator
     client.focused          $act    $act    $act_text    $ind
@@ -281,4 +286,8 @@ in {
     client.unfocused        $inact  $inact  $inact_text  $ind
     client.urgent           $urg    $urg    $urg_text    $ind
   '';
+  xsession.windowManager.i3 = {
+    extraConfig = ''
+    '';
+  };
 }

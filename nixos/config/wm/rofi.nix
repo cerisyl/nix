@@ -18,11 +18,11 @@
       kb-cancel           = "Escape,Super_L";
     };
   };
-  xdg.configFile = {
+  home.file = {
     # Grid config for rofimoji
-    "rofi/grid.rasi".source = ../../../extra/grid.rasi;
+    ".config/rofi/grid.rasi".source = ../../../extra/grid.rasi;
     # Rofimoji config
-    "rofimoji.rc".text = ''
+    ".config/rofimoji.rc".text = ''
       action = copy
       max-recent = 0
       skin-tone = neutral
@@ -31,7 +31,7 @@
       files = [emojis, math, miscellaneous, supplemental, alchemical_symbols, dingbats]
     '';
     # Greenclip config
-    "greenclip.toml".text = ''
+    ".config/greenclip.toml".text = ''
       [greenclip]
         blacklisted_applications = [ keepassxc ]
         enable_image_support = true

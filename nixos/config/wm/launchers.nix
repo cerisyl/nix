@@ -158,9 +158,9 @@
 in {
   # Create custom launchers here
   xdg.desktopEntries = mappedRemovals;
-  xdg.dataFile = {
+  home.file = {
     # Floorp
-    "applications/floorp.desktop".text = ''
+    ".local/share/applications/floorp.desktop".text = ''
       [Desktop Entry]
       Actions=new-private-window;new-window;profile-manager-window
       Categories=Network;WebBrowser
@@ -183,6 +183,6 @@ in {
       Exec=floorp --new-window --enable-blink-features=MiddleClickAutoscroll
       Name=New Window
     '';
-    "applications/win11.desktop".text = winLauncher;
+    ".local/share/applications/win11.desktop".text = winLauncher;
   } // mappedOverwrites // mappedCustoms;
 }

@@ -16,11 +16,11 @@ in {
   services.polybar = {
     enable    = true;
     package   = pkgMap.polybar;
+    script    = "polybar bar &";
     settings  = {
       # Global settings
       "global/wm" = {
-        margin-top      = 8;
-        margin-bottom   = 8;
+        margin-bottom   = 16;
       };
       # Additional settings
       "settings" = {
@@ -29,16 +29,16 @@ in {
       # Main bar settings
       "bar/main" = {
         width           = "100%";
-        height          = 34;
+        height          = 28;
         radius          = 8;
         fixed-center    = true;
-        bottom          = true;
+        bottom          = false;
         monitor         = "";
         background      = colors.bg;
         foreground      = colors.fg;
 
-        font-0          = "JetbrainsMono Nerd Font:style=Bold:size=12;2";
-        font-1          = "Barlow Regular SC:style=Bold:size=11;1";
+        font-0          = "JetbrainsMono Nerd Font:style=Bold:size=10;2";
+        font-1          = "Barlow Regular SC:style=Bold:size=10;1";
 
         border-size     = 0;
         border-color    = colors.accent;
@@ -52,7 +52,7 @@ in {
 
         wm-restack      = "i3";
 
-        cursor-click    = "pointer";
+        cursor-click    = "default";
         tray-position   = "right";
         tray-maxsize    = 16;
         enable-ipc      = true;
@@ -60,7 +60,7 @@ in {
       # Start menu / rofi
       "module/menu" = {
         type                = "custom/text";
-        content             = "";
+        content             = "   ";
         content-foreground  = colors.fg;
         content-padding     = 0;
         click-left          = "pkill rofi || rofi -show";
@@ -100,14 +100,9 @@ in {
         type                = "internal/date";
         interval            = 1;
         label-foreground    = colors.fg;
-        time                = "%l:%M:%S %p%n%d %b %Y";
-        time-alt            = "%A, %d %B %Y";
+        time                = "%d %b %Y | %L:%M:%S %p";
         label               = "%time%";
       };
     };
   };
 }
-
-
-
-
