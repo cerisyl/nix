@@ -134,27 +134,27 @@ in {
   };
 
   # Viewer/interactivity settings
-# xfconf.settings.thunar = {
-#   last-separator-position           = 160;
-#   last-details-view-zoom-level      = "THUNAR_ZOOM_LEVEL_25_PERCENT";
-#   last-sort-column                  = "THUNAR_COLUMN_NAME";
-#   last-sort-order                   = "GTK_SORT_ASCENDING";
-#   misc-single-click                 = true;
-#   misc-thumbnail-draw-frames        = false;
-#   misc-text-beside-icons            = false;
-#   shortcuts-icon-size               = "THUNAR_ICON_SIZE_16";
-#   tree-icon-emblems                 = "true";
-#   shortcuts-icon-emblems            = "true";
-#   last-details-view-visible-columns = "THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_TYPE";
-#   #last-details-view-column-widths   = "50,50,185,104,50,158,50,50,291,50,50,64,50,694";
-#   misc-recursive-permissions        = "THUNAR_RECURSIVE_PERMISSIONS_ALWAYS";
-#   misc-date-style                   = "THUNAR_DATE_STYLE_CUSTOM";
-#   misc-date-custom-style            = "%Y-%m-%d %I:%M %p";
-#   hidden-bookmarks                  = [ "trash:///" "recent:///" "network:///" ];
-#   hidden-devices                    = [
-#     "192.168.200.240"
-#     smb://sgunning@engrit-file-01.ad.uillinois.edu/archive
-#     smb://sgunning@engr-archive.ad.uillinois.edu/engrit
-#   ];
-# };
+  xfconf.settings.thunar = {
+    last-separator-position           = 160;
+    last-details-view-zoom-level      = "THUNAR_ZOOM_LEVEL_25_PERCENT";
+    last-sort-column                  = "THUNAR_COLUMN_NAME";
+    last-sort-order                   = "GTK_SORT_ASCENDING";
+    misc-single-click                 = true;
+    misc-thumbnail-draw-frames        = false;
+    misc-text-beside-icons            = false;
+    shortcuts-icon-size               = "THUNAR_ICON_SIZE_16";
+    tree-icon-emblems                 = "true";
+    shortcuts-icon-emblems            = "true";
+    last-details-view-visible-columns = "THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_TYPE";
+    #last-details-view-column-widths   = "50,50,185,104,50,158,50,50,291,50,50,64,50,694";
+    misc-recursive-permissions        = "THUNAR_RECURSIVE_PERMISSIONS_ALWAYS";
+    misc-date-style                   = "THUNAR_DATE_STYLE_CUSTOM";
+    misc-date-custom-style            = "%Y-%m-%d %I:%M %p";
+    hidden-bookmarks                  = [ "trash:///" "recent:///" "network:///" ];
+    hidden-devices                    = [
+      "192.168.200.240"
+      smb://sgunning@engrit-file-01.ad.uillinois.edu/archive
+      smb://sgunning@engr-archive.ad.uillinois.edu/engrit
+    ];
+  };
 }

@@ -101,81 +101,81 @@ in {
     ${pkgMap.fd}/bin/fd -H ".*\.63a4305d$" ~ -X rm
   '';
 
-#  xfconf.settings = {
-#    # Session
-#    xfce-session = {
-#      "general/LockCommand" = "${pkgMap.lightdm}/bin/dm-tool lock";
-#    };
-#
-#    # Disable screensaver
-#    xfce4-screensaver = {
-#      "saver/enabled" = false;
-#      "saver/idle-activation/enabled" = false;
-#    };
-#
-#    # Background + desktop
-#    xfce4-desktop = {
-#      # Desktop icons
-#      "desktop-icons/show-tooltips"               = false;
-#      "desktop-icons/file-icons/show-trash"       = true;
-#      "desktop-icons/file-icons/show-home"        = true;
-#      "desktop-icons/file-icons/show-filesystem"  = false;
-#      "desktop-icons/file-icons/show-removable"   = false;
-#      "desktop-icons/show-hidden-files"           = false;
-#      "desktop-icons/single-click"                = true;
-#      "desktop-icons/use-custon-font-size"        = true;
-#      "desktop-icons/font-size"                   = themeProps."${theme}".desktopFontSize;
-#      "desktop-icons/icon-size"                   = 48;
-#    } // displays."${myHostname}";
-#
-#    # Windows
-#    xfwm4 = {
-#      "general/button_layout"     = "O|HMC";
-#      "general/placement_mode"    = "mouse";
-#      "general/scroll_workspaces" = false;
-#      "general/snap_width"        = 28;
-#      "general/theme"             = themeProps."${theme}".windowTheme; # Window theme
-#      "general/title_alignment"   = themeProps."${theme}".windowTitleAlign;
-#      "general/title_font"        = themeProps."${theme}".fontTitle;
-#      "general/toggle_workspaces" = false;
-#      "general/workspace_count"   = 1;
-#      "general/wrap_windows"      = false;
-#      "general/workspace_names"   = [ "main" ];
-#    };
-#
-#    xsettings = {
-#      # Net
-#      "Net/ThemeName"                 = "${theme}-main"; # General theme
-#      "Net/IconThemeName"             = "${theme}-icons";
-#      "Net/EnableEventSounds"         = true;
-#      "Net/EnableInputFeedbackSounds" = true;
-#      # Gtk
-#      "Gtk/ButtonImages"        = false;
-#      "Gtk/ColorPalette"        = "";
-#      "Gtk/CursorThemeName"     = "${theme}-cursors";
-#      "Gtk/CursorThemeSize"     = 24;
-#      "Gtk/FontName"            = themeProps."${theme}".font;
-#      "Gtk/MenuBarAccel"        = "";
-#      "Gtk/MonospaceFontName"   = "JetBrainsMono Nerd Font 10";
-#      "Gtk/TitlebarMiddleClick" = "";
-#      "Gtk/ToolbarIconSize"     = "";
-#      "Gtk/ToolbarStyle"        = "";
-#      # Xfce
-#      "Xfce/LastCustomDPI"      = themeProps."${theme}".dpi;
-#      "Xfce/SyncThemes"         = themeProps."${theme}".syncThemes;
-#      # Xft
-#      "Xft/DPI"                 = themeProps."${theme}".dpi;
-#      "Xft/Antialias"           = themeProps."${theme}".antialias;
-#      "Xft/Hinting"             = 1; # On
-#      "Xft/HintStyle"           = "hintfull";
-#    };
-#
-#    # Notifications
-#    xfce4-notifyd = {
-#      "applications/muted_applications" = [ ];
-#      "notify-location" = "bottom-right";
-#    };
-#  };
+  xfconf.settings = {
+    # Session
+    xfce-session = {
+      "general/LockCommand" = "${pkgMap.lightdm}/bin/dm-tool lock";
+    };
+
+    # Disable screensaver
+    xfce4-screensaver = {
+      "saver/enabled" = false;
+      "saver/idle-activation/enabled" = false;
+    };
+
+    # Background + desktop
+    xfce4-desktop = {
+      # Desktop icons
+      "desktop-icons/show-tooltips"               = false;
+      "desktop-icons/file-icons/show-trash"       = true;
+      "desktop-icons/file-icons/show-home"        = true;
+      "desktop-icons/file-icons/show-filesystem"  = false;
+      "desktop-icons/file-icons/show-removable"   = false;
+      "desktop-icons/show-hidden-files"           = false;
+      "desktop-icons/single-click"                = true;
+      "desktop-icons/use-custon-font-size"        = true;
+      "desktop-icons/font-size"                   = themeProps."${theme}".desktopFontSize;
+      "desktop-icons/icon-size"                   = 48;
+    } // displays."${myHostname}";
+
+    # Windows
+    xfwm4 = {
+      "general/button_layout"     = "O|HMC";
+      "general/placement_mode"    = "mouse";
+      "general/scroll_workspaces" = false;
+      "general/snap_width"        = 28;
+      "general/theme"             = themeProps."${theme}".windowTheme; # Window theme
+      "general/title_alignment"   = themeProps."${theme}".windowTitleAlign;
+      "general/title_font"        = themeProps."${theme}".fontTitle;
+      "general/toggle_workspaces" = false;
+      "general/workspace_count"   = 1;
+      "general/wrap_windows"      = false;
+      "general/workspace_names"   = [ "main" ];
+    };
+
+    xsettings = {
+      # Net
+      "Net/ThemeName"                 = "${theme}-main"; # General theme
+      "Net/IconThemeName"             = "${theme}-icons";
+      "Net/EnableEventSounds"         = true;
+      "Net/EnableInputFeedbackSounds" = true;
+      # Gtk
+      "Gtk/ButtonImages"        = false;
+      "Gtk/ColorPalette"        = "";
+      "Gtk/CursorThemeName"     = "${theme}-cursors";
+      "Gtk/CursorThemeSize"     = 24;
+      "Gtk/FontName"            = themeProps."${theme}".font;
+      "Gtk/MenuBarAccel"        = "";
+      "Gtk/MonospaceFontName"   = "JetBrainsMono Nerd Font 10";
+      "Gtk/TitlebarMiddleClick" = "";
+      "Gtk/ToolbarIconSize"     = "";
+      "Gtk/ToolbarStyle"        = "";
+      # Xfce
+      "Xfce/LastCustomDPI"      = themeProps."${theme}".dpi;
+      "Xfce/SyncThemes"         = themeProps."${theme}".syncThemes;
+      # Xft
+      "Xft/DPI"                 = themeProps."${theme}".dpi;
+      "Xft/Antialias"           = themeProps."${theme}".antialias;
+      "Xft/Hinting"             = 1; # On
+      "Xft/HintStyle"           = "hintfull";
+    };
+
+    # Notifications
+    xfce4-notifyd = {
+      "applications/muted_applications" = [ ];
+      "notify-location" = "bottom-right";
+    };
+  };
 
   # Home directories (see thunar.nix)
   xdg = {

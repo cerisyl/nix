@@ -5,11 +5,14 @@
 { role }: let
   # Exlude specific .nix configurations
   excludedFiles = [
-    "autostart.nix"
-    "battery.nix"
-    "displays.nix"
-    "shortcuts.nix"
-    "taskbar.nix"
+    #"autostart.nix"
+    #"battery.nix"
+    #"displays.nix"
+    #"shortcuts.nix"
+    #"taskbar.nix"
+    "i3.nix"
+    "picom.nix"
+    "polybar.nix"
   ];
 
   baseDir = ./.;
