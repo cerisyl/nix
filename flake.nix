@@ -11,6 +11,10 @@
       url = "github:zarzob/Simply-Love-SM5/itgmania-release";
       flake = false;
     };
+    nixcord = {
+      url = "github:KaylorBen/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,7 +42,7 @@
         ./nixos/hosts/${myHostname}/configuration.nix
         inputs.home-manager.nixosModules.home-manager
         {
-          home-manager.sharedModules = [ ];
+          home-manager.sharedModules = [ inputs.nixcord.homeModules.nixcord ];
           system.configurationRevision = self.rev or null;
           system.nixos.label =
             if (self.sourceInfo ? lastModifiedDate) && (self.sourceInfo ? shortRev)
