@@ -33,7 +33,7 @@
     # Greenclip config
     ".config/greenclip.toml".text = ''
       [greenclip]
-        blacklisted_applications = [ keepassxc ]
+        blacklisted_applications = [ "keepassxc" ]
         enable_image_support = true
         history_file = "~/.cache/greenclip.history"
         image_cache_directory = "/tmp/greenclip"

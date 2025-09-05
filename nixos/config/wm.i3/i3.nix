@@ -2,10 +2,9 @@
 
   # Define autostarts
   autostart = {
-    discord     = "discord --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling";
+    discord     = "vesktop --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling";
     greenclip   = "greenclip daemon";
     keepassxc   = "keepassxc";
-    outlook     = "floorp https://outlook.office.com/mail/";
     pasteblock  = "xmousepasteblock";
     slack       = "slack -u";
     steam       = "steam -silent";
@@ -24,7 +23,7 @@
     nova    = with autostart; [ discord thunderbird ];
     astore  = [ ];
     medea   = [ ];
-    engrit  = with autostart; [ outlook slack tdx teams ];
+    engrit  = with autostart; [ slack tdx teams thunderbird ];
     vm      = with autostart; [ discord ];
   };
 

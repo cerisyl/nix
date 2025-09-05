@@ -111,7 +111,7 @@
     (custom "ln..e"   "Tauon"                   "tauonmb"                         "tauon"                                               "ceri-music")
     (custom "lname"   "VLC Media Player"        "vlc"                             true                                                  "ceri-media")
     # soc
-    (custom "ln..."   "Discord"                 "discord"                         "discord --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling"      "ceri-cord")
+    (custom "ln..."   "Discord"                 "discord"                         "vesktop --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling"      "ceri-cord")
     # util
     (custom "ln..."   "Discord Chat Exporter"   "discordchatexporter"             true                                                  "ceri-cord")
     # vm

@@ -27,7 +27,6 @@ lname | * | zsh-syntax-highlighting
 # core: Essential GUI programs for everyday use.
 ln..e |   | birdtray
 l.... |   | ungoogled-chromium |-> Specifically for WebFSR
-lname |   | kdePackages.dolphin
 lname | * | mate.engrampa
 lname |   | floorp
 lname | * | keepassxc
@@ -37,6 +36,7 @@ lnam. |   | rustdesk
 lna.e | * | syncthing
 lna.e | * | syncthingtray
 ln..e | * | thunderbird
+....e |   | thunderbird-140
 lname |   | xfce.thunar
 lname |   | xnviewmp
 
@@ -84,7 +84,7 @@ l.... |   | dropbox
 l.... |   | xfce.thunar-dropbox-plugin
 
 # soc: Social media and other messaging programs.
-ln... | * | discord
+ln... | * | vesktop
 ln... | * | telegram-desktop
 
 # tools: Mixed tools and utilities; typically lesser-used.
