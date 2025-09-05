@@ -1,8 +1,8 @@
 { config, pkgMap, myHostname, theme, getThemeFile, lib, ... }:
-if (pkgMap ? "thunderbird" || pkgMap ? "thunderbird-140") then {
+if pkgMap ? "thunderbird"  then {
   programs.thunderbird = {
     enable  = true;
-    package = if myHostname != "engrit" then pkgMap.thunderbird else pkgMap.thunderbird-140;
+    package = pkgMap.thunderbird;
     profiles.main = {
       isDefault = true;
     };
