@@ -54,6 +54,12 @@
     (overwrite "Rofi"                   "rofi"                            "rofi -show")
     (overwrite "Rofi Theme Selector"    "rofi-theme-selector"             true)
     (overwrite "Syncthing Tray"         "syncthingtray"                   "syncthingtray --wait --single-instance")
+    (overwrite "Vesktop"                "vesktop"                         true)
+    (overwrite "LibreOffice"            "startcenter"                     "libreoffice")
+    (overwrite "LibreOffice Base"       "base"                            "libreoffice --base")
+    (overwrite "LibreOffice Draw"       "draw"                            "libreoffice --draw")
+    (overwrite "LibreOffice Math"       "math"                            "libreoffice --math")
+    (overwrite "LibreOffice Impress"    "impress"                         "libreoffice --impress")
   ];
   mappedOverwrites = builtins.listToAttrs (map (obj: {
     name = ".local/share/applications/${obj.filename}.desktop";
@@ -94,10 +100,10 @@
     (custom "lname"   "Lock"                    "lock"                            "xflock4"                                             "ceri-lock")
     (custom "lname"   "Restart"                 "restart"                         "reboot"                                              "ceri-reboot")
     (custom "lname"   "Shutdown"                "shutdown"                        "shutdown now"                                        "ceri-shutdown")
-    (custom "lname"   "xnviewmp"                "xnviewmp"                        "xnviewmp"                                            "ristretto")
+    (custom "lname"   "xnviewmp"                "xnviewmp"                        "xnviewmp"                                            "ceri-images")
     # core (laptop)
-    (custom ".n.me"   "Suspend"                 "suspend"                         "systemctl suspend"                                   "ceri-lock")
-    (custom ".n.me"   "Hibernate"               "hibernate"                       "systemctl hibernate"                                 "ceri-lock")
+    (custom ".n.me"   "Suspend"                 "suspend"                         "systemctl suspend"                                   "ceri-suspend")
+    (custom ".n.me"   "Hibernate"               "hibernate"                       "systemctl hibernate"                                 "ceri-hibernate")
     # create
     (custom "l...."   "Blender"                 "blender"                         (gpuCmd "blender %f")                                 true)
     (custom "ln..."   "Kdenlive"                "org.kde.kdenlive"                (gpuCmd "kdenlive")                                   "ceri-kden")
@@ -112,6 +118,9 @@
     (custom "lname"   "VLC Media Player"        "vlc"                             true                                                  "ceri-media")
     # soc
     (custom "ln..."   "Discord"                 "discord"                         "vesktop --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling"      "ceri-cord")
+    # tools
+    (custom "ln..e"   "Word"                    "writer"                          "libreoffice --writer"                                "ceri-word")
+    (custom "ln..e"   "Excel"                   "calc"                            "libreoffice --calc"                                  "ceri-excel")
     # util
     (custom "ln..."   "Discord Chat Exporter"   "discordchatexporter"             true                                                  "ceri-cord")
     # vm
