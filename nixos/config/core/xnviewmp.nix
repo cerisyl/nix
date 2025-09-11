@@ -1,6 +1,6 @@
-{ config, pkgMap, theme, getThemeFile, homedir, zmod, lib, myHostname, ... }:
-if pkgMap ? "itgmania" then {
-  home.file.".config/xnviewmp/xnview.ini" = ''
+{ config, pkgMap, lib, ... }:
+if pkgMap ? "xnviewmp" then {
+  home.file.".config/xnviewmp/xnview.ini".text = ''
     [Appearance]
     borderColor=38 38 38
     borderSize=1
