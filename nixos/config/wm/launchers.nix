@@ -42,6 +42,7 @@
     (overwrite "Appearance"             "xfce-ui-settings"                "xfce4-appearance-settings")
     (overwrite "Birdtray"               "com.ulduzsoft.Birdtray.desktop"  "birdtray")
     (overwrite "Color Profiles"         "xfce4-color-settings"            true)
+    (overwrite "Dropbox"                "dropbox"                         true)
     (overwrite "Default Applications"   "xfce4-mime-settings"             true)
     (overwrite "Keyboard"               "xfce-keyboard-settings"          "xfce4-keyboard-settings")
     (overwrite "Log Out"                "xfce4-session-logout"            true)
@@ -160,7 +161,7 @@
     Name=Windows 11
     Type=Application
     Exec=${win11Cmd.${myHostname}}
-    Icon=${homedir}/.icons/ceres-icons/apps/scalable/ceri-start.svg
+    Icon=ceri-start
     ${if myHostname == "astore" then "NoDisplay=true" else ""}
   '';
 

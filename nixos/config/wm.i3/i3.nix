@@ -3,6 +3,7 @@
   # Define autostarts
   autostart = {
     discord     = "vesktop --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling";
+    dropbox     = "dropbox";
     greenclip   = "greenclip daemon";
     keepassxc   = "keepassxc";
     pasteblock  = "xmousepasteblock";
@@ -19,7 +20,7 @@
 
   # Set autostarts per host
   hostAutostarts = {
-    lux     = with autostart; [ discord steam telegram thunderbird ];
+    lux     = with autostart; [ discord dropbox steam telegram thunderbird ];
     nova    = with autostart; [ discord thunderbird ];
     astore  = [ ];
     medea   = [ ];

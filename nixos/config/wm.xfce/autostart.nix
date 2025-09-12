@@ -5,15 +5,15 @@
   # Launcher exclusions
   exclude = {
     work    = [ "floorp-work" "slack" "teams" ];
-    lesser  = [ "birdtray" "steam" "telegram" ];
+    lesser  = [ "dropbox" "steam" "telegram" ];
   };
   hostExclusions = {
     lux     = [ "battery" ] ++ exclude.work;
-    nova    = [ "steam" "telegram" ] ++ exclude.work;
-    astore  = [ "battery" "discord" ] ++ exclude.work ++ exclude.lesser;
-    medea   = [ "discord" ] ++ exclude.work ++ exclude.lesser;
-    engrit  = [ "discord" ] ++ exclude.lesser;
-    vm      = [ "battery" ] ++ exclude.work ++ exclude.lesser;
+    nova    = [ ] ++ exclude.lesser ++ exclude.work;
+    astore  = [ "battery" "birdtray" "discord" ] ++ exclude.work ++ exclude.lesser;
+    medea   = [ "birdtray" "discord" ] ++ exclude.work ++ exclude.lesser;
+    engrit  = [ "birdtray" "discord" ] ++ exclude.lesser;
+    vm      = [ "battery" "birdtray" ] ++ exclude.work ++ exclude.lesser;
   };
 
   filenames = builtins.filter (name:

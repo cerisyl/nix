@@ -29,6 +29,7 @@ ln..e |   | birdtray
 l.... |   | ungoogled-chromium |-> Specifically for WebFSR
 lname | * | mate.engrampa
 lname |   | floorp
+l.... |   | libsForQt5.kdeconnect-kde
 lname | * | keepassxc
 lname | * | kitty
 ln..e | * | obsidian
@@ -37,7 +38,7 @@ lna.e | * | syncthing
 lna.e | * | syncthingtray
 ln..e | * | thunderbird
 lname |   | xfce.thunar
-lname |   | xnviewmp
+lname | * | xnviewmp
 
 # create: Programs for creative output.
 l.... |   | blender
