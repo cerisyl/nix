@@ -155,6 +155,7 @@ lname |   | xmousepasteblock
 # lname |   | xdg-user-dirs
 
 # wm.xfce: xfwm-specific add-ins
+lname |   | libcanberra
 lname |   | lightdm
 .n.me |   | xfce.xfce4-battery-plugin
 lname |   | xfce.xfce4-docklike-plugin
@@ -163,6 +164,7 @@ lname |   | xfce.xfce4-mailwatch-plugin
 lname |   | xfce.xfce4-notifyd
 lname |   | xfce.xfce4-pulseaudio-plugin
 lname |   | xfce.xfwm4
+lname |   | yad
 
 # work: Work-related applications.
 ....e | * | boxfs
