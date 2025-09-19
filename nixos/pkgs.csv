@@ -155,7 +155,7 @@ lname |   | xmousepasteblock
 # lname |   | xdg-user-dirs
 
 # wm.xfce: xfwm-specific add-ins
-lname |   | libcanberra
+lname |   | libcanberra-gtk3
 lname |   | lightdm
 .n.me |   | xfce.xfce4-battery-plugin
 lname |   | xfce.xfce4-docklike-plugin

@@ -81,6 +81,11 @@
     "application/x-tar"             = archiver;
     "application/zip"               = archiver;
     "application/x-zip-compressed"  = archiver;
+    # office
+    "application/msword" = "writer.desktop";
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
+    "application/vnd.ms-excel" = "calc.desktop";
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "calc.desktop";
     # windows executables
     "application/vnd.microsoft.portable-executable" = "wine.desktop";
     "application/x-msdownload" = "wine.desktop";

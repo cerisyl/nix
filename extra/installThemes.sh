@@ -15,6 +15,10 @@ if [[ "$checkConnection" == "" ]]; then
         mkdir -p "/home/ceri/.local/share/themes/$theme-$type"
         rm -rf "/home/ceri/.local/share/themes/$theme-$type"
         unzip -qq $zip -d "/home/ceri/.local/share/themes/$theme-$type"
+      elif [[ $zip == *"sounds"* ]]; then
+        mkdir -p "/home/ceri/.local/share/sounds/$theme"
+        rm -rf "/home/ceri/.local/share/sounds/$theme"
+        unzip -qq $zip -d "/home/ceri/.local/share/sounds/$theme"
       else
         mkdir -p "/home/ceri/.icons/$theme-$type"
         rm -rf "/home/ceri/.icons/$theme-$type"
