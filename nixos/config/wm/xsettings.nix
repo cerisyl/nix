@@ -178,6 +178,12 @@ in {
     };
   };
 
+  # Try to set QT font/DPI
+  home.sessionVariables = {
+    QT_FONT_NAME = font;
+    QT_FONT_DPI = "${dpi}";
+  };
+
   # Home directories (see thunar.nix)
   xdg = {
     enable = true;

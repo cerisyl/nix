@@ -92,19 +92,22 @@
     then ''sh -c "sh ${gpuShPath} run ${cmd};"''
     else cmd);
 
+  # Shortcut to play sounds
+  play = "canberra-gtk-play -i";
+
   custom = init: name: filename: exec: icon: { inherit init name filename exec icon; };
   customLaunchers = [
     #custom init      Name                      .desktop file                     Exec (true if == .desktop file)                       Icon (true if == .desktop file)
     # core
     (custom "ln..e"   "Email"                   "thunderbird"                     true                                                  "ceri-email")
     (custom "lname"   "KeePassXC"               "org.keepassxc.KeePassXC"         "keepassxc"                                           "ceri-pass")
-    (custom "lname"   "Lock"                    "lock"                            "xflock4"                                             "ceri-lock")
-    (custom "lname"   "Restart"                 "restart"                         "reboot"                                              "ceri-reboot")
-    (custom "lname"   "Shutdown"                "shutdown"                        "shutdown now"                                        "ceri-shutdown")
+    (custom "lname"   "Lock"                    "lock"                            "${play} desktop-logout & xflock4"                    "ceri-lock")
+    (custom "lname"   "Restart"                 "restart"                         "${play} system-shutdown & reboot"                    "ceri-reboot")
+    (custom "lname"   "Shutdown"                "shutdown"                        "${play} system-shutdown & shutdown now"              "ceri-shutdown")
     (custom "lname"   "xnviewmp"                "xnviewmp"                        "xnviewmp"                                            "ceri-images")
     # core (laptop)
-    (custom ".n.me"   "Suspend"                 "suspend"                         "systemctl suspend"                                   "ceri-suspend")
-    (custom ".n.me"   "Hibernate"               "hibernate"                       "systemctl hibernate"                                 "ceri-hibernate")
+    (custom ".n.me"   "Suspend"                 "suspend"                         "${play} desktop-logout & systemctl suspend"          "ceri-suspend")
+    (custom ".n.me"   "Hibernate"               "hibernate"                       "${play} desktop-logout & systemctl hibernate"        "ceri-hibernate")
     # create
     (custom "l...."   "Blender"                 "blender"                         (gpuCmd "blender %f")                                 true)
     (custom "ln..."   "Kdenlive"                "org.kde.kdenlive"                (gpuCmd "kdenlive")                                   "ceri-kden")

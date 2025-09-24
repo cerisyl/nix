@@ -13,4 +13,7 @@ in {
     };
     gtk4.extraConfig = gtkExtras;
   };
+
+  # Enable canberra via modules
+  home.sessionVariables.GTK_MODULES = "canberra-gtk-module";
 }

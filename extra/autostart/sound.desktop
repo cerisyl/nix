@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Startup sound
+Type=Application
+Exec=canberra-gtk-play -i desktop-login-first
