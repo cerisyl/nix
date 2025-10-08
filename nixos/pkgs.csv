@@ -95,7 +95,7 @@ ln..e |   | ffmpeg
 ln... |   | freac
 ln... |   | handbrake
 lname |   | imagemagick
-ln... | * | imgbrd-grabber
+#ln... | * | imgbrd-grabber
 ln... |   | jmtpfs
 l.a.e |   | jpeginfo
 ln..e |   | libreoffice-fresh
