@@ -15,5 +15,5 @@ in {
   };
 
   # Enable canberra via modules
-  home.sessionVariables.GTK_MODULES = "canberra-gtk-module";
+  home.sessionVariables.GTK_MODULES = "canberra-gtk3-module";
 }

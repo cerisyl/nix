@@ -10,7 +10,7 @@
     # Kill current task
     "<Primary><Alt>Escape" = "xkill";
     # Lock computer
-    "<Super>l" = "xflock4";
+    "<Super>l" = ''sh -c "canberra-gtk-play -i desktop-logout & xflock4"'';
     # btop / Task manager
     "<Primary><Shift>Escape" = "kitty --hold btop";
     # Windows key (toggle rofi "start menu")
