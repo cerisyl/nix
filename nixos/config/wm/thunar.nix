@@ -56,6 +56,7 @@
     # external/network locations
     (mkPlace  "l...." "file:///mnt/astore" "astore")
     (mkPlace  "l...." "file:///mnt/extra"  "extra")
+    (mkPlace  "....e" "smb://sgunning@engrit-file-01.ad.uillinois.edu/engrit/Users/sgunning"                "sgunning")
     (mkPlace  "....e" "smb://sgunning@engrit-file-01.ad.uillinois.edu/engrit/Shares/admin/Building%20Maps"  "maps")
     (mkPlace  "....e" "smb://sgunning@engr-archive.ad.uillinois.edu/Archive/Microsoft/Windows/OS/ISOs"      "isos")
   ];
