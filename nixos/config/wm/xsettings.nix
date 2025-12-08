@@ -90,7 +90,7 @@
       # "backdrop/screen0/monitorHDMI-0/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
     };
     astore = {
-      "backdrop/screen0/monitorHDMI-0/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      "backdrop/screen0/monitorDP-2/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
     };
     vm = {
       "backdrop/screen0/monitorVirtual-1/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";

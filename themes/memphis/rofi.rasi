@@ -45,7 +45,7 @@ icon-ribbon {
   expand: false;
   size: 644px;
   margin: calc(-1 * (680px / 2 - 38px));
-  filename: "/home/ceri/desktop/banner.png";
+  filename: "/home/ceri/.nix/themes/memphis/img/banner.png";
 }
 
 search-wrapper {

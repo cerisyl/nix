@@ -1,7 +1,7 @@
 { config, pkgMap, theme, getThemeFile, homedir, myHostname, lib, ... }: let
   displays = {
     lux = {
-      "Default/DP-1/RefreshRate" = 143.972318;
+      "Default/DP-1/RefreshRate" = 99.95;
     };
     nova = {
       # "Default/DP-1/RefreshRate" = "${homedir}/.nix/themes/${theme}/img/bg.png";
@@ -26,7 +26,7 @@
       # ...
     };
     astore = {
-      # "Default/HDMI-0/RefreshRate" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      "Default/DP-2/RefreshRate" = 99.95;
     };
     vm = {
       # "Default/Virtual-1/RefreshRate" = "${homedir}/.nix/themes/${theme}/img/bg.png";
