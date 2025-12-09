@@ -1,8 +1,8 @@
 { config, lib, myHostname, ... }:
-if myHostname == "lux" then {
+if myHostname == "lux" or myHostname == "astore" then {
   services.openssh = {
     enable  = true;
-    ports   = [ 22 ];
+    ports   = [ 50951 ];
     settings = {
       PasswordAuthentication  = true;
       PubkeyAuthentication    = false;

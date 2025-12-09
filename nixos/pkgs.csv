@@ -106,7 +106,7 @@ l.... |   | puddletag
 lname |   | qdirstat
 lname |   | qdiskinfo
 l.a.e |   | rclone
-....e | * | remmina
+l...e | * | remmina
 l.... |   | rubyripper
 lname |   | tesseract
 l.a.e |   | testdisk
@@ -125,7 +125,7 @@ lna.e |   | virt-manager
 lna.e |   | win-virtio
 lna.e |   | win-spice
 # VM share methods
-l.... |   | samba
+l.a.. |   | samba
 .n..e |   | virtiofsd
 
 # wm: Window manager tools and add-ins.

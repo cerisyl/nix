@@ -100,7 +100,7 @@ in {
         extraGroups   = [ "wheel" "input" "networkmanager" "deluge" "libvirtd" "share" ];
       };
     # Only add mang as a secondary user on lux host
-    } // (if myHostname == "lux" then {
+    } // (if myHostname == "lux" || myHostname == "astore" then {
       mang = {
         isSystemUser  = true;
         shell         = pkgsUnstable.zsh;
