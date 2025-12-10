@@ -1,5 +1,5 @@
 { config, lib, myHostname, ... }:
-if myHostname == "lux" or myHostname == "astore" then {
+if myHostname == "lux" || myHostname == "astore" then {
   services.openssh = {
     enable  = true;
     ports   = [ 50951 ];
