@@ -22,10 +22,10 @@
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-    #"/mnt/astore" = {
-    #  device = "/dev/disk/by-uuid/2ea991dc-cf75-421d-8f1e-2df130645e43";
-    #  fsType = "ext4";
-    #};
+    "/mnt/astore" = {
+      device = "/dev/disk/by-uuid/2ea991dc-cf75-421d-8f1e-2df130645e43";
+      fsType = "ext4";
+    };
     "/mnt/share" = {
       device = "/dev/disk/by-uuid/57128f71-a084-4239-8bec-61f6113c8ebb";
       fsType = "ext4";
