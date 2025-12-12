@@ -110,7 +110,7 @@ in if pkgMap ? "itgmania" then {
       HiddenSongs=0
       HideIncompleteCourses=0
       HighResolutionTextures=ForceOn
-      HttpAllowHosts=*.groovestats.com
+      HttpAllowHosts=*.groovestats.com,*.arrowcloud.dance
       HttpEnabled=1
       IgnoredDialogs=FRAME_DIMENSIONS_WARNING
       ImageCache=LowResPreload

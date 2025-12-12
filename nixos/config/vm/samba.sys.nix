@@ -11,6 +11,15 @@
       "directory mask"  = "0755";
     };
   } else if myHostname == "astore" then {
+    astore = { 
+      path              = "/mnt/astore";
+      browseable        = "yes";
+      writeable         = "yes";
+      "guest ok"        = "no";
+      "valid users"     = "ceri";
+      "create mask"     = "0644";
+      "directory mask"  = "0755";
+    };
     share = {
       path              = "/mnt/share";
       browseable        = "yes";

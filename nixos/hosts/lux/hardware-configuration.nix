@@ -27,6 +27,16 @@
       device = "/dev/disk/by-uuid/63979a69-2d7f-4f09-8a8f-6c2b6b9a26bf";
       fsType = "ext4";
     };
+    #"/mnt/astore" = {
+    #  device = "//192.168.200.240/astore";
+    #  fsType = "cifs";
+    #  options = [ "username=ceri" "password=${}" "x-systemd.automount" "noauto" ];
+    #};
+    "/mnt/share" = {
+      device = "//192.168.200.240/share";
+      fsType = "cifs";
+      options = [ "username=ceri" "password=${}" "x-systemd.automount" "noauto" ];
+    };
   };
 
   swapDevices =
