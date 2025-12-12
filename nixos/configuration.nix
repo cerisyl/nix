@@ -86,8 +86,17 @@ in {
 
   # Import hardware config
   imports = [
+    inputs.sops-nix.nixosModules.sops
     ./hosts/${myHostname}/hardware-configuration.nix
   ] ++ import ./config { role = "system"; };
+
+  # Set up secrets
+  sops.defaultSopsFile = ../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
+
+  # Import secrets
+  sops.secrets.samba = {};
 
   # Users
   programs.zsh.enable = true;

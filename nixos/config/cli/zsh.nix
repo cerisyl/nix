@@ -128,12 +128,11 @@
       package = "~/itg/package.sh";
       budg    = "code ~/sync/main/code/neobudget";
 
-      # NPM
-      npmi    = "npm install";
-      run     = "npm run";
-      dev     = "npm run dev";
-      deploy  = "npm run deploy";
-      redev   = "npm run redev";
+      # Bun
+      bi    = "bun i";
+      bid   = "bun i -D";
+      brun  = "bun run dev";
+      build = "bun run build";
 
       # Work
       tdx       = "floorp https://help.uillinois.edu/TDNext/Home/Desktop/Default.aspx";

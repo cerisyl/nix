@@ -7,13 +7,14 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-legacy.url = "github:nixos/nixpkgs/80d50fc87924c2a0d346372d242c27973cf8cdbf";
     # extra programs + home-manager
-    zmod = {
-      url = "github:zarzob/Simply-Love-SM5/itgmania-release";
-      flake = false;
-    };
+    sops-nix.url = "github:Mic92/sops-nix";
     nixcord = {
       url = "github:KaylorBen/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zmod = {
+      url = "github:zarzob/Simply-Love-SM5/itgmania-release";
+      flake = false;
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
