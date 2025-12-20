@@ -143,6 +143,7 @@ lname |   | xfce.thunar-archive-plugin
 lname |   | xfce.thunar-media-tags-plugin
 lname |   | xfce.xfce4-screenshooter
 lname |   | xmousepasteblock
+..a.. |   | xrdp
 
 # wm.i3: i3-specific add-ins
 # lname |   | dconf

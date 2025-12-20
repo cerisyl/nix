@@ -30,12 +30,24 @@
     "/mnt/astore" = {
       device = "//192.168.200.240/astore";
       fsType = "cifs";
-      options = [ "credentials=${config.sops.secrets.samba.path}" "x-systemd.automount" "noauto" ];
+      options = [
+        "credentials=${config.sops.secrets.samba.path}"
+        "uid=${toString config.users.users.ceri.uid}"
+        "gid=${toString config.users.groups.ceri.gid}"
+        "x-systemd.automount"
+        "noauto"
+      ];
     };
     "/mnt/share" = {
       device = "//192.168.200.240/share";
       fsType = "cifs";
-      options = [ "credentials=${config.sops.secrets.samba.path}" "x-systemd.automount" "noauto" ];
+      options = [
+        "credentials=${config.sops.secrets.samba.path}"
+        "uid=${toString config.users.users.ceri.uid}"
+        "gid=${toString config.users.groups.ceri.gid}"
+        "x-systemd.automount"
+        "noauto"
+      ];
     };
   };
 

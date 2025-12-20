@@ -16,6 +16,7 @@
       url = "github:zarzob/Simply-Love-SM5/itgmania-release";
       flake = false;
     };
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,6 +44,9 @@
         ./nixos/hosts/${myHostname}/configuration.nix
         inputs.home-manager.nixosModules.home-manager
         {
+          nixpkgs.overlays = if myHostname == "astore"
+            then [ inputs.nix-minecraft.overlay ]
+            else [];
           home-manager.sharedModules = [ inputs.nixcord.homeModules.nixcord ];
           system.configurationRevision = self.rev or null;
           system.nixos.label =
@@ -50,7 +54,13 @@
             then "${self.sourceInfo.shortRev}"
             else "${self.sourceInfo.lastModifiedDate}-dirty";
         }
-      ];
+      ] ++ (if myHostname == "lux"
+        then [ inputs.sops-nix.nixosModules.sops ]
+        else []
+      ) ++ (if myHostname == "astore"
+        then [ inputs.nix-minecraft.nixosModules.minecraft-servers ]
+        else []
+      );
     };
   in {
     nixosConfigurations = {

@@ -86,17 +86,19 @@ in {
 
   # Import hardware config
   imports = [
-    inputs.sops-nix.nixosModules.sops
     ./hosts/${myHostname}/hardware-configuration.nix
   ] ++ import ./config { role = "system"; };
 
-  # Set up secrets
-  sops.defaultSopsFile = ../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/home/ceri/.config/sops/age/keys.txt";
+  # Sops config
+  sops = if myHostname == "lux" then {
+    # Set up secrets
+    defaultSopsFile = ../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/home/ceri/.config/sops/age/keys.txt";
 
-  # Import secrets
-  sops.secrets.samba = {};
+    # Import secrets
+    secrets.samba = {};
+  } else {};
 
   # Users
   programs.zsh.enable = true;

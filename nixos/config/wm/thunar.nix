@@ -53,8 +53,9 @@
     (mkDir    "lname" "vm"          true          false     true)
     (mkDir    "lname" "videos"      true          true      false)
     # external/network locations
+    (mkPlace  "l.a.e" "/"                  "—————")
     (mkPlace  "l...." "file:///mnt/extra"  "extra")
-    #(mkPlace  "l.a.." "file:///mnt/astore" "astore")
+    (mkPlace  "l.a.." "file:///mnt/astore" "astore")
     (mkPlace  "l.a.." "file:///mnt/share"  "share")
     (mkPlace  "....e" "smb://sgunning@engrit-file-01.ad.uillinois.edu/engrit/Users/sgunning"                "sgunning")
     (mkPlace  "....e" "smb://sgunning@engrit-file-01.ad.uillinois.edu/engrit/Shares/admin/Building%20Maps"  "maps")
