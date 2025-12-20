@@ -33,7 +33,7 @@
       options = [
         "credentials=${config.sops.secrets.samba.path}"
         "uid=${toString config.users.users.ceri.uid}"
-        "gid=${toString config.users.groups.ceri.gid}"
+        "gid=${toString config.users.groups.users.gid}"
         "x-systemd.automount"
         "noauto"
       ];
@@ -44,7 +44,7 @@
       options = [
         "credentials=${config.sops.secrets.samba.path}"
         "uid=${toString config.users.users.ceri.uid}"
-        "gid=${toString config.users.groups.ceri.gid}"
+        "gid=${toString config.users.groups.users.gid}"
         "x-systemd.automount"
         "noauto"
       ];

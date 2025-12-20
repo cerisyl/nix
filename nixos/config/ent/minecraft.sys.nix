@@ -1,4 +1,4 @@
-{ config, lib, myHostname, ... }:
+{ config, lib, pkgs, myHostname, ... }:
 if (myHostname == "astore") then {
   services.minecraft-servers = {
     enable = true;
