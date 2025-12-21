@@ -4,7 +4,7 @@
       "Default/DP-1/RefreshRate" = 99.95;
     };
     nova = {
-      # "Default/DP-1/RefreshRate" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      # ...
     };
     engrit = {
       # Left DP monitor
@@ -26,10 +26,11 @@
       # ...
     };
     astore = {
+      "Default/DP-1/RefreshRate" = 99.95;
       "Default/DP-2/RefreshRate" = 99.95;
     };
     vm = {
-      # "Default/Virtual-1/RefreshRate" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      # ...
     };
   };
 in {

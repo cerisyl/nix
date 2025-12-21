@@ -70,31 +70,33 @@
   };
 
   # Get a list of displays and prep them for xfce4-desktop (for backgrounds)
+  defaultBg = "${homedir}/.nix/themes/${theme}/img/bg.png";
   displays = {
     lux = {
-      "backdrop/screen0/monitorDP-1/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      "backdrop/screen0/monitorDP-1/workspace0/last-image" = defaultBg;
     };
     nova = {
-      "backdrop/screen0/monitorDP-1/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      "backdrop/screen0/monitorDP-1/workspace0/last-image" = defaultBg;
     };
     engrit = {
-      "backdrop/screen0/monitoreDP-1/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
-      "backdrop/screen0/monitorDP-1-1/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
-      "backdrop/screen0/monitorDP-1-2/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
-      "backdrop/screen0/monitorDP-2-1/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
-      "backdrop/screen0/monitorDP-2-2/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
-      "backdrop/screen0/monitorDP-1-2-2/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
-      "backdrop/screen0/monitorDP-1-3-3/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      "backdrop/screen0/monitoreDP-1/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-1-1/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-1-2/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-2-1/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-2-2/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-1-2-2/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-1-3-3/workspace0/last-image" = defaultBg;
     };
     medea = {
-      # "backdrop/screen0/monitorHDMI-0/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      # "backdrop/screen0/monitorHDMI-0/workspace0/last-image" = defaultBg;
     };
     astore = {
-      "backdrop/screen0/monitorDP-1/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
-      "backdrop/screen0/monitorDP-2/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      "backdrop/screen0/monitorDP-1/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-2/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorrdp0/workspace0/last-image" = defaultBg;
     };
     vm = {
-      "backdrop/screen0/monitorVirtual-1/workspace0/last-image" = "${homedir}/.nix/themes/${theme}/img/bg.png";
+      "backdrop/screen0/monitorVirtual-1/workspace0/last-image" = defaultBg;
     };
   };
 
@@ -187,9 +189,10 @@ in {
     QT_FONT_DPI = themeProps."${theme}".dpi;
   };
 
-  # Home directories (see thunar.nix)
+  # Home directories (see thunar.nix) & sound themes
   xdg = {
     enable = true;
+    sounds.enable = true;
     userDirs = {
       enable             = true;
       createDirectories  = true;
