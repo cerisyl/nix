@@ -189,10 +189,9 @@ in {
     QT_FONT_DPI = themeProps."${theme}".dpi;
   };
 
-  # Home directories (see thunar.nix) & sound themes
+  # Home directories (see thunar.nix)
   xdg = {
     enable = true;
-    sounds.enable = true;
     userDirs = {
       enable             = true;
       createDirectories  = true;
