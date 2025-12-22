@@ -42,6 +42,7 @@
       modules = [
         ./nixos/hosts/${myHostname}/configuration.nix
         inputs.home-manager.nixosModules.home-manager
+        inputs.sops-nix.nixosModules.sops
         {
           home-manager.sharedModules = [ inputs.nixcord.homeModules.nixcord ];
           system.configurationRevision = self.rev or null;
@@ -50,10 +51,7 @@
             then "${self.sourceInfo.shortRev}"
             else "${self.sourceInfo.lastModifiedDate}-dirty";
         }
-      ] ++ (if myHostname == "lux"
-        then [ inputs.sops-nix.nixosModules.sops ]
-        else []
-      );
+      ];
     };
   in {
     nixosConfigurations = {
