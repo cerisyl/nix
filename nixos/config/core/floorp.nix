@@ -128,7 +128,7 @@
 in {
   programs.floorp = {
     enable        = true;
-    package       = pkgMap.floorp;
+    package       = pkgMap.floorp-bin;
     profiles.main = {
       id = 0;
       settings = defaultSettings;
