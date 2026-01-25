@@ -20,7 +20,7 @@ if pkgMap ? "vesktop" then {
         betterSessions.enable       = true;
         callTimer.enable            = true;
         copyFileContents.enable     = true;
-        clearURLs.enable            = true;
+        ClearURLs.enable            = true;
         crashHandler.enable         = true;
         disableCallIdle.enable      = true;
         fixImagesQuality.enable     = true;

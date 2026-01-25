@@ -5,9 +5,9 @@ if myHostname == "engrit" then {
     graphics.enable = true;
     enableAllFirmware = true;
     opengl.extraPackages = with pkgs; [
-      vaapiIntel
+      intel-vaapi-driver
       libvdpau-va-gl
-      vaapiVdpau
+      libva-vdpau-driver
       intel-ocl
       intel-media-driver
     ];

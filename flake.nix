@@ -42,7 +42,7 @@
       modules = [
         ./nixos/hosts/${myHostname}/configuration.nix
         inputs.home-manager.nixosModules.home-manager
-        inputs.sops-nix.nixosModules.sops 
+        inputs.sops-nix.nixosModules.sops
         {
           home-manager.sharedModules = [ inputs.nixcord.homeModules.nixcord ];
           system.configurationRevision = self.rev or null;
