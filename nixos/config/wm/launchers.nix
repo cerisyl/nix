@@ -55,7 +55,7 @@
     (overwrite "Rofi"                   "rofi"                            "rofi -show")
     (overwrite "Rofi Theme Selector"    "rofi-theme-selector"             true)
     (overwrite "Syncthing Tray"         "syncthingtray"                   "syncthingtray --wait --single-instance")
-    (overwrite "Vesktop"                "vesktop"                         true)
+    (overwrite "Discord"                "discord"                         true)
     (overwrite "LibreOffice"            "startcenter"                     "libreoffice")
     (overwrite "LibreOffice Base"       "base"                            "libreoffice --base")
     (overwrite "LibreOffice Draw"       "draw"                            "libreoffice --draw")
@@ -121,7 +121,7 @@
     (custom "ln..e"   "Tauon"                   "tauonmb"                         "tauon"                                               "ceri-music")
     (custom "lname"   "VLC Media Player"        "vlc"                             true                                                  "ceri-media")
     # soc
-    (custom "ln..."   "Discord"                 "discord"                         "vesktop --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling"      "ceri-cord")
+    (custom "ln..."   "Discord"                 "discord"                         "discord --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling"      "ceri-cord")
     # tools
     (custom "ln..e"   "Word"                    "writer"                          "libreoffice --writer"                                "ceri-word")
     (custom "ln..e"   "Excel"                   "calc"                            "libreoffice --calc"                                  "ceri-excel")

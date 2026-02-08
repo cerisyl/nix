@@ -2,7 +2,7 @@
 
   # Define autostarts
   autostart = {
-    discord     = "vesktop --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling";
+    discord     = "discord --enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling";
     dropbox     = "dropbox";
     greenclip   = "greenclip daemon";
     keepassxc   = "keepassxc";

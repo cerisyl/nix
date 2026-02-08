@@ -83,7 +83,7 @@ l.... |   | dropbox
 l.... |   | xfce.thunar-dropbox-plugin
 
 # soc: Social media and other messaging programs.
-ln... | * | vesktop
+ln... | * | discord
 ln... | * | telegram-desktop
 
 # tools: Mixed tools and utilities; typically lesser-used.
