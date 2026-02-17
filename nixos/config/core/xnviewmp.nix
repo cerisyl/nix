@@ -236,7 +236,7 @@ if pkgMap ? "xnviewmp" then {
     useInternalVideoPlayer=true
     useRecycleBin=true
     useTabs=false
-    version=@ByteArray(1.8.8)
+    version=@ByteArray(${pkgMap.xnviewmp.version})
 
     [IPTC]
     defaultCodec=0
@@ -412,7 +412,7 @@ if pkgMap ? "xnviewmp" then {
     OpenWithParam=@Invalid()
     PathBrowser=
     RecentFiles=
-    checkFreq=1
+    checkFreq=0
     customPath=
     dbFlag=0
     dbFolder=
