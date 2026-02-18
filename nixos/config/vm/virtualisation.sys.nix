@@ -23,6 +23,6 @@ in {
 
   # For looking-glass
   services.udev.extraRules = ''
-    SUBSYSTEM=="kvmfr", OWNER="ceri", GROUP="kvm", MODE="0660"
+    SUBSYSTEM=="kvmfr0", OWNER="ceri", GROUP="users", MODE="0660"
   '';
 }
