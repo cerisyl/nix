@@ -15,6 +15,7 @@ lname |   | pciutils |-> lspci
 lname |   | p7zip
 lname |   | sops
 lname |   | tealdeer
+lname |   | unrar
 lname |   | unzip
 lname |   | usbutils |-> lsusb
 lname | * | zinit
