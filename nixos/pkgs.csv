@@ -167,7 +167,6 @@ lname |   | xfce.xfce4-pulseaudio-plugin
 lname |   | xfce.xfwm4
 
 # work: Work-related applications.
-....e | * | boxfs
 ....e | * | onedrive
 ....e | * | openconnect
 ....e | * | powershell
