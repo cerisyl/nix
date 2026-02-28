@@ -13,6 +13,7 @@
     "i3.nix"
     "picom.nix"
     "polybar.nix"
+    "audio.nix"
   ];
 
   baseDir = ./.;

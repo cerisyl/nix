@@ -1,4 +1,5 @@
 # cli: Essential/system commands and CLI tools.
+lname |   | bat
 lname |   | btop
 lname |   | fastfetch
 lname | * | fd
@@ -45,6 +46,7 @@ lname | * | xnviewmp
 l.... |   | blender
 # ln... |   | fade-in
 ln... |   | kdePackages.kdenlive
+ln... |   | libxcomposite |-> relies on obs
 ln... |   | obs-studio
 l.... |   | reaper
 

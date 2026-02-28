@@ -32,7 +32,7 @@
       fsType = "cifs";
       options = [
         "credentials=${config.sops.secrets.samba.path}"
-        "uid=${toString config.users.users.ceri.uid}"
+        "uid=1000" # for some reason, UID isn't set by users.users
         "gid=${toString config.users.groups.users.gid}"
         "x-systemd.automount"
         "noauto"
@@ -43,7 +43,7 @@
       fsType = "cifs";
       options = [
         "credentials=${config.sops.secrets.samba.path}"
-        "uid=${toString config.users.users.ceri.uid}"
+        "uid=1000" # for some reason, UID isn't set by users.users
         "gid=${toString config.users.groups.users.gid}"
         "x-systemd.automount"
         "noauto"

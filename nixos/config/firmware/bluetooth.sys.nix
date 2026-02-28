@@ -1,5 +1,5 @@
 { config, lib, pkgs, myHostname, ... }:
-if (myHostname == "luxe" || myHostname == "engrit") then {
+if (myHostname == "nova" || myHostname == "engrit") then {
   hardware.bluetooth = {
     enable      = true;
     powerOnBoot = true;

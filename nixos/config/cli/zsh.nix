@@ -89,11 +89,16 @@
     # Aliases
     shellAliases = {
       # General
-      ls      = "ls --color=auto";
       c       = "clear";
       home    = "cd ~";
       fetch   = "fastfetch";
       ff      = "fastfetch";
+
+      # Colorized outputs
+      ls      = "ls --color=auto";
+      lsblk   = "lsblk | bat -l conf -p";
+      lsmod   = "lsmod | bat -l conf -p";
+      lscpu   = "lscpu | bat -l cpuinfo -p";
 
       # Websearch
       yt      = "youtube";

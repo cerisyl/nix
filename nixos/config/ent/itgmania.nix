@@ -105,7 +105,7 @@ in if pkgMap ? "itgmania" then {
       FrameLimitPercent=0.000000
       FullscreenIsBorderlessWindow=1
       GetRankingName=On
-      GlobalOffsetSeconds=-0.060000
+      GlobalOffsetSeconds=-0.047000
       HarshHotLifePenalty=1
       HiddenSongs=0
       HideIncompleteCourses=0
