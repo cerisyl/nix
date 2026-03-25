@@ -63,11 +63,11 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1774312874,
-        "narHash": "sha256-mFc7Iy+Oqwr7Vwb7CmNIWilSYiTw2857imf6Rb75ITg=",
+        "lastModified": 1774376318,
+        "narHash": "sha256-4qPK1/nTax4RJ4VClNBdDpz9o3uh5KTQwz+2e3XFOn4=",
         "owner": "KaylorBen",
         "repo": "nixcord",
-        "rev": "71f4b3f92ca534c3665deb63e229195955d96cf9",
+        "rev": "1e20d00ccb0fd2ed9ae7a9cce953ea74c430f318",
         "type": "github"
       },
       "original": {
@@ -203,11 +203,11 @@
     "zmod": {
       "flake": false,
       "locked": {
-        "lastModified": 1774234696,
-        "narHash": "sha256-CKxtShlA93xtOf5T4s3jA6ImYXdekyrIrC82H3brTRg=",
+        "lastModified": 1774331797,
+        "narHash": "sha256-AhzC4wf+dfxediW72xuiUE+nPFYnCC5ZK7dPtOEwutE=",
         "owner": "zarzob",
         "repo": "Simply-Love-SM5",
-        "rev": "eab7724ff9fe421e2b28bc5e9af9a2fa61bd1457",
+        "rev": "9c2993af5a75faf4cf03d617cf08b73e1071e748",
         "type": "github"
       },
       "original": {
