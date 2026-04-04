@@ -14,7 +14,7 @@
       }
     ];
     # Init
-    initExtraBeforeCompInit = ''
+    initContent = lib.mkOrder 550 ''
       # Set up / source zinit
       # TODO: Remove the need for surpressing source output
       export ZINIT_HOME="${homedir}/.local/share/zinit/"
@@ -57,20 +57,7 @@
 
       # Mute beeps
       unsetopt BEEP
-    '';
-    # History
-    history = {
-      size          = 10000;
-      save          = 10000;
-      append        = true;
-      share         = true;
-      ignoreSpace   = true;
-      saveNoDups    = true;
-      ignoreDups    = true;
-      ignoreAllDups = true;
-      findNoDups    = true;
-    };
-    initExtra = ''
+
       # Completion styling
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
       zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
@@ -86,6 +73,18 @@
       # Init omp
       eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.json)"
     '';
+    # History
+    history = {
+      size          = 10000;
+      save          = 10000;
+      append        = true;
+      share         = true;
+      ignoreSpace   = true;
+      saveNoDups    = true;
+      ignoreDups    = true;
+      ignoreAllDups = true;
+      findNoDups    = true;
+    };
     # Aliases
     shellAliases = {
       # General

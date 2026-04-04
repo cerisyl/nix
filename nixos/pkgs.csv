@@ -30,7 +30,7 @@ lname | * | zsh-syntax-highlighting
 # core: Essential GUI programs for everyday use.
 ln..e |   | birdtray
 l.... |   | ungoogled-chromium |-> Specifically for WebFSR
-lname | * | mate.engrampa
+lname | * | engrampa
 lname |   | floorp-bin
 lname | * | keepassxc
 lname | * | kitty
@@ -53,7 +53,7 @@ l.... |   | reaper
 # dev : Development tools.
 lna.e | * | bun
 ln... |   | python311 |-> 9ornull
-lna.e |   | python313
+lna.e |   | python314
 lna.e | * | vscode-fhs
 
 # ent: Entertainment / gaming programs.
