@@ -183,6 +183,9 @@ in {
     };
   };
 
+  # User icon
+  home.file.".face".source = getThemeFile "img/fetch.png";
+
   # Try to set QT font/DPI
   home.sessionVariables = {
     QT_FONT_NAME = themeProps."${theme}".font;

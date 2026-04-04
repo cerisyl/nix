@@ -59,6 +59,27 @@
     lib.strings.hasInfix hostID entry.init
   ) allPkgs;
 
+  # Load additional packages from the /customs directory
+  loadRecursive = dir:
+    let
+      dirSet = builtins.readDir dir;
+      entries = builtins.attrNames dirSet;
+      paths = builtins.concatMap (name:
+        let
+          path = dir + "/${name}";
+          type = dirSet."${name}";
+        in
+          if type == "directory"
+            then loadRecursive path
+          else if name != "default.nix"
+            then [ path ]
+          else
+            []
+      ) entries;
+    in
+      paths;
+  customPackages = loadRecursive ./customs;
+
   # TODO: Would be cool if we can combine these two blocks into
   # a single call- research later.
 
@@ -67,7 +88,7 @@
     if entry.isUnstable == true
     then getAttrByStr pkgsUnstable entry.pkg
     else getAttrByStr pkgs entry.pkg
-  ) enabledPkgs;
+  ) enabledPkgs ++ import customPackages;
 
   # Also spawn an object to use in loading proper packages in config
   pkgMap = builtins.listToAttrs (map (entry:

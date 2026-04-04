@@ -1,5 +1,15 @@
 # TODO: Integrate into builds
+
+# Checks connection to Dropbox
 checkConnection=$(ping -c1 dropbox.com | grep "100% packet loss")
+
+# Function to install theme
+installTheme () {
+  mkdir -p "$2"
+  rm -rf "$2"
+  unzip -qq $1 -d "$2"
+}
+
 if [[ "$checkConnection" == "" ]]; then
   curl -L -o /tmp/themes.zip "https://www.dropbox.com/scl/fo/lym7a5h68pxibl2fwkl4r/AObWCCVHSwMMA6YnJHckmzo?rlkey=hsjqv6dnle5ysgsppyj0gtfm7&st=m5axlvg7&dl=1" -s
   getNewHash=$(cat /tmp/themes.zip | md5sum | awk "{print $1}")
@@ -12,17 +22,11 @@ if [[ "$checkConnection" == "" ]]; then
       file=$(basename $zip)
       type=${file%.*}
       if [[ $zip == *"main"* ]] || [[ $zip == *"window"* ]]; then
-        mkdir -p "/home/ceri/.local/share/themes/$theme-$type"
-        rm -rf "/home/ceri/.local/share/themes/$theme-$type"
-        unzip -qq $zip -d "/home/ceri/.local/share/themes/$theme-$type"
+        installTheme $zip "/home/ceri/.local/share/themes/$theme-$type"
       elif [[ $zip == *"sounds"* ]]; then
-        mkdir -p "/home/ceri/.local/share/sounds/$theme"
-        rm -rf "/home/ceri/.local/share/sounds/$theme"
-        unzip -qq $zip -d "/home/ceri/.local/share/sounds/$theme"
+        installTheme $zip "/home/ceri/.local/share/sounds/$theme"
       else
-        mkdir -p "/home/ceri/.icons/$theme-$type"
-        rm -rf "/home/ceri/.icons/$theme-$type"
-        unzip -qq $zip -d "/home/ceri/.icons/$theme-$type"
+        installTheme $zip "/home/ceri/.icons/$theme-$type"
       fi
     done
     rm -rf /tmp/themes
