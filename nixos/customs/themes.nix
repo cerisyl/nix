@@ -1,14 +1,13 @@
-{ config, pkgs, lib, ... }:
-pkgs.stdenv.mkDerivation {
+{ pkgs }: pkgs.stdenv.mkDerivation {
   name = "ceri-themes";
   version = "1.0";
   src = builtins.fetchurl {
     name = "ceri-themes";
     url = "https://www.dropbox.com/scl/fo/lym7a5h68pxibl2fwkl4r/AObWCCVHSwMMA6YnJHckmzo?rlkey=hsjqv6dnle5ysgsppyj0gtfm7&st=m5axlvg7&dl=1";
-    sha256 = "3cd8645d42184bcbbaff080040b48126347e892b5cfcb360e0f961908227238b";
+    sha256 = "f8b118b68cb0e4b2c4e73d4af4ad10f0db2f940642d17b37ad71c507bb4e5c1c";
   };
   unpackPhase = ''
-    ${pkgs.unzip}/bin/unzip $src -x / -d /tmp/themes
+    ${pkgs.unzip}/bin/unzip -qq $src -x / -d /tmp/themes
   '';
   installPhase = ''
     installTheme () {
@@ -33,4 +32,4 @@ pkgs.stdenv.mkDerivation {
   fixupPhase = ''
     rm -rf /tmp/themes
   '';
-};
+}

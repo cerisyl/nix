@@ -71,14 +71,17 @@
         in
           if type == "directory"
             then loadRecursive path
-          else if name != "default.nix"
+          else if builtins.match ".*\\.nix$" name != null && name != "default.nix"
             then [ path ]
           else
             []
       ) entries;
     in
       paths;
-  customPackages = loadRecursive ./customs;
+  customDirs = loadRecursive ./customs;
+  customPkgs = map (custom:
+    pkgs.callPackage custom {}
+  ) customDirs;
 
   # TODO: Would be cool if we can combine these two blocks into
   # a single call- research later.
@@ -88,7 +91,7 @@
     if entry.isUnstable == true
     then getAttrByStr pkgsUnstable entry.pkg
     else getAttrByStr pkgs entry.pkg
-  ) enabledPkgs ++ import customPackages;
+  ) enabledPkgs;
 
   # Also spawn an object to use in loading proper packages in config
   pkgMap = builtins.listToAttrs (map (entry:
@@ -169,20 +172,21 @@ in {
 
   # Define packages
   nixpkgs.config.allowUnfree  = true;
-  environment.systemPackages  = systemPkgs;
+  environment.systemPackages  = systemPkgs ++ customPkgs;
 
   # Allow dynamically linked executables
   programs.nix-ld.enable    = true;
   programs.nix-ld.libraries = [];
 
   # Fonts
+  fonts.fontDir.enable = true;
   fonts.packages = [
+    pkgsUnstable.nerd-fonts.jetbrains-mono
     pkgs.inter
+    pkgs.roboto
     pkgs.noto-fonts-cjk-sans
     pkgs.noto-fonts-color-emoji
-    #pkgs.barlow - Gives issues with QT apps
-    pkgs.roboto
-    pkgsUnstable.nerd-fonts.jetbrains-mono
+    (pkgs.callPackage ./fonts.nix {}) # custom fonts
   ];
 
   # Enable flakes

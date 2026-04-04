@@ -116,6 +116,7 @@ in {
     xfce4-screensaver = {
       "saver/enabled" = false;
       "saver/idle-activation/enabled" = false;
+      "lock/user-switching/enabled" = false;
     };
 
     # Background + desktop
