@@ -71,6 +71,9 @@
     "application/x-sh"          = editor;
     "text/tab-separated-values" = editor;
     "application/xml"           = editor;
+    "inode/x-empty"             = editor;
+    "application/x-zerosize"    = editor;
+    "application/octet-stream"  = editor;
     # archiving
     "application/x-7z-compressed"   = archiver;
     "application/x-bzip"            = archiver;
@@ -92,7 +95,6 @@
     # misc applications
     "x-scheme-handler/discord" = "discord.desktop";
     "x-scheme-handler/magnet"  = "deluge.desktop";
-    # TODO: direct open win11 vm for things like xlsx?
   };
 in {
   xdg.mimeApps = {

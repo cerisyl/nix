@@ -189,8 +189,12 @@ in {
     (pkgs.callPackage ./fonts.nix {}) # custom fonts
   ];
 
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Buffer/parallel downloads, enable flakes
+  nix.settings = {
+    download-buffer-size  = 524288000;
+    max-substitution-jobs = 4;
+    experimental-features = [ "nix-command" "flakes" ];
+  };
 
   # NEVER EVER CHANGE THIS.
   system.stateVersion = "24.11";

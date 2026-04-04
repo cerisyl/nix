@@ -10,9 +10,9 @@ unknown_driver() {
 # Function to swap GPU from VM -> host
 swap_vm_host() {
   if [[ "$cur_driver" == "vfio-pci" ]]; then
-    sudo virsh nodedev-reattach pci_0000_01_00_0
-    sudo rmmod vfio_pci vfio_pci_core vfio_iommu_type1
-    sudo modprobe -i nvidia nvidia_uvm nvidia_modeset
+    virsh nodedev-reattach pci_0000_01_00_0
+    rmmod vfio_pci vfio_pci_core vfio_iommu_type1
+    modprobe -i nvidia nvidia_uvm nvidia_modeset
     echo "GPU host-ready! (confirm with \"gpu\")"
   elif [[ "$cur_driver" == "nvidia" ]]; then
     echo "GPU already mounted to host."
@@ -24,9 +24,9 @@ swap_vm_host() {
 # Function to swap GPU from host -> VM
 swap_host_vm() {
   if [[ "$cur_driver" == "nvidia" ]]; then
-    sudo rmmod nvidia_modeset nvidia_uvm nvidia
-    sudo modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1
-    sudo virsh nodedev-detach pci_0000_01_00_0
+    rmmod nvidia_modeset nvidia_uvm nvidia
+    modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1
+    virsh nodedev-detach pci_0000_01_00_0
     echo "GPU VM-ready! (confirm with \"gpu\")"
   elif [[ "$cur_driver" == "vfio-pci" ]]; then
     echo "GPU already mounted to VM."
