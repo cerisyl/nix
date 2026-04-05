@@ -156,7 +156,7 @@ in {
       # Net
       "Net/ThemeName"                 = "${theme}-main"; # General theme
       "Net/IconThemeName"             = "${theme}-icons";
-      "Net/SoundThemeName"            = "${theme}"; #theme;
+      "Net/SoundThemeName"            = "current-sounds"; #theme;
       "Net/EnableEventSounds"         = true;
       "Net/EnableInputFeedbackSounds" = true;
       # Gtk

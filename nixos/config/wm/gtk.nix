@@ -2,7 +2,7 @@
   gtkExtras = {
     gtk-enable-event-sounds           = true;
     gtk-enable-input-feedback-sounds  = true;
-    gtk-sound-theme-name              = "luna"; #theme;
+    gtk-sound-theme-name              = "current-sounds"; #theme;
   };
 in {
   gtk = {

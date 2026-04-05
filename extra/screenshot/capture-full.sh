@@ -13,6 +13,6 @@ canberra-gtk-play -i camera-shutter &
 # Notify image was copied
 if [ -f $fname ]; then
   xclip -selection clipboard -t image/png -i "$fname"
-  canberra-gtk-play -i window-attention-active &
   notify-send -i "$fname" -t 5000 "Capture" "Saved and copied to clipboard"
+  canberra-gtk-play -i window-attention-active &
 fi
