@@ -13,7 +13,7 @@ in pkgs.stdenv.mkDerivation {
   version = "1.0";
   src = builtins.fetchurl {
     name = "ceri-themes";
-    url = "https://www.dropbox.com/scl/fo/lym7a5h68pxibl2fwkl4r/AObWCCVHSwMMA6YnJHckmzo?rlkey=hsjqv6dnle5ysgsppyj0gtfm7&st=m5axlvg7&dl=1";
+    url = "https://www.dropbox.com/scl/fo/lym7a5h68pxibl2fwkl4r/AObWCCVHSwMMA6YnJHckmzo?rlkey=99g6a54rq8gjkp3gzy2zleda5&st=o27idbom&dl=1";
     sha256 = "0fcdf7555c27193106b4c49f708f1af34d3d97c1ae6cebb76cbda34f8a4f39dd";
   };
   unpackPhase = ''
