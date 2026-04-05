@@ -70,7 +70,7 @@
   };
 
   # Get a list of displays and prep them for xfce4-desktop (for backgrounds)
-  defaultBg = "${homedir}/.nix/themes/${theme}/img/bg.png";
+  defaultBg = "/run/current-system/sw/share/themes/current-main/img/bg.png";
   displays = {
     lux = {
       "backdrop/screen0/monitorDP-1/workspace0/last-image" = defaultBg;
@@ -185,7 +185,7 @@ in {
   };
 
   # User icon
-  home.file.".face".source = getThemeFile "img/fetch.png";
+  home.file.".face".source = ../../../extra/face.png;
 
   # Try to set QT font/DPI
   home.sessionVariables = {

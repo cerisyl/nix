@@ -4,7 +4,7 @@
     package   = pkgMap.fastfetch;
     settings  = {
       logo = {
-        source      = (getThemeFile "img/fetch.png");
+        source      = "/run/current-system/sw/share/themes/current-main/img/fetch.png";
         type        = "kitty-direct";
         width       = 33;
         height      = 15;

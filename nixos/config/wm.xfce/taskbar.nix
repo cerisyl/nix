@@ -28,7 +28,7 @@
       darkMode          = false;
       bgStyle           = 2; # image
       bgColor           = [ 1.00 1.00 1.00 1.00 ];
-      bgImage           = "file://${homedir}/.nix/themes/aero/img/taskbar.png";
+      bgImage           = "file:///run/current-system/sw/share/themes/aero-main/img/taskbar.png";
       showLabels        = false;
       flatButtons       = false;
       font              = "Segoe UI Regular 10";

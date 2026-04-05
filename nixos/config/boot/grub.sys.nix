@@ -49,7 +49,7 @@ in {
         timeoutStyle    = "hidden";
         backgroundColor = "#1a1a1f";
         splashImage     = null;
-        theme           = "/home/ceri/.nix/themes/ceres/grub";
+        #theme           = "/run/current-system/sw/share/themes/current-grub";
         efiInstallAsRemovable = true;
       };
     };

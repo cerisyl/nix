@@ -4,14 +4,14 @@
   margin-right: 6px;
   background-color: transparent;
   background-position: left;
-  background-image: url("file:///home/ceri/.nix/themes/luna/img/start.png");
+  background-image: url("file:///run/current-system/sw/share/themes/luna-main/img/start.png");
   background-repeat: no-repeat;
   background-size: 97px;
 }
 
 #launcher-1 box button:hover,
 #launcher-7 box button:hover {
-  background-image: url("file:///home/ceri/.nix/themes/luna/img/start-hover.png");
+  background-image: url("file:///run/current-system/sw/share/themes/luna-main/img/start-hover.png");
 }
 
 #sn-button {

@@ -244,7 +244,7 @@ in {
     bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && $refresh_i3status
 
     # Set background
-    exec_always feh --bg-scale "${homedir}/.nix/themes/${theme}/img/bg.png"
+    exec_always feh --bg-scale /run/current-system/sw/share/themes/current-main/img/bg.png"
 
     # Autostarts
     ${myAutostarts}

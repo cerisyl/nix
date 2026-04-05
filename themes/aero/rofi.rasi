@@ -109,7 +109,7 @@ right-half {
 icon-user {
   expand: false;
   size: 105px;
-  filename: "/home/ceri/.nix/themes/aero/img/icon.png";
+  filename: "/run/current-system/sw/share/themes/aero-main/img/icon.png";
   margin: -8px 0 0 0;
 }
 

@@ -1,7 +1,7 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ config, pkgMap, lib, ... }: {
   boot.plymouth = {
     enable = true;
     theme  = "spinner";
-    logo   = ../../../themes/ceres/img/boot.png;
+    #logo   = "/run/current-system/sw/share/themes/current-main/img/boot.png";
   };
 }
