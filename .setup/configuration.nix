@@ -35,6 +35,12 @@
     pkgs.unzip
   ];
 
+  # Buffer/parallel downloads
+  nix.settings = {
+    download-buffer-size  = 524288000;
+    max-substitution-jobs = 4;
+  };
+
   # NEVER EVER CHANGE THIS.
   system.stateVersion = "24.11";
 }
