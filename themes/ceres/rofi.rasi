@@ -109,7 +109,6 @@ button selected {
 
 listview {
   columns: 1;
-  spacing: 4px;
   fixed-height: true;
   fixed-columns: true;
   scrollbar: true;
@@ -125,7 +124,7 @@ scrollbar {
 
 element {
   spacing: 0.5em;
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: 4px;
 }
 

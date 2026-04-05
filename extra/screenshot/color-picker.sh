@@ -1,6 +1,7 @@
 # Pick a color and return it into the clipboard as HEX
 
 color=$(xcolor -P 160)
+canberra-gtk-play -i keyboard-action &
 echo $color | xclip -sel clip
 
 # Display a notification that the hex was copied

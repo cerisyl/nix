@@ -5,12 +5,14 @@ fname="/tmp/ocr.png"
 
 # Take the screeshot and save it to the directory
 xfce4-screenshooter -r -s $fname
+canberra-gtk-play -i keyboard-action &
 
 # Copy to clipboard
-# Display a notification that the image was copied
+# Notify the image text was copied
 if [ -f $fname ]; then
   output="$(tesseract $fname -)"
   echo $output | xclip -sel clip
+  canberra-gtk-play -i window-attention-active &
   notify-send -i clipit-trayicon -t 5000 "Copied text" "$output"
 fi
 

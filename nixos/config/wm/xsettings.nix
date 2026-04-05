@@ -70,7 +70,10 @@
   };
 
   # Get a list of displays and prep them for xfce4-desktop (for backgrounds)
-  defaultBg = "/run/current-system/sw/share/themes/current-main/img/bg.png";
+  defaultBg = if (myHostname != "lux" && theme == "ceres")
+    then "/run/current-system/sw/share/themes/current-main/img/lock.png"
+    else "/run/current-system/sw/share/themes/current-main/img/bg.png";
+
   displays = {
     lux = {
       "backdrop/screen0/monitorDP-1/workspace0/last-image" = defaultBg;

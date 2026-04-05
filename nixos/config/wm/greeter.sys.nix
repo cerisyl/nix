@@ -13,9 +13,10 @@
       indicators = [ "~host" "~spacer" "~clock" "~spacer" "~session" "~power"];
       # Extremely jank solution
       extraConfig = ''
-        background          = /run/current-system/sw/share/themes/current-main/img/lock.png
-        default-user-image  = /run/current-system/sw/share/themes/current-main/img/fetch.png
-        font-name           = Barlow 10
+        background            = /run/current-system/sw/share/themes/current-main/img/lock.png
+        default-user-image    = /run/current-system/sw/share/themes/current-main/img/fetch.png
+        font-name             = Barlow 10
+        draw-user-backgrounds = false
       '';
     };
   };

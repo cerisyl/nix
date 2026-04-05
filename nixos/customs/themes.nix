@@ -14,7 +14,7 @@ in pkgs.stdenv.mkDerivation {
   src = builtins.fetchurl {
     name = "ceri-themes";
     url = "https://www.dropbox.com/scl/fo/lym7a5h68pxibl2fwkl4r/AObWCCVHSwMMA6YnJHckmzo?rlkey=hsjqv6dnle5ysgsppyj0gtfm7&st=m5axlvg7&dl=1";
-    sha256 = "93402e7e0f604c96351a3a142dfe7367c26d985d9d3410edcef04a28e10875b7";
+    sha256 = "ae0efcf2e2d751b95b28949b37be5ccfb4eacdc7aff2a7da1cad48bdf9441917";
   };
   unpackPhase = ''
     ${pkgs.unzip}/bin/unzip -qq $src -x / -d /tmp/themes
