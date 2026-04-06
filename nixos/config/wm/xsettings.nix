@@ -70,36 +70,36 @@
   };
 
   # Get a list of displays and prep them for xfce4-desktop (for backgrounds)
-  defaultBg = if (myHostname != "lux" && theme == "ceres")
+  defaultBg = if ((myHostname == "astore" || myHostname == "medea") && theme == "ceres")
     then "/run/current-system/sw/share/themes/current-main/img/lock.png"
     else "/run/current-system/sw/share/themes/current-main/img/bg.png";
 
   displays = {
     lux = {
-      "backdrop/screen0/monitorDP-1/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-1/workspace0/last-image" = "${defaultBg}";
     };
     nova = {
-      "backdrop/screen0/monitorDP-1/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-1/workspace0/last-image" = "${defaultBg}";
     };
     engrit = {
-      "backdrop/screen0/monitoreDP-1/workspace0/last-image" = defaultBg;
-      "backdrop/screen0/monitorDP-1-1/workspace0/last-image" = defaultBg;
-      "backdrop/screen0/monitorDP-1-2/workspace0/last-image" = defaultBg;
-      "backdrop/screen0/monitorDP-2-1/workspace0/last-image" = defaultBg;
-      "backdrop/screen0/monitorDP-2-2/workspace0/last-image" = defaultBg;
-      "backdrop/screen0/monitorDP-1-2-2/workspace0/last-image" = defaultBg;
-      "backdrop/screen0/monitorDP-1-3-3/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitoreDP-1/workspace0/last-image" = "${defaultBg}";
+      "backdrop/screen0/monitorDP-1-1/workspace0/last-image" = "${defaultBg}";
+      "backdrop/screen0/monitorDP-1-2/workspace0/last-image" = "${defaultBg}";
+      "backdrop/screen0/monitorDP-2-1/workspace0/last-image" = "${defaultBg}";
+      "backdrop/screen0/monitorDP-2-2/workspace0/last-image" = "${defaultBg}";
+      "backdrop/screen0/monitorDP-1-2-2/workspace0/last-image" = "${defaultBg}";
+      "backdrop/screen0/monitorDP-1-3-3/workspace0/last-image" = "${defaultBg}";
     };
     medea = {
-      # "backdrop/screen0/monitorHDMI-0/workspace0/last-image" = defaultBg;
+      # "backdrop/screen0/monitorHDMI-0/workspace0/last-image" = "${defaultBg}";
     };
     astore = {
-      "backdrop/screen0/monitorDP-1/workspace0/last-image" = defaultBg;
-      "backdrop/screen0/monitorDP-2/workspace0/last-image" = defaultBg;
-      "backdrop/screen0/monitorrdp0/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorDP-1/workspace0/last-image" = "${defaultBg}";
+      "backdrop/screen0/monitorDP-2/workspace0/last-image" = "${defaultBg}";
+      "backdrop/screen0/monitorrdp0/workspace0/last-image" = "${defaultBg}";
     };
     vm = {
-      "backdrop/screen0/monitorVirtual-1/workspace0/last-image" = defaultBg;
+      "backdrop/screen0/monitorVirtual-1/workspace0/last-image" = "${defaultBg}";
     };
   };
 
