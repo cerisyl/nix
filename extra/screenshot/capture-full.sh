@@ -7,7 +7,6 @@ mkdir -p "$screenshots/$(date +%Y-%m)"
 # Take the screeshot and save it to the directory
 fname="$screenshots/$(date +%Y-%m)/$(date +%Y-%m-%d_%H-%M-%S).png"
 xfce4-screenshooter -f -c -s "$fname"
-canberra-gtk-play -i camera-shutter &
 
 # Copy to clipboard
 # Notify image was copied
