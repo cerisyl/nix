@@ -8,7 +8,7 @@ if myHostname == "engrit" then {
       intel-vaapi-driver
       libvdpau-va-gl
       libva-vdpau-driver
-      intel-ocl
+      #intel-ocl
       intel-media-driver
     ];
   };
