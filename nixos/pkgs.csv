@@ -129,7 +129,7 @@ lna.e |   | virtio-win
 lna.e |   | win-spice
 # VM share methods
 l.a.. |   | samba
-.n..e |   | virtiofsd
+.na.e |   | virtiofsd
 
 # wm: Window manager tools and add-ins.
 lname |   | gvfs

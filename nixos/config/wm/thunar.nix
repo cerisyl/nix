@@ -36,7 +36,7 @@
   userDirs = [
     #cmd      init    path          type          place     isExtra     place:alias
     (mkDir    "lname" "captures"    "screenshots" true      true)
-    (mkDir    "lname" "code"        true          true      true)
+    (mkDir    "lna.e" "code"        true          true      true)
     (mkDir    "lname" "desktop"     true          false     false)
     (mkDir    "lnam." "deluge"      "torrents"    false     true)
     (mkDir    "lname" "docs"        "documents"   true      false)
@@ -50,7 +50,7 @@
     (mkPlace  "l...." "file://${homedir}/.itgmania/Screenshots"         "screenshots-itg")
     (mkDir    "lname" "sync"        true          true      true)
     (mkDir    "lname" "util"        "tools"       true      true)
-    (mkDir    "lname" "vm"          true          false     true)
+    (mkDir    "lna.e" "vm"          true          false     true)
     (mkDir    "lname" "videos"      true          true      false)
     # external/network locations
     (mkPlace  "l.a.e" "/"                  "—————")

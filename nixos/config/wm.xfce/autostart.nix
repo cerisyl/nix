@@ -8,12 +8,12 @@
     lesser  = [ "dropbox" "steam" "telegram" ];
   };
   hostExclusions = {
-    lux     = [ "battery" ] ++ exclude.work;
-    nova    = [ ] ++ exclude.lesser ++ exclude.work;
+    lux     = [ "battery" "deluge" ] ++ exclude.work;
+    nova    = [ "deluge" ] ++ exclude.lesser ++ exclude.work;
     astore  = [ "battery" "birdtray" "discord" ] ++ exclude.work ++ exclude.lesser;
-    medea   = [ "birdtray" "discord" ] ++ exclude.work ++ exclude.lesser;
-    engrit  = [ "birdtray" "discord" ] ++ exclude.lesser;
-    vm      = [ "battery" "birdtray" ] ++ exclude.work ++ exclude.lesser;
+    medea   = [ "birdtray" "deluge" "discord" ] ++ exclude.work ++ exclude.lesser;
+    engrit  = [ "birdtray" "deluge" "discord" ] ++ exclude.lesser;
+    vm      = [ "battery" "birdtray" "deluge" ] ++ exclude.work ++ exclude.lesser;
   };
 
   filenames = builtins.filter (name:
