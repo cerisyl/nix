@@ -1,5 +1,5 @@
 { config, lib, pkgMap, myHostname, ... }:
-if myHostname == "lux" || myHostname == "engrit" then {
+if myHostname != "astore" && myHostname != "medea" then {
   services.remmina = {
     enable  = true;
     package = pkgMap.remmina;
