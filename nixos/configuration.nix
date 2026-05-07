@@ -78,7 +78,16 @@
       ) entries;
     in
       paths;
-  customDirs = loadRecursive ./customs;
+
+  # TODO: Better dynamic importing w/ host-based filtering
+  #customDirs = loadRecursive ./customs;
+  customDirs = if myHostname == "engrit" then [
+    ./customs/themes.nix
+    ./customs/crowdstrike.nix
+  ] else [
+    ./customs/themes.nix
+  ];
+
   customPkgs = map (custom:
     pkgs.callPackage custom {}
   ) customDirs;

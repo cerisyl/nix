@@ -1,9 +1,10 @@
 { pkgs }:
-pkgs.stdenv.mkDerivation {
+pkgs.stdenv.mkDerivation rec {
   name = "falcon-sensor";
   version = "1.0";
   arch = "amd64";
-  buildInputs = with pkgs; [ dpkg zlib autoPatchelfHook ];
+  nativeBuildInputs = with pkgs; [ dpkg autoPatchelfHook ];
+  propagatedBuildInputs = with pkgs; [ openssl libnl zlib ];
   src = builtins.fetchurl {
     name = "falcon-sensor";
     url = "https://uofi.app.box.com/index.php?rm=box_download_shared_file&shared_name=6ygz74yw198grpn752s4yjrgao1iraet&file_id=f_2209156038813";
@@ -14,6 +15,6 @@ pkgs.stdenv.mkDerivation {
     dpkg-deb -x $src .
   '';
   installPhase = ''
-    cp -r . $out 
+    cp -r . $out
   '';
 }

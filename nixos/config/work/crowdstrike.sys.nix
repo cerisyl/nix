@@ -1,13 +1,14 @@
-{  pkgs, ... }:
+{ pkgs, myHostname, ... }:
 let
   falcon = pkgs.callPackage ../../customs/crowdstrike.nix { };
+  cid = "";
   startPreScript = pkgs.writeScript "init-falcon" ''
     #! ${pkgs.bash}/bin/sh
     /run/current-system/sw/bin/mkdir -p /opt/CrowdStrike
     ln -sf ${falcon}/opt/CrowdStrike/* /opt/CrowdStrike
-    ${pkgs.bash}/bin/bash -c "${falcon}/opt/CrowdStrike/falconctl -f -s --cid="
+    ${pkgs.bash}/bin/bash -c "${falcon}/opt/CrowdStrike/falconctl -s --cid=${cid} -f --trace=debug"
   '';
-in {
+in if myHostname == "engrit" then {
   systemd.services.falcon-sensor = {
     enable = true;
     description = "CrowdStrike Falcon Sensor";
@@ -25,5 +26,6 @@ in {
       KillMode = "process";
     };
     wantedBy = [ "multi-user.target" ];
+    environment.LD_LIBRARY_PATH = "${pkgs.openssl.out}/lib:${pkgs.glibc.out}/lib:${pkgs.zlib.out}/lib:${pkgs.libnl.out}/lib";
   };
-}
+} else {}
