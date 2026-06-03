@@ -28,6 +28,7 @@
         netid "https://my.engr.illinois.edu/usersearch/index.asp?search="
         atlas "https://uofi.atlassian.net/wiki/search?text="
         tix "https://help.uillinois.edu/TDNext/Apps/Search/LookupItem?searchText="
+        listserv "https://lists.illinois.edu/lists/info/"
       )
 
       # Add in snippets
@@ -144,7 +145,9 @@
       ipam      = "floorp https://ipam.illinois.edu/ui";
       jenk      = "floorp https://helptools-importer.engrit.illinois.edu";
       lens      = "floorp https://ctweb1.techservices.illinois.edu/ipm";
-      filter    = "floorp https://my.engr.illinois.edu/cts/macfilter.asp";
+      macfilter = "floorp https://my.engr.illinois.edu/cts/macfilter.asp";
+      statip    = "floorp https://host-record-creator.engrit.illinois.edu/";
+      simr      = "floorp https://simr.engrit.illinois.edu/";
       ibuy      = "floorp https://www.busfin.uillinois.edu/applications/i_buy";
       purchase  = "floorp https://my.engr.illinois.edu/login.asp?/purchasing/index.asp";
     };
