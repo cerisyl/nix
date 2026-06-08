@@ -13,6 +13,7 @@
     "audio/ogg"       = mediaPlayer;
     "audio/x-vorbis"  = mediaPlayer;
     "audio/wav"       = mediaPlayer;
+    "audio/x-aac"     = mediaPlayer;
     # images
     "image/avif"    = imgViewer;
     "image/bmp"     = imgViewer;
@@ -46,6 +47,7 @@
     "video/webm"        = mediaPlayer;
     "video/x-ms-wmv"    = mediaPlayer;
     "video/x-matroska"  = mediaPlayer; # mkv
+    "video/ogg"         = mediaPlayer;
     # code
     "text/x-c"                  = editor;
     "text/x-c++"                = editor;

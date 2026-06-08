@@ -6,7 +6,7 @@
     # Grid config (used in place as base theme, imports rofi.rasi)
     theme     = (getThemeFile "rofi.rasi");
     extraConfig = {
-      modi                = "drun,filebrowser";
+      modi                = "drun,recursivebrowser";
       show-icons          = true;
       icon-theme          = "${theme}-icons";
       drun-display-format = "{name}";

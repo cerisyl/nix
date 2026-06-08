@@ -14,6 +14,7 @@
     "floorp.tabsleep.excludeHosts"            = "youtube.com,emkooz.github.io,synergism.cc,orteil.dashnet.org";
     "toolkit.tabbox.switchByScrolling"        = false;  # Switch tabs by scrolling with your mouse
     "browser.tabs.closeTabByDblclick"         = false;  # Close tabs with a double click
+    "browser.tabs.closeWindowWithLastTab"     = true;   # Close window with last tab
     "floorp.tabs.showPinnedTabsTitle"         = false;  # Show the title of pinned tabs
     "browser.tabs.tabMinWidth"                = 64;     # Minimum width of tabs
     "floorp.browser.tabs.tabMinHeight"        = 30;     # Minimum height of tabs

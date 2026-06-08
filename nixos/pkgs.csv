@@ -16,6 +16,7 @@ lname |   | pciutils |-> lspci
 lname |   | p7zip
 lname |   | sops
 lname |   | tealdeer
+lname |   | tree
 lname |   | unrar
 lname |   | unzip
 lname |   | usbutils |-> lsusb

@@ -1,15 +1,14 @@
 configuration {
   display-drun: "APPLICATIONS";
-  display-filebrowser: "FILES & FOLDERS";
+  display-recursivebrowser: "FILES & FOLDERS";
   display-clipboard: "CLIPBOARD";
   /* Theme config */
   font: "Inter Regular 11";
   icon-theme: "osx-icons";
   /* TODO: This is here until home-manager supports filebrowser settings. */
-  filebrowser {
+  recursivebrowser {
     directory: "/home/ceri";
-    directories-first: true;
-    show-hidden: false;
+    filter-regex: ".*([Gg]ames|node_modules|[Cc]ache|\.(nix|local|icons|steam|wine)).*";
   }
 }
 

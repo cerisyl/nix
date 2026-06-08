@@ -170,7 +170,7 @@
     Name=Windows 11
     Type=Application
     Exec=${win11Cmd.${myHostname}}
-    Icon=ceri-start
+    Icon=ceri-win
     ${if myHostname == "astore" then "NoDisplay=true" else ""}
   '';
 

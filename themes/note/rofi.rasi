@@ -6,10 +6,9 @@ configuration {
   font: "Roboto Regular 11";
   icon-theme: "note-icons";
   /* TODO: This is here until home-manager supports filebrowser settings. */
-  filebrowser {
+  recursivebrowser {
     directory: "/home/ceri";
-    directories-first: true;
-    show-hidden: false;
+    filter-regex: ".*([Gg]ames|node_modules|[Cc]ache|\.(nix|local|icons|steam|wine)).*";
   }
 }
 
