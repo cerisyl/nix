@@ -1,12 +1,25 @@
-{ config, pkgMap, theme, getThemeFile, homedir, zmod, lib, myHostname, ... }: let
+{ config, pkgs, pkgMap, theme, getThemeFile, homedir, zmod, lib, myHostname, ... }: let
   # Get commit shortstring
   zmodRev = "zmod_${builtins.substring 0 8 zmod.rev}";
   itgShare = if myHostname == "lux" then "/home/ceri/itg/play/songs-share/" else "";
+  unzip = "${pkgMap.unzip}/bin/unzip";
+  # Patch zmod with the Datum VisualStyle
+  zmodPatched = pkgs.runCommand "zmod-patched" {} ''
+    cp -r ${zmod} $out
+    chmod -R u+w $out
+    sed -i "11a\     Datum = 'Quaq'," "$out/Sounds/_common menu music/default.lua"
+    sed -i 's/"🖲/"💾", "🖲/' "$out/Scripts/99 SL-ThemePrefs.lua"
+    sed -i 's/"Transistor/"Datum", "Transistor/' "$out/Scripts/99 SL-ThemePrefs.lua"
+    sed -i 's/Technique" and/Technique" and style ~= "Datum" and/' "$out/BGAnimations/_shared background/Normal.lua"
+    sed -i 's/Technique" or/Technique" or style == "Datum" or/' "$out/BGAnimations/_shared background/Normal.lua"
+    sed -i '33a\af[#af+1] = LoadActor("./Datum/Datum.lua", file)' "$out/BGAnimations/_shared background/default.lua"
+    cp -r "$out/Graphics/_VisualStyles/Technique" "$out/Graphics/_VisualStyles/Datum"
+  '';
 in if pkgMap ? "itgmania" then {
   home.file = {
     # Load latest zmod
     ".itgmania/Themes/${zmodRev}" = {
-      source = zmod;
+      source = zmodPatched;
       recursive = true;
     };
     # Source extra judgment files
@@ -304,7 +317,6 @@ in if pkgMap ? "itgmania" then {
     '';
     # Theme-based preferences
     ".itgmania/Save/ThemePrefs.ini".text = ''
-      [${zmodRev}]
       AllowDanceSolo=false
       AllowFailingOutOfSet=true
       AllowScreenEvalSummary=true
@@ -354,7 +366,7 @@ in if pkgMap ? "itgmania" then {
       StepStats=Show
       ThemeFont=Mega
       UseImageCache=false
-      VisualStyle=Technique
+      VisualStyle=Datum
       WriteCustomScores=false
       nice=2
     '';
@@ -399,9 +411,10 @@ in if pkgMap ? "itgmania" then {
     #   2_UpRight=
     # '';
   };
-  # Load our noteskins
+  # Load our noteskins + extra Datum patches
   home.activation.loadNoteskins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p "${homedir}/.itgmania/NoteSkins/dance"
-    ${pkgMap.unzip}/bin/unzip -qq -o "${homedir}/.nix/extra/itg/noteskins.zip" -d "${homedir}/.itgmania/NoteSkins/dance"
+    ${unzip} -qq -o "${homedir}/.nix/extra/itg/noteskins.zip" -d "${homedir}/.itgmania/NoteSkins/dance"
+    ${unzip} -qq -o "${homedir}/.nix/extra/itg/datum.zip" -d "${homedir}/.itgmania/Themes/${zmodRev}/BGAnimations/_shared background"
   '';
 } else {}
