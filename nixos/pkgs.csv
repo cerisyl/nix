@@ -100,7 +100,7 @@ ln..e |   | ffmpeg
 ln... |   | freac
 ln... |   | handbrake
 lname |   | imagemagick
-#ln... | * | imgbrd-grabber
+ln... | * | imgbrd-grabber
 ln... |   | jmtpfs
 l.a.e |   | jpeginfo
 ln..e |   | libreoffice-fresh
@@ -116,7 +116,7 @@ ln..e | * | remmina
 l.... |   | rubyripper
 lname |   | tesseract
 l.a.e |   | testdisk
-ln... |   | wineWow64Packages
+ln... |   | wineWow64Packages.stable
 ln... |   | winetricks
 lname |   | xcolor
 ln... | * | yt-dlg

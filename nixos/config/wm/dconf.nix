@@ -6,6 +6,7 @@
         gtk-theme                 = "${theme}-main";
         icon-theme                = "${theme}-icons";
         gtk-enable-primary-paste  = false;
+        color-scheme              = "prefer-dark";
       };
     };
   };
