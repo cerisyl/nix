@@ -200,10 +200,11 @@ in {
   xdg = {
     enable = true;
     userDirs = {
-      enable             = true;
-      createDirectories  = true;
-      publicShare        = null;
-      templates          = null;
+      enable              = true;
+      createDirectories   = true;
+      publicShare         = null;
+      templates           = null;
+      setSessionVariables = true;
     };
   };
 }

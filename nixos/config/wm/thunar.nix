@@ -25,7 +25,7 @@
       let
         realType = if type == true then path else type;
         dirs = if isExtra == true
-          then { extraConfig."XDG_${lib.toUpper realType}_DIR" = "${homedir}/${path}"; }
+          then { extraConfig."${lib.toUpper realType}" = "${homedir}/${path}"; }
           else { "${realType}" = "${homedir}/${path}"; };
         places = if place == true
           then [ "file://${homedir}/${path}" ]

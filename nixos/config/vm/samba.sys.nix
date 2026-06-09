@@ -39,13 +39,14 @@
 
 in if myHostname == "lux" || myHostname == "astore" then {
   services.samba = {
-    enable        = true;
-    securityType  = "user";
-    shares        = smbShares;
-    settings.global = {
-      "hosts allow" = "192.168.122.0/24 192.168.123.0/24 127.0 192.168.200.245 192.168.200.246";
-      "interfaces"  = interfaces."${myHostname}";
-      "bind interfaces only" = "yes";
-    };
+    enable = true;
+    settings = {
+      global = {
+        "hosts allow" = "192.168.122.0/24 192.168.123.0/24 127.0 192.168.200.245 192.168.200.246";
+        "interfaces"  = interfaces."${myHostname}";
+        "bind interfaces only" = "yes";
+        security = "user";
+      };
+    } // smbShares;
   };
 } else {}

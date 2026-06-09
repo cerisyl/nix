@@ -1,7 +1,6 @@
 { config, pkgMap, theme, getThemeFile, lib, ... }: {
   home.file = {
     ".config/kitty/${theme}.conf".text = builtins.readFile (getThemeFile "kitty.conf");
-    ".config/kitty/diff.conf".text = builtins.readFile (getThemeFile "kitty-diff.conf");
   };
   programs.kitty = {
     enable    = true;
@@ -48,5 +47,6 @@
     extraConfig = ''
       mouse_map right       click ungrabbed paste_from_clipboard
     '';
+    diffConfig.extraConfig = builtins.readFile (getThemeFile "kitty-diff.conf");
   };
 }

@@ -36,11 +36,11 @@ lname |   | floorp-bin
 lname | * | keepassxc
 lname | * | kitty
 ln..e | * | obsidian
-lnam. |   | rustdesk
+lnam. |   | rustdesk-flutter
 lna.e | * | syncthing
 lna.e | * | syncthingtray
+lname |   | thunar
 ln..e | * | thunderbird
-lname |   | xfce.thunar
 lname | * | xnviewmp
 
 # create: Programs for creative output.
@@ -64,7 +64,7 @@ lnam. |   | deluge-gtk
 ln... |   | dolphin-emu
 ln... | * | itgmania
 ..a.. |   | javaPackages.compiler.openjdk17 |-> for mc sever
-ln... |   | melonDS
+ln... |   | melonds
 ln... |   | nicotine-plus |-> soulseek
 ln... |   | prismlauncher
 ln... | * | steam
@@ -86,7 +86,7 @@ lname |   | vlc
 # fs: Cloud file storage services.
 l.... |   | grive2
 l.... |   | dropbox
-l.... |   | xfce.thunar-dropbox-plugin
+l.... |   | thunar-dropbox-plugin
 
 # soc: Social media and other messaging programs.
 ln... | * | discord
@@ -116,7 +116,7 @@ ln..e | * | remmina
 l.... |   | rubyripper
 lname |   | tesseract
 l.a.e |   | testdisk
-ln... |   | wineWowPackages.stable
+ln... |   | wineWow64Packages
 ln... |   | winetricks
 lname |   | xcolor
 ln... | * | yt-dlg
@@ -146,9 +146,9 @@ lname |   | rofimoji
 lname |   | volctl
 lname |   | wmctrl
 lname |   | xclip
-lname |   | xfce.thunar-archive-plugin
-lname |   | xfce.thunar-media-tags-plugin
-lname |   | xfce.xfce4-screenshooter
+lname |   | thunar-archive-plugin
+lname |   | thunar-media-tags-plugin
+lname |   | xfce4-screenshooter
 lname |   | xmousepasteblock
 ..a.e |   | xrdp
 
@@ -164,13 +164,13 @@ lname |   | xmousepasteblock
 # wm.xfce: xfwm-specific add-ins
 lname |   | libcanberra-gtk3
 lname |   | lightdm
-.n.me |   | xfce.xfce4-battery-plugin
-lname |   | xfce.xfce4-docklike-plugin
-lname |   | xfce.xfce4-genmon-plugin
-lname |   | xfce.xfce4-mailwatch-plugin
-lname |   | xfce.xfce4-notifyd
-lname |   | xfce.xfce4-pulseaudio-plugin
-lname |   | xfce.xfwm4
+.n.me |   | xfce4-battery-plugin
+lname |   | xfce4-docklike-plugin
+lname |   | xfce4-genmon-plugin
+lname |   | xfce4-mailwatch-plugin
+lname |   | xfce4-notifyd
+lname |   | xfce4-pulseaudio-plugin
+lname |   | xfwm4
 
 # work: Work-related applications.
 .n..e | * | networkmanager-openconnect

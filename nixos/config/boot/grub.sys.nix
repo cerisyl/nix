@@ -1,4 +1,4 @@
-{ config, pkgsLegacy, theme, getThemeFile, myHostname, lib, ... }: let
+{ config, pkgs, theme, getThemeFile, myHostname, lib, ... }: let
   # ,10de:1381,10de:0fbc
   hostKernelParams = {
     lux     = [ "intel_iommu=on" "iommu.passthrough=1" "iommu=pt" "vfio-pci.ids=10de:2482,10de:228b,10de:1381,10de:0fbc" ];
@@ -9,10 +9,10 @@
   };
   hostOptions = {
     lux = {
-      kernelPackages        = pkgsLegacy.linuxPackages;
+      kernelPackages        = pkgs.linuxPackages;
       initrd.kernelModules  = [ "vfio_pci" "vfio" "vfio_iommu_type1" ];
       kernelModules         = [ "kvmfr" ];
-      extraModulePackages   = with pkgsLegacy.linuxPackages; [ kvmfr ];
+      extraModulePackages   = with pkgs.linuxPackages; [ kvmfr ];
       extraModprobeConfig   = ''
         options vfio-pci ids=10de:2482,10de:228b,10de:1381,10de:0fbc
         softdep nvidia pre: vfio-pci

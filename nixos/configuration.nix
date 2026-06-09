@@ -205,6 +205,9 @@ in {
     experimental-features = [ "nix-command" "flakes" ];
   };
 
+  # Disable documentation, since it breaks in 26.05
+  documentation.doc.enable = false;
+
   # NEVER EVER CHANGE THIS.
   system.stateVersion = "24.11";
 }
