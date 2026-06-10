@@ -118,7 +118,7 @@
     (custom "ln..."   "Kdenlive"                "org.kde.kdenlive"                (gpuCmd "kdenlive")                             "ceri-kden")
     (custom "ln..."   "OBS Studio"              "com.obsproject.Studio"           "obs"                                           "ceri-obs")
     # ent
-    (custom "ln..."   "ArrowVortex"             "av"                              "wine ${avPath}/ArrowVortex.exe"                "${avPath}/av.ico")
+    (custom "ln..."   "ArrowVortex"             "av"                              "umu-run ${avPath}/ArrowVortex.exe"             "${avPath}/av.ico")
     (custom "lnam."   "Deluge"                  "deluge"                          true                                            "ceri-deluge")
     (custom "ln..."   "Dolphin Emulator"        "dolphin-emu"                     true                                            true)
     (custom "ln..."   "ITGmania"                "itgmania"                        (gpuCmd "itgmania")                             "ceri-itg")

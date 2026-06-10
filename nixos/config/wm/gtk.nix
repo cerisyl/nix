@@ -1,7 +1,8 @@
 { config, pkgMap, theme, getThemeFile, lib, ... }: let 
   gtkExtras = {
-    gtk-enable-event-sounds           = true;
-    gtk-enable-input-feedback-sounds  = true;
+    gtk-application-prefer-dark-theme = 1;
+    gtk-enable-event-sounds           = 1;
+    gtk-enable-input-feedback-sounds  = 1;
     gtk-sound-theme-name              = "current-sounds"; #theme;
   };
 in {

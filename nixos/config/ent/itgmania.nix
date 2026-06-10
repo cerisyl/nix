@@ -7,7 +7,7 @@
   zmodPatched = pkgs.runCommand "zmod-patched" {} ''
     cp -r ${zmod} $out
     chmod -R u+w $out
-    sed -i "11a\     Datum = 'Quaq'," "$out/Sounds/_common menu music/default.lua"
+    sed -i "11a\  Datum = 'Quaq'," "$out/Sounds/_common menu music/default.lua"
     sed -i 's/"🖲/"💾", "🖲/' "$out/Scripts/99 SL-ThemePrefs.lua"
     sed -i 's/"Transistor/"Datum", "Transistor/' "$out/Scripts/99 SL-ThemePrefs.lua"
     sed -i 's/Technique" and/Technique" and style ~= "Datum" and/' "$out/BGAnimations/_shared background/Normal.lua"
@@ -317,6 +317,7 @@ in if pkgMap ? "itgmania" then {
     '';
     # Theme-based preferences
     ".itgmania/Save/ThemePrefs.ini".text = ''
+      [${zmodRev}]
       AllowDanceSolo=false
       AllowFailingOutOfSet=true
       AllowScreenEvalSummary=true
