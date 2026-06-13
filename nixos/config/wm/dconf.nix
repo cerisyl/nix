@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme                 = "${theme}-main";
+        gtk-theme                 = "${theme}-main:dark";
         icon-theme                = "${theme}-icons";
         gtk-enable-primary-paste  = false;
         color-scheme              = "prefer-dark";

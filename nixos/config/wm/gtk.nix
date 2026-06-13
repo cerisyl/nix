@@ -1,9 +1,10 @@
 { config, pkgMap, theme, getThemeFile, lib, ... }: let 
   gtkExtras = {
-    gtk-application-prefer-dark-theme = 1;
+    gtk-application-prefer-dark-theme = true;
     gtk-enable-event-sounds           = 1;
     gtk-enable-input-feedback-sounds  = 1;
     gtk-sound-theme-name              = "current-sounds"; #theme;
+    gtk-modules                       = "canberra-gtk3-module";
   };
 in {
   gtk = {
@@ -14,7 +15,4 @@ in {
     };
     gtk4.extraConfig = gtkExtras;
   };
-
-  # Enable canberra via modules
-  home.sessionVariables.GTK_MODULES = "canberra-gtk3-module";
 }

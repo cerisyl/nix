@@ -7,7 +7,8 @@
   zmodPatched = pkgs.runCommand "zmod-patched" {} ''
     cp -r ${zmod} $out
     chmod -R u+w $out
-    sed -i "11a\  Datum = 'Quaq'," "$out/Sounds/_common menu music/default.lua"
+    sed -i "11a\  Datum = 'everglow'," "$out/Sounds/_common menu music/default.lua"
+    # sed -i "s/fold.ogg/Forza/" "$out/Sounds/ScreenGameOver music.lua"
     sed -i 's/"🖲/"💾", "🖲/' "$out/Scripts/99 SL-ThemePrefs.lua"
     sed -i 's/"Transistor/"Datum", "Transistor/' "$out/Scripts/99 SL-ThemePrefs.lua"
     sed -i 's/Technique" and/Technique" and style ~= "Datum" and/' "$out/BGAnimations/_shared background/Normal.lua"
@@ -413,9 +414,15 @@ in if pkgMap ? "itgmania" then {
     # '';
   };
   # Load our noteskins + extra Datum patches
-  home.activation.loadNoteskins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    mkdir -p "${homedir}/.itgmania/NoteSkins/dance"
-    ${unzip} -qq -o "${homedir}/.nix/extra/itg/noteskins.zip" -d "${homedir}/.itgmania/NoteSkins/dance"
-    ${unzip} -qq -o "${homedir}/.nix/extra/itg/datum.zip" -d "${homedir}/.itgmania/Themes/${zmodRev}/BGAnimations/_shared background"
+  home.activation.loadItgmPatches = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    noteskinDir="${homedir}/.itgmania/NoteSkins/dance"
+    patchDir="${homedir}/.nix/extra/itg"
+    theme="${homedir}/.itgmania/Themes/${zmodRev}"
+
+    mkdir -p "$noteskinDir"
+    ${unzip} -qq -o "$patchDir/noteskins.zip" -d "$noteskinDir"
+    ${unzip} -qq -o "$patchDir/datum.zip" -d "$theme/BGAnimations/_shared background"
+    cp "$patchDir/everglow (loop).ogg" "$theme/Sounds/_common menu music"
+    # cp "$patchDir/Forza (loop).ogg" "$theme/Sounds"
   '';
 } else {}

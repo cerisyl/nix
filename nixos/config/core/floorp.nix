@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, homedir, lib, ... }: let
+{ config, pkgMap, theme, getThemeFile, homedir, geckium, lib, ... }: let
   defaultSettings = {
     # General
     ## Startup
@@ -128,14 +128,15 @@
   };
 in {
   programs.floorp = {
-    enable        = true;
-    package       = pkgMap.floorp-bin;
+    enable  = true;
+    package = pkgMap.floorp-bin;
     profiles.main = {
       id = 0;
       settings = defaultSettings;
       search = {
         default         = "google";
         privateDefault  = "google";
+        force           = true;
       };
     };
   };
