@@ -5,7 +5,6 @@
     # main repos
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-legacy.url = "github:nixos/nixpkgs/80d50fc87924c2a0d346372d242c27973cf8cdbf";
     # extra programs + home-manager
     sops-nix.url = "github:Mic92/sops-nix";
     nixcord = {
@@ -22,7 +21,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-legacy, zmod, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, zmod, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     defHost = myHostname: let
@@ -30,14 +29,10 @@
         inherit system;
         config.allowUnfree = true;
       };
-      pkgsLegacy = import nixpkgs-legacy {
-        inherit system;
-        config.allowUnfree = true;
-      };
       pkgsGit = { inherit zmod; };
     in nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit inputs system pkgsUnstable pkgsLegacy pkgsGit myHostname;
+        inherit inputs system pkgsUnstable pkgsGit myHostname;
       };
       modules = [
         ./nixos/hosts/${myHostname}/configuration.nix
