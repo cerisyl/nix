@@ -1,6 +1,6 @@
 { config, lib, pkgs, myHostname, ... }:
 if myHostname == "engrit" then {
-  services.xserver.videoDrivers = [ "i915" "displaylink" "modesetting" ];
+  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
   hardware = {
     graphics.enable = true;
     enableAllFirmware = true;

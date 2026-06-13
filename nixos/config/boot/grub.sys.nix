@@ -24,6 +24,7 @@
       initrd.kernelModules  = [ "i915" ];
     };
     engrit = {
+      initrd.kernelModules  = [ "i915" ];
       extraModprobeConfig   = "options snd_hda_intel power_save=1";
     };
     medea   = {};
