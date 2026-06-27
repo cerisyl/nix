@@ -98,46 +98,53 @@
 
   # Misc
   avPath = "${homedir}/games/ArrowVortex";
+  codeSync = "${homedir}/sync/main/code";
   discordArgs = "--enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling";
 
   custom = init: name: filename: exec: icon: { inherit init name filename exec icon; };
   customLaunchers = [
-    #       init      Name                      .desktop file                     Exec (true if == .desktop file)                 Icon (true if == .desktop file)
+    #       init      Name                    .desktop file                     Exec (true if == .desktop file)                 Icon (true if == .desktop file)
+    # ________________________________________________________________________________________________________________________________________________
     # core
-    (custom "ln..e"   "Email"                   "thunderbird"                     true                                            "ceri-email")
-    (custom "lname"   "KeePassXC"               "org.keepassxc.KeePassXC"         "keepassxc"                                     "ceri-pass")
-    (custom "lname"   "Lock"                    "lock"                            (srun "desktop-logout" "xflock4")               "ceri-lock")
-    (custom "lname"   "Restart"                 "restart"                         (srun "system-shutdown" "reboot")               "ceri-reboot")
-    (custom "lname"   "Shutdown"                "shutdown"                        (srun "system-shutdown" "shutdown now")         "ceri-shutdown")
-    (custom "lname"   "xnviewmp"                "xnviewmp"                        "xnviewmp"                                      "ceri-images")
+    (custom "ln..e"   "Email"                 "thunderbird"                     true                                            "ceri-email")
+    (custom "lname"   "KeePassXC"             "org.keepassxc.KeePassXC"         "keepassxc"                                     "ceri-pass")
+    (custom "lname"   "Lock"                  "lock"                            (srun "desktop-logout" "xflock4")               "ceri-lock")
+    (custom "lname"   "Restart"               "restart"                         (srun "system-shutdown" "reboot")               "ceri-reboot")
+    (custom "lname"   "Shutdown"              "shutdown"                        (srun "system-shutdown" "shutdown now")         "ceri-shutdown")
+    (custom "lname"   "xnviewmp"              "xnviewmp"                        "xnviewmp"                                      "ceri-images")
     # core (laptop)
-    (custom ".n.me"   "Suspend"                 "suspend"                         (srun "desktop-logout" "systemctl suspend")    "ceri-suspend")
-    (custom ".n.me"   "Hibernate"               "hibernate"                       (srun "desktop-logout" "systemctl hibernate")  "ceri-hibernate")
+    (custom ".n.me"   "Suspend"               "suspend"                         (srun "desktop-logout" "systemctl suspend")     "ceri-suspend")
+    (custom ".n.me"   "Hibernate"             "hibernate"                       (srun "desktop-logout" "systemctl hibernate")   "ceri-hibernate")
     # create
-    (custom "l...."   "Blender"                 "blender"                         (gpuCmd "blender %f")                           true)
-    (custom "ln..."   "Kdenlive"                "org.kde.kdenlive"                (gpuCmd "kdenlive")                             "ceri-kden")
-    (custom "ln..."   "OBS Studio"              "com.obsproject.Studio"           "obs"                                           "ceri-obs")
+    (custom "l...."   "Blender"               "blender"                         (gpuCmd "blender %f")                           true)
+    (custom "ln..."   "Kdenlive"              "org.kde.kdenlive"                (gpuCmd "kdenlive")                             "ceri-kden")
+    (custom "ln..."   "OBS Studio"            "com.obsproject.Studio"           "obs"                                           "ceri-obs")
     # ent
-    (custom "ln..."   "ArrowVortex"             "av"                              "umu-run ${avPath}/ArrowVortex.exe"             "${avPath}/av.ico")
-    (custom "lnam."   "Deluge"                  "deluge"                          true                                            "ceri-deluge")
-    (custom "ln..."   "Dolphin Emulator"        "dolphin-emu"                     true                                            true)
-    (custom "ln..."   "ITGmania"                "itgmania"                        (gpuCmd "itgmania")                             "ceri-itg")
-    (custom "ln..."   "Minecraft"               "org.prismlauncher.PrismLauncher" (gpuCmd "prismlauncher")                        "ceri-mc")
-    (custom "ln..."   "Steam"                   "steam"                           true                                            "ceri-steam")
-    (custom "ln..e"   "Tauon"                   "tauonmb"                         "tauon"                                         "ceri-music")
-    (custom "lname"   "VLC Media Player"        "vlc"                             true                                            "ceri-media")
+    (custom "ln..."   "ArrowVortex"           "av"                              "umu-run ${avPath}/ArrowVortex.exe"             "${avPath}/av.ico")
+    (custom "lnam."   "Deluge"                "deluge"                          true                                            "ceri-deluge")
+    (custom "ln..."   "Dolphin Emulator"      "dolphin-emu"                     true                                            true)
+    (custom "ln..."   "ITGmania"              "itgmania"                        (gpuCmd "itgmania")                             "ceri-itg")
+    (custom "ln..."   "Minecraft"             "org.prismlauncher.PrismLauncher" (gpuCmd "prismlauncher")                        "ceri-mc")
+    (custom "ln..."   "Steam"                 "steam"                           true                                            "ceri-steam")
+    (custom "ln..e"   "Tauon"                 "tauonmb"                         "tauon"                                         "ceri-music")
+    (custom "lname"   "VLC Media Player"      "vlc"                             true                                            "ceri-media")
     # soc
-    (custom "ln..."   "Discord"                 "discord"                         "discord ${discordArgs}"                        "ceri-cord")
+    (custom "ln..."   "Discord"               "discord"                         "discord ${discordArgs}"                        "ceri-cord")
     # tools
-    (custom "ln..e"   "Word"                    "writer"                          "libreoffice --writer"                          "ceri-word")
-    (custom "ln..e"   "Excel"                   "calc"                            "libreoffice --calc"                            "ceri-excel")
+    (custom "ln..e"   "Word"                  "writer"                          "libreoffice --writer"                          "ceri-word")
+    (custom "ln..e"   "Excel"                 "calc"                            "libreoffice --calc"                            "ceri-excel")
     # util
-    (custom "ln..."   "Discord Chat Exporter"   "discordchatexporter"             true                                            "ceri-cord")
+    (custom "ln..."   "Discord Chat Exporter" "discordchatexporter"             true                                            "ceri-cord")
     # vm
-    (custom "l...."   "Looking Glass Client"    "looking-glass-client"            "looking-glass-client -s -m 97"                 "looking-glass")
-    (custom "lname"   "Virtual Machine Manager" "virt-manager"                    true                                            "ceri-vm")
+    (custom "l...."   "Looking Glass"         "looking-glass-client"            "looking-glass-client -s -m 97"                 "looking-glass")
+    (custom "lname"   "VM Manager"            "virt-manager"                    true                                            "ceri-vm")
     # wm
-    (custom "lname"   "File Manager"            "xfce4-file-manager"              "exo-open --launch FileManager %u"              "ceri-files")
+    (custom "lname"   "File Manager"          "xfce4-file-manager"              "exo-open --launch FileManager %u"              "ceri-files")
+    # ________________________________________________________________________________________________________________________________________________
+    # projects
+    (custom "ln..."   "cering.dev"            "webdev"                          "code ${codeSync}/cering_dev-sv_V2"             "${codeSync}/cering_dev-sv_V2/src/img/favicon.svg")
+    (custom "ln..."   "neobudget"             "neobudget"                       "code ${codeSync}/neobudget"                    "${codeSync}/neobudget/static/favicon.svg")
+    (custom "lname"   "NixOS Config"          "nixconf"                         "code ${homedir}/.nix"                          "ceri-start")
   ];
 
   # Only import packages containing the hostID in the init string

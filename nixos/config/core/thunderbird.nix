@@ -11,7 +11,6 @@
     # Time
     "intl.date_time.pattern_override.date_short" = "y MMM dd";
     "intl.date_time.pattern_override.time_short" = "hh:mmaaaaa";
-    # TODO: lowercase am/pm?
   };
 in if pkgMap ? "thunderbird"  then {
   programs.thunderbird = {
