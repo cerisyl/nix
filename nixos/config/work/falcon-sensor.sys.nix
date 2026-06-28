@@ -1,6 +1,6 @@
 { pkgs, myHostname, ... }:
 let
-  falcon = pkgs.callPackage ../../customs/crowdstrike.nix { };
+  falcon = pkgs.callPackage ../../customs/falcon-sensor.nix { };
   cid = "";
   startPreScript = pkgs.writeScript "init-falcon" ''
     #! ${pkgs.bash}/bin/sh

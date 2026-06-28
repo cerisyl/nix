@@ -1,9 +1,9 @@
-{ config, pkgMap, lib, ... }:
+{ config, pkgs, pkgMap, lib, ... }:
 if pkgMap ? "lutris" then {
   programs.lutris = {
     enable  = true;
     package = pkgMap.lutris;
-    winePackages = with pkgMap; [ wineWow64Packages.stable ];
+    winePackages  = [ pkgs.wineWow64Packages.full ];
     extraPackages = with pkgMap; [ winetricks umu-launcher ];
   };
 } else {}

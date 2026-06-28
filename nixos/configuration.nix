@@ -51,6 +51,7 @@
   allPkgs = map (entry: {
     init        = builtins.elemAt entry 0;
     isUnstable  = lib.strings.hasInfix "*" (builtins.elemAt entry 1);
+    isCustom    = lib.strings.hasInfix "@" (builtins.elemAt entry 1);
     pkg         = lib.strings.trim (builtins.elemAt entry 2);
   }) pkgsSplit;
 
@@ -79,27 +80,17 @@
     in
       paths;
 
-  # TODO: Better dynamic importing w/ host-based filtering
-  #customDirs = loadRecursive ./customs;
-  customDirs = if myHostname == "engrit" then [
-    ./customs/themes.nix
-    ./customs/crowdstrike.nix
-  ] else [
-    ./customs/themes.nix
-  ];
-
-  customPkgs = map (custom:
-    pkgs.callPackage custom {}
-  ) customDirs;
-
   # TODO: Would be cool if we can combine these two blocks into
   # a single call- research later.
 
-  # Get our packages using the specified channel of choice (isUnstable)
+  # Get our packages using the specified channel of choice
   systemPkgs = map (entry:
     if entry.isUnstable == true
-    then getAttrByStr pkgsUnstable entry.pkg
-    else getAttrByStr pkgs entry.pkg
+      then getAttrByStr pkgsUnstable entry.pkg
+    else if entry.isCustom == true
+      then pkgs.callPackage ./customs/${entry.pkg}.nix {}
+    else
+      getAttrByStr pkgs entry.pkg
   ) enabledPkgs;
 
   # Also spawn an object to use in loading proper packages in config
@@ -181,7 +172,7 @@ in {
 
   # Define packages
   nixpkgs.config.allowUnfree  = true;
-  environment.systemPackages  = systemPkgs ++ customPkgs;
+  environment.systemPackages  = systemPkgs;
 
   # Allow dynamically linked executables
   programs.nix-ld.enable    = true;

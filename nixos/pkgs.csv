@@ -8,6 +8,7 @@ lname | * | git
 lna.e | * | git-lfs
 lname |   | home-manager
 lname |   | killall
+lname |   | inotify-tools
 lname |   | libnotify
 lname |   | micro
 lname | * | oh-my-posh
@@ -30,6 +31,7 @@ lname | * | zsh-syntax-highlighting
 
 # core: Essential GUI programs for everyday use.
 ln..e |   | birdtray
+lname | @ | ceri-themes
 l.... |   | ungoogled-chromium |-> Specifically for WebFSR
 lname | * | engrampa
 lname |   | floorp-bin
@@ -117,7 +119,7 @@ ln..e | * | remmina
 l.... |   | rubyripper
 lname |   | tesseract
 l.a.e |   | testdisk
-ln... |   | wineWow64Packages.stable
+ln... |   | wineWow64Packages.full
 ln... |   | winetricks
 lname |   | xcolor
 ln... | * | yt-dlg
@@ -173,6 +175,7 @@ lname |   | xfce4-pulseaudio-plugin
 lname |   | xfwm4
 
 # work: Work-related applications.
+....e | @ | falcon-sensor
 .n..e | * | networkmanager-openconnect
 ....e | * | onedrive
 ....e | * | powershell
