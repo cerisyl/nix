@@ -117,6 +117,7 @@
     (custom ".n.me"   "Hibernate"             "hibernate"                       (srun "desktop-logout" "systemctl hibernate")   "ceri-hibernate")
     # create
     (custom "l...."   "Blender"               "blender"                         (gpuCmd "blender %f")                           true)
+    (custom "ln..."   "Fade In"               "fadein"                          "fadein %f"                                     "fade-in")
     (custom "ln..."   "Kdenlive"              "org.kde.kdenlive"                (gpuCmd "kdenlive")                             "ceri-kden")
     (custom "ln..."   "OBS Studio"            "com.obsproject.Studio"           "obs"                                           "ceri-obs")
     # ent

@@ -47,7 +47,7 @@ lname | * | xnviewmp
 
 # create: Programs for creative output.
 l.... |   | blender
-# ln... |   | fade-in
+ln... | @ | fade-in
 ln... |   | kdePackages.kdenlive
 ln... |   | libxcomposite |-> relies on obs
 ln... |   | obs-studio
@@ -59,11 +59,13 @@ ln..e | * | nodejs_22
 ln... |   | python311 |-> 9ornull
 lna.e |   | python314
 lna.e | * | vscode-fhs
+lna.e | * | zed-editor-fhs
 
 # ent: Entertainment / gaming programs.
 l.... |   | arduino-ide
 lnam. |   | deluge-gtk
 ln... |   | dolphin-emu
+ln..e | * | fooyin
 ln... | * | itgmania
 ..a.. |   | javaPackages.compiler.openjdk17 |-> for mc sever
 ln... |   | lutris

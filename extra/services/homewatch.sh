@@ -1,8 +1,10 @@
+#!/run/current-system/sw/bin/bash
+
 # Define targets
 declare -a targets=("Arduino" "Floorp" "Projects" "thunderbird")
 
 # Remove if created
-inotifywait -m -e create ~/. | while read FILE; do
+/run/current-system/sw/bin/inotifywait -m -e create ~/. | while read FILE; do
   echo $FILE
   for i in "${!targets[@]}"; do
     dir="${targets[$i]}"

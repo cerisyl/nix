@@ -95,8 +95,9 @@
     "application/vnd.microsoft.portable-executable" = "wine.desktop";
     "application/x-msdownload" = "wine.desktop";
     # misc applications
-    "x-scheme-handler/discord" = "discord.desktop";
-    "x-scheme-handler/magnet"  = "deluge.desktop";
+    "x-scheme-handler/discord"      = "discord.desktop";
+    "x-scheme-handler/magnet"       = "deluge.desktop";
+    "application/x-fadein-document" = "fadein.desktop";
   };
 in {
   xdg.mimeApps = {

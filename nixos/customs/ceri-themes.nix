@@ -11,19 +11,20 @@
 in pkgs.stdenv.mkDerivation {
   name = "ceri-themes";
   version = "1.0";
+  nativeBuildInputs = with pkgs; [ fd unzip ];
   src = builtins.fetchurl {
     name = "ceri-themes";
     url = "https://www.dropbox.com/scl/fo/lym7a5h68pxibl2fwkl4r/AObWCCVHSwMMA6YnJHckmzo?rlkey=99g6a54rq8gjkp3gzy2zleda5&st=o27idbom&dl=1";
     sha256 = "1a26a77865140312896dca48cd5c36b88360e951ff573a0340eed572e3b6f4fa";
   };
   unpackPhase = ''
-    ${pkgs.unzip}/bin/unzip -qq $src -x / -d /tmp/themes
+    unzip -qq $src -x / -d /tmp/themes
   '';
   installPhase = ''
     installTheme () {
       mkdir -p "$2"
       rm -rf "$2"
-      ${pkgs.unzip}/bin/unzip -qq $1 -d "$2"
+      unzip -qq $1 -d "$2"
     }
 
     declare -A routes
@@ -34,7 +35,7 @@ in pkgs.stdenv.mkDerivation {
     routes["cursors"]="icons"
     routes["sounds"]="sounds"
 
-    for zip in $(${pkgs.fd}/bin/fd ".*\.zip$" /tmp/themes); do
+    for zip in $(fd ".*\.zip$" /tmp/themes); do
       theme=$(basename $(dirname $zip))
       file=$(basename $zip)
       type=''${file%.*}
