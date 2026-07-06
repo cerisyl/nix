@@ -4,6 +4,7 @@
     package = pkgMap.zed-editor;
     extensions = [
       "html"
+      "log"
       "lua"
       "scss"
       "powershell"
