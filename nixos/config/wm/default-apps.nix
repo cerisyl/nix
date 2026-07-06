@@ -2,7 +2,7 @@
   mediaPlayer = "vlc.desktop";
   imgViewer   = "xnviewmp.desktop";
   browser     = "floorp.desktop";
-  editor      = "code.desktop";
+  editor      = "dev.zed.Zed.desktop" #"code.desktop";
   archiver    = "engrampa.desktop";
   fileAssociations = {
     # audio

@@ -106,7 +106,7 @@
       wolfram = "wolframalpha";
 
       # Package management
-      rebuild = ''(sudo nixos-rebuild switch --flake ~/.nix/. &> ~/.switch.log || 
+      rebuild = ''(sudo nixos-rebuild switch --flake ~/.nix/. &> ~/.switch.log ||
       (cat ~/.switch.log | grep --color error && false)) && xfce4-panel -r'';
       # (cat ~/.switch.log | grep --color error && false))'';
       rbl     = "rebuild";
@@ -123,7 +123,7 @@
       py        = "python";
       pipin     = "python -m pip install";
       pipun     = "python -m pip uninstall";
-      init-venv = "python -m venv .venv"; 
+      init-venv = "python -m venv .venv";
       pyv       = "./.venv/bin/python";
       pyvin     = "pyv -m pip install";
       pyvun     = "pyv -m pip uninstall";
@@ -131,8 +131,6 @@
       # Instant run
       chatter = "cd ~/code/sites/chatter && npm run dev";
       dalle   = "for file in *; do mv \"$file\" \"${file:0:26}.png\"; done";
-      package = "~/itg/package.sh";
-      budg    = "code ~/sync/main/code/neobudget";
 
       # Bun
       bi    = "bun i";

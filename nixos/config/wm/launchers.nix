@@ -143,9 +143,9 @@
     (custom "lname"   "File Manager"          "xfce4-file-manager"              "exo-open --launch FileManager %u"              "ceri-files")
     # ________________________________________________________________________________________________________________________________________________
     # projects
-    (custom "ln..."   "cering.dev"            "webdev"                          "code ${codeSync}/cering_dev-sv_V2"             "${codeSync}/cering_dev-sv_V2/src/img/favicon.svg")
-    (custom "ln..."   "neobudget"             "neobudget"                       "code ${codeSync}/neobudget"                    "${codeSync}/neobudget/static/favicon.svg")
-    (custom "lname"   "NixOS Config"          "nixconf"                         "code ${homedir}/.nix"                          "ceri-start")
+    (custom "ln..."   "cering.dev"            "webdev"                          "zeditor ${codeSync}/cering_dev-sv_V2"          "${codeSync}/cering_dev-sv_V2/src/img/favicon.svg")
+    (custom "ln..."   "neobudget"             "neobudget"                       "zeditor ${codeSync}/neobudget"                 "${codeSync}/neobudget/static/favicon.svg")
+    (custom "lname"   "NixOS Config"          "nixconf"                         "zeditor ${homedir}/.nix"                       "ceri-start")
   ];
 
   # Only import packages containing the hostID in the init string
