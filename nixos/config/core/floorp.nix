@@ -54,6 +54,8 @@
     "userChrome.hidden.disabled_menu"         = false;  # Hide disabled context menu items
     "userChrome.icon.disabled"                = false;  # Disable Lepton's context menu and panel menu icons
     "userChrome.icon.menu"                    = true;   # Enable Lepton's context menu icons
+    "browser.tabs.splitView.enabled"          = false;  # Disable split view feature
+    "browser.tabs.splitView.working"          = false;  # Disable split view feature
     ### Position adjustments
     "userChrome.centered.tab"                 = false;  # Center labels in tabs
     "userChrome.centered.urlbar"              = false;  # Center text in the Address Bar

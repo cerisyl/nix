@@ -56,6 +56,7 @@ l.... |   | reaper
 # dev : Development tools.
 lna.e | * | bun
 lna.e |   | nil
+lna.e |   | nixd
 ln..e | * | nodejs_22
 ln... |   | python311 |-> 9ornull
 lna.e |   | python314
@@ -66,7 +67,7 @@ lna.e | * | zed-editor
 l.... |   | arduino-ide
 lnam. |   | deluge-gtk
 ln... |   | dolphin-emu
-ln..e | * | fooyin
+ln..e | @ | fooyin
 ln... | * | itgmania
 ..a.. |   | javaPackages.compiler.openjdk17 |-> for mc sever
 ln... |   | lutris

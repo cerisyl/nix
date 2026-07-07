@@ -6,26 +6,32 @@
       "html"
       "log"
       "lua"
-      "scss"
       "powershell"
       "pug"
+      "scss"
+      "toml"
       "git-firefly"
       "rainbow-csv"
       "charmed-icons"
     ];
+    userKeymaps = [{
+      context           = "Editor && mode == full";
+      bindings."alt-z"  = "editor::ToggleSoftWrap";
+    }];
     userSettings = {
       # General settings
-      base_keymap = "VSCode";
-      auto_update = false;
-      disable_ai  = true;
-      vim_mode    = false;
+      base_keymap    = "VSCode";
+      auto_update    = false;
+      disable_ai     = true;
+      vim_mode       = false;
       session.trust_all_worktrees = true;
 
       # Theme/UI settings
       theme = {
         mode  = "dark";
-        light = "Ayu Dark";
-        dark  = "Ayu Dark";
+        # TODO: Re-comment with proper theme when posted to repo
+        # light = "Ayu Dark";
+        # dark  = "Ayu Dark";
       };
       icon_theme                = "Light Charmed Icons";
       ui_font_family            = "Barlow";
@@ -63,7 +69,8 @@
       # Editor settings
       show_whitespaces      = "trailing";
       allow_rewrap          = "anywhere";
-      soft_wrap             = "editor_width";
+      soft_wrap             = "none"; # can still toggle w/ alt-z
+      format_on_save        = "off";
       inline_code_actions   = false;
       relative_line_numbers = "disabled";
       gutter = {
@@ -82,6 +89,7 @@
 
       # Project / filebrowser settings (left)
       project_panel = {
+        default_width = 200;
         git_status_indicator = true;
         diagnostic_badges = true;
         entry_spacing = "standard";
@@ -91,6 +99,7 @@
 
       # Git panel settings (right)
       git_panel = {
+        default_width = 240;
         file_icons = false;
         sort_by_path = true;
       };
