@@ -89,12 +89,12 @@ in {
         <directories/>
       </action>
       <action>
-        <icon>vscode</icon>
-        <name>Open Folder as VS Code Project</name>
+        <icon>zed</icon>
+        <name>Open Folder as Zed Project</name>
         <submenu></submenu>
         <unique-id>1725554266135535-1</unique-id>
-        <command>code %f</command>
-        <description>Opens folder in VS Code</description>
+        <command>zed %f</command>
+        <description>Opens folder in Zed</description>
         <range>*</range>
         <patterns>*</patterns>
         <directories/>
