@@ -60,7 +60,7 @@ lna.e |   | nixd
 ln..e | * | nodejs_22
 ln... |   | python311 |-> 9ornull
 lna.e |   | python314
-lna.e | * | vscode-fhs
+# lna.e | * | vscode-fhs
 lna.e | * | zed-editor
 
 # ent: Entertainment / gaming programs.
@@ -77,7 +77,7 @@ ln... |   | prismlauncher
 ln... | * | steam
 ln... | * | steam-unwrapped
 ln... | * | steam-run
-ln..e |   | tauon
+# ln..e |   | tauon
 ln... |   | umu-launcher
 lname |   | vlc
 

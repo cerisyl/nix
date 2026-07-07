@@ -5,6 +5,8 @@
 { role }: let
   # Exlude specific .nix configurations
   excludedFiles = [
+    "vscode.nix"
+    "tauon.nix"
     #"autostart.nix"
     #"battery.nix"
     #"displays.nix"
@@ -23,7 +25,7 @@
   matchesRole = name:
     if role == "system"
     then isNixFile name && builtins.match ".*\\.sys\\.nix$" name != null
-    else isNixFile name && builtins.match ".*\\.sys\\.nix$" name == null; 
+    else isNixFile name && builtins.match ".*\\.sys\\.nix$" name == null;
 
   # Get all files
   findConfig = dir:
@@ -47,4 +49,3 @@
   configPaths = findConfig baseDir;
 in
   map import configPaths
-

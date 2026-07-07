@@ -10,6 +10,7 @@
       "pug"
       "scss"
       "toml"
+      "color-highlight"
       "git-firefly"
       "rainbow-csv"
       "charmed-icons"
@@ -123,6 +124,7 @@
       git.inline_blame.enabled  = false;
       cli_default_open_behavior = "new_window";
       bottom_dock_layout        = "right_aligned";
+      lsp_document_colors       = "background";
     };
   };
 }
