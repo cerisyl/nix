@@ -73,6 +73,7 @@
       };
 
       # Editor settings
+      tab_size              = 2;
       show_whitespaces      = "trailing";
       allow_rewrap          = "anywhere";
       soft_wrap             = "none"; # can still toggle w/ alt-z
