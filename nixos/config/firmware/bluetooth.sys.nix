@@ -1,4 +1,4 @@
-{ config, lib, pkgs, myHostname, ... }:
+{ myHostname, ... }:
 if (myHostname == "nova" || myHostname == "engrit") then {
   hardware.bluetooth = {
     enable      = true;

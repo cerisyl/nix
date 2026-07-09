@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, homedir, lib, ... }: {
+{ config, pkgMap, homedir, lib, ... }: {
   programs.zsh = {
     enable = true;
     package = pkgMap.zsh;
@@ -17,12 +17,11 @@
     # Init
     initContent = lib.mkOrder 550 ''
       # Set up / source zinit
-      # TODO: Remove the need for surpressing source output
       export ZINIT_HOME="${homedir}/.local/share/zinit/"
       if [ ! -d "$ZINIT_HOME" ]; then
-        mkdir -p "$(dirname $ZINIT_HOME)"
+        mkdir -p $(dirname $ZINIT_HOME)
       fi
-      source ${pkgMap.zinit}/share/zinit/zinit.zsh > /dev/null 2>&1
+      source ${pkgMap.zinit}/share/zinit/zinit.zsh
 
       # Search engines
       ZSH_WEB_SEARCH_ENGINES=(

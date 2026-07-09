@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }:
+{ pkgMap, ... }:
 if pkgMap ? "discordchatexporter-desktop" then {
   home.file.".config/discordchatexporter/Settings.dat".text = ''
     {

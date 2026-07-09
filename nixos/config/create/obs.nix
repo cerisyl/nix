@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, hostname, lib, ... }:
+{ pkgMap, ... }:
 if pkgMap ? "obs-studio" then {
   programs.obs-studio = {
     enable      = true;

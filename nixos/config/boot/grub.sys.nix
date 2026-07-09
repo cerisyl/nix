@@ -1,4 +1,4 @@
-{ config, pkgs, theme, getThemeFile, myHostname, lib, ... }: let
+{ pkgs, myHostname, ... }: let
   # ,10de:1381,10de:0fbc
   hostKernelParams = {
     lux     = [ "intel_iommu=on" "iommu.passthrough=1" "iommu=pt" "vfio-pci.ids=10de:2482,10de:228b,10de:1381,10de:0fbc" ];

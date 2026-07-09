@@ -1,4 +1,4 @@
-{ config, pkgMap, myHostname, lib, ... }: let
+{ myHostname, lib, ... }: let
   # Make life easier - prefixes a key in an attribute set
   prependAttrs = prefix:
     lib.attrsets.mapAttrs' (name: value:

@@ -30,9 +30,10 @@
         config.allowUnfree = true;
       };
       pkgsGit = { inherit zmod; };
+      libutils = import ./nixos/utils.nix { inherit (nixpkgs) lib; };
     in nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit inputs system pkgsUnstable pkgsGit myHostname;
+        inherit inputs system libutils pkgsUnstable pkgsGit myHostname;
       };
       modules = [
         ./nixos/hosts/${myHostname}/configuration.nix

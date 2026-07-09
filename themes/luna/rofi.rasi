@@ -8,11 +8,6 @@ configuration {
   /* Theme config */
   font: "Tahoma 9";
   icon-theme: "luna-icons";
-  /* TODO: This is here until home-manager supports filebrowser settings. */
-  recursivebrowser {
-    directory: "/home/ceri";
-    filter-regex: ".*([Gg]ames|node_modules|[Cc]ache|\.(nix|local|icons|steam|wine)).*";
-  }
 }
 
 * {
@@ -85,7 +80,7 @@ shutdown, logoff {
   spacing: 8px;
 }
 
-spacer { 
+spacer {
   expand: true;
 }
 

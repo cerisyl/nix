@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, homedir, geckium, lib, ... }: let
+{ pkgMap, homedir, ... }: let
   defaultSettings = {
     # General
     ## Startup

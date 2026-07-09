@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ theme, ... }: {
   dconf = {
     enable = true;
     settings = {

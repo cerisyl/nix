@@ -1,4 +1,4 @@
-{ config, pkgs, lib, myHostname, ... }:
+{ pkgs, myHostname, ... }:
 if (myHostname != "engrit") then {
   services.deluge = {
     enable        = true;

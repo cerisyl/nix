@@ -1,4 +1,4 @@
-{ config, pkgMap, myHostname, theme, getThemeFile, lib, ... }: let
+{ pkgMap, ... }: let
   # Shoutouts https://kb.mozillazine.org/About:config_entries
   defaultSettings = {
     # UI

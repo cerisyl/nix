@@ -1,16 +1,7 @@
-{ config, pkgMap, theme, getThemeFile, homedir, myHostname, lib, ... }: let
+{ homedir, myHostname, lib, libutils, ... }: let
 
-  # TODO: Pull this from main config file- possibly see if this is syncable with the init defined in /packages
-  # maybe it could be an extra option in pkgMap...
-  hostMap = {
-    "lux"     = "l";
-    "nova"    = "n";
-    "vm"      = "n";
-    "astore"  = "a";
-    "medea"   = "m";
-    "engrit"  = "e";
-  };
-  hostID = hostMap.${myHostname};
+  # Get host ID
+  hostID = libutils.getHostId myHostname;
   toInit = str: (lib.strings.hasInfix hostID str);
 
   # Create and/or bookmark directories based on hostname
@@ -155,8 +146,8 @@ in {
     hidden-bookmarks                  = [ "trash:///" "recent:///" "network:///" ];
     hidden-devices                    = [
       "192.168.200.240"
-      smb://sgunning@engrit-file-01.ad.uillinois.edu/archive
-      smb://sgunning@engr-archive.ad.uillinois.edu/engrit
+      "smb://sgunning@engrit-file-01.ad.uillinois.edu/archive"
+      "smb://sgunning@engr-archive.ad.uillinois.edu/engrit"
     ];
   };
 }

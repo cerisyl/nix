@@ -1,4 +1,5 @@
-{ pkgs }: pkgs.stdenv.mkDerivation {
+{ pkgs }:
+pkgs.stdenv.mkDerivation {
   name = "ceri-fonts";
   version = "1.0";
   src = ../extra/fonts.zip;

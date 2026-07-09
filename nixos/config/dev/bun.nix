@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ pkgMap, ... }: {
   programs.bun = {
     enable      = true;
     package     = pkgMap.bun;

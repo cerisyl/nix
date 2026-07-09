@@ -1,7 +1,7 @@
-{ config, lib, myHostname, ... }: let
+{ myHostname, ... }: let
   # Define shares
   smbShares = if myHostname == "lux" then {
-    home = { 
+    home = {
       path              = "/home/ceri";
       browseable        = "yes";
       writeable         = "yes";
@@ -11,7 +11,7 @@
       "directory mask"  = "0755";
     };
   } else if myHostname == "astore" then {
-    astore = { 
+    astore = {
       path              = "/mnt/astore";
       browseable        = "yes";
       writeable         = "yes";
@@ -30,7 +30,7 @@
       "directory mask"  = "0755";
     };
   } else {};
-  
+
   # Define interfaces
   interfaces = {
     lux     = "lo enp5s0 virbr0";

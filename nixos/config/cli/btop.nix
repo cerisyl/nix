@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ pkgMap, theme, getThemeFile, ... }: {
   home.file.".config/btop/themes/${theme}.theme".text = builtins.readFile (getThemeFile "btop.theme");
   programs.btop = {
     enable    = true;

@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, homedir, lib, ... }: {
+{ homedir, ... }: {
   home.file.".config/deluge/gtk3ui.conf".text = ''
     {
       "file": 1,

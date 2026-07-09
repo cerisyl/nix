@@ -1,4 +1,4 @@
-{ config, lib, pkgs, myHostname, ... }:
+{ pkgs, myHostname, ... }:
 if myHostname == "engrit" then {
   services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
   hardware = {

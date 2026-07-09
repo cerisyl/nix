@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, homedir, myHostname, lib, ... }: let
+{ homedir, myHostname, ... }: let
 
   # Define autostarts
   autostart = {
@@ -129,7 +129,7 @@ in {
     #bindsym $mod+d focus child
 
     # Define names for default workspaces
-    set $ws1  1 "${iconSocial}₁" # socials 
+    set $ws1  1 "${iconSocial}₁" # socials
     set $ws2  2 "₂" # vms
     set $ws3  3 "${iconMail}₃" # email
     set $ws4  4 "₄" # code
@@ -250,7 +250,7 @@ in {
     ${myAutostarts}
 
     # Themeing -----------------------------------------------------------------
-    # TODO: integrate other color palettes
+    # NOTE: integrate other color palettes
 
     # No title bars
     default_border pixel 1

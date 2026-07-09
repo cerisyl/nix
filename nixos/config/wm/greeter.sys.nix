@@ -1,4 +1,4 @@
-{ config, pkgs, pkgMap, lib, ... }: {
+{ ... }: {
   services.xserver.displayManager.lightdm = {
     enable = true;
     greeters.gtk = {

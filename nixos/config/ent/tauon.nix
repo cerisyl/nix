@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, homedir, lib, ... }:
+{ pkgMap, theme, getThemeFile, homedir, lib, ... }:
 if pkgMap ? "tauon" then {
   home.file.".local/share/TauonMusicBox/theme/${theme}.ttheme".source = (getThemeFile "tauon.ttheme");
   home.activation.tauonConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

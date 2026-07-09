@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ ... }: {
   programs.keepassxc = {
     enable = true;
     settings = {

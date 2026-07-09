@@ -1,4 +1,4 @@
-{ config, lib, myHostname, ... }: let
+{ myHostname, ... }: let
   # 445    smb
   # 3389   rdp
   # 50951  ssh

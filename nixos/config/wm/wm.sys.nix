@@ -1,4 +1,4 @@
-{ config, pkgs, pkgMap, lib, ... }: {
+{ pkgs, ... }: {
   services.xserver = {
     enable = true;
     desktopManager = {

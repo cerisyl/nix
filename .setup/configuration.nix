@@ -1,5 +1,5 @@
 # Barebones, ephemeral config. Use on first-time setup.
-{ config, lib, pkgs, ... }: {
+{ pkgs, ... }: {
   # Main params
   networking.hostName = "ephemeral";
   time.timeZone       = "America/Chicago";

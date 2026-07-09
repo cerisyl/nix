@@ -1,4 +1,4 @@
-{ config, lib, myHostname, ... }:
+{ myHostname, ... }:
 if myHostname == "lux" || myHostname == "astore" then {
   services.openssh = {
     enable  = true;

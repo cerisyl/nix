@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ homedir, pkgMap, theme, getThemeFile, ... }: {
   programs.rofi = {
     enable    = true;
     package   = pkgMap.rofi;
@@ -6,16 +6,20 @@
     # Grid config (used in place as base theme, imports rofi.rasi)
     theme     = (getThemeFile "rofi.rasi");
     extraConfig = {
-      modi                = "drun,recursivebrowser";
-      show-icons          = true;
-      icon-theme          = "${theme}-icons";
+      modi              = "drun,recursivebrowser";
+      show-icons        = true;
+      icon-theme        = "${theme}-icons";
       drun-display-format = "{name}";
-      hover-select        = true;
-      scrollbar           = true;
-      me-select-entry     = "";
-      me-accept-entry     = [ "MousePrimary" "MouseSecondary" "MouseDPrimary" ];
-      run-shell-command   = "kitty --hold {cmd}";
-      kb-cancel           = "Escape,Super_L";
+      hover-select      = true;
+      scrollbar         = true;
+      me-select-entry   = "";
+      me-accept-entry   = [ "MousePrimary" "MouseSecondary" "MouseDPrimary" ];
+      run-shell-command = "kitty --hold {cmd}";
+      kb-cancel         = "Escape,Super_L";
+      recursivebrowser  = {
+        directory       = homedir;
+        filter-regex    = ''.*([Gg]ames|node_modules|[Cc]ache|\.(nix|local|icons|steam|wine)).*'';
+      };
     };
   };
   home.file = {

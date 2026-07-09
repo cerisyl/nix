@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ pkgMap, ... }: {
   programs.git = {
     enable  = true;
     package = pkgMap.git;

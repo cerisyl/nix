@@ -1,4 +1,4 @@
-{ config, lib, pkgMap, myHostname, ... }:
+{ pkgMap, myHostname, ... }:
 if myHostname != "astore" && myHostname != "medea" then {
   services.remmina = {
     enable  = true;

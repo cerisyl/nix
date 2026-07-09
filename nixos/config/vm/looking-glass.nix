@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }:
+{ pkgMap, ... }:
 if pkgMap ? "looking-glass-client" then {
   programs.looking-glass-client = {
     enable  = true;

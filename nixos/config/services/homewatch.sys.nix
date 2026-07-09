@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ ... }: {
   systemd.user.services.homewatch = {
     enable      = true;
     description = "Watch and remove generated directories";

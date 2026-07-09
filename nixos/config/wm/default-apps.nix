@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: let
+{ ... }: let
   mediaPlayer = "vlc.desktop";
   imgViewer   = "xnviewmp.desktop";
   browser     = "floorp.desktop";

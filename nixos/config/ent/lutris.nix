@@ -1,4 +1,4 @@
-{ config, pkgs, pkgMap, lib, ... }:
+{ pkgs, pkgMap, ... }:
 if pkgMap ? "lutris" then {
   programs.lutris = {
     enable  = true;

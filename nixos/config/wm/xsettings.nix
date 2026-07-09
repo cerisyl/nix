@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, homedir, myHostname, lib, ... }: let
+{ pkgMap, theme, myHostname, lib, ... }: let
   # Theme-specific properties
   themeProps = {
     ceres = {

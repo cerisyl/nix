@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ pkgMap, ... }: {
   programs.vscode = {
     enable        = true;
     package       = pkgMap.vscode-fhs;

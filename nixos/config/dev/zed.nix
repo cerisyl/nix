@@ -1,19 +1,23 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ pkgMap, ... }: {
   programs.zed-editor = {
     enable  = true;
     package = pkgMap.zed-editor;
     extensions = [
+      "charmed-icons"
+      "color-highlight"
+      "git-firefly"
       "html"
+      "ini"
+      "javascript-snippets"
       "log"
       "lua"
       "powershell"
       "pug"
-      "scss"
-      "toml"
-      "color-highlight"
-      "git-firefly"
       "rainbow-csv"
-      "charmed-icons"
+      "scss"
+      "svelte"
+      "svelte-snippets"
+      "toml"
     ];
     userKeymaps = [{
       context           = "Editor && mode == full";
@@ -119,6 +123,7 @@
 
       # Misc.
       file_types = {
+        "ini" = [ "*.desktop" ];
         "Rainbow CSV (|)" = [ "pkgs.csv" ];
       };
       git.inline_blame.enabled  = false;

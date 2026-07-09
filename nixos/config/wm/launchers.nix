@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, myHostname, homedir, lib, ... }: let
+{ myHostname, homedir, lib, libutils, ... }: let
   removeLaunchers = [
     "btop"
     "cups"
@@ -73,18 +73,8 @@
     '';
   }) overwriteLaunchers);
 
-  # Use binary to determine what packages we should download
-  # TODO: Pull this from main config file- possibly see if this is syncable with the init defined in /packages
-  # maybe it could be an extra option in pkgMap...
-  hostMap = {
-    "lux"     = "l";
-    "nova"    = "n";
-    "vm"      = "n";
-    "astore"  = "a";
-    "medea"   = "m";
-    "engrit"  = "e";
-  };
-  hostID = hostMap.${myHostname};
+  # Get host ID
+  hostID = libutils.getHostId myHostname;
 
   # Shortened command/helpers for launchers
   # GPU command stuff
@@ -127,7 +117,7 @@
     (custom "ln..."   "ITGmania"              "itgmania"                        (gpuCmd "itgmania")                             "ceri-itg")
     (custom "ln..."   "Minecraft"             "org.prismlauncher.PrismLauncher" (gpuCmd "prismlauncher")                        "ceri-mc")
     (custom "ln..."   "Steam"                 "steam"                           true                                            "ceri-steam")
-    (custom "ln..e"   "Tauon"                 "tauonmb"                         "tauon"                                         "ceri-music")
+    #(custom "ln..e"   "Tauon"                 "tauonmb"                         "tauon"                                         "ceri-music")
     (custom "lname"   "VLC Media Player"      "vlc"                             true                                            "ceri-media")
     # soc
     (custom "ln..."   "Discord"               "discord"                         "discord ${discordArgs}"                        "ceri-cord")
@@ -153,7 +143,6 @@
     lib.strings.hasInfix hostID entry.init
   ) customLaunchers;
 
-  # TODO: Maybe combine this into one command
   mappedCustoms = builtins.listToAttrs (map (obj: {
     name = ".local/share/applications/${obj.filename}.desktop";
     value.text = ''

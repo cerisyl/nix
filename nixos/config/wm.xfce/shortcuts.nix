@@ -1,11 +1,5 @@
-{ config, pkgMap, theme, getThemeFile, homedir, lib, ... }: let
-  # TODO: Put this in a util .nix file or something
-  # Make life easier - prefixes a key in an attribute set
-  prependAttrs = prefix:
-    lib.attrsets.mapAttrs' (name: value:
-      lib.attrsets.nameValuePair "${prefix}${name}" value);
-
-  shortcuts = prependAttrs "commands/custom/" {
+{ homedir, libutils, ... }: let
+  shortcuts = libutils.prependAttrs "commands/custom/" {
     "override"  = true;
     # Kill current task
     "<Primary><Alt>Escape" = "xkill";
@@ -32,7 +26,7 @@
     "<Primary><Shift>O"           = "sh ${homedir}/.nix/extra/screenshot/ocr.sh";
     "<Super><Alt>C"               = "sh ${homedir}/.nix/extra/screenshot/color-picker.sh";
 
-    # Volume 
+    # Volume
     "AudioLowerVolume"  = "pactl set-sink-volume @DEFAULT_SINK@ -1%";
     "AudioRaiseVolume"  = "pactl set-sink-volume @DEFAULT_SINK@ +1%";
     "AudioMute"         = "pactl set-sink-mute @DEFAULT_SINK@ toggle";

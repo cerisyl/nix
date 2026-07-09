@@ -1,5 +1,4 @@
-{ config, lib, myHostname, ... }:
-# Stupid, but should work
+{ myHostname, ... }:
 if (myHostname != "engrit" && myHostname != "astore") then {
   programs.steam = {
     enable = true;

@@ -1,5 +1,5 @@
 { pkgs }:
-pkgs.stdenv.mkDerivation rec {
+pkgs.stdenv.mkDerivation {
   pname = "fade-in";
   version = "5.0.11";
   arch = "amd64";

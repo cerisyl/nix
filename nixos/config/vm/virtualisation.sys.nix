@@ -1,5 +1,4 @@
-{ config, lib, pkgs, myHostname, ... }: let
-in {
+{ ... }: {
   virtualisation = {
     libvirtd = {
       enable = true;

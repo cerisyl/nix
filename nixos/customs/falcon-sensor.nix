@@ -1,5 +1,5 @@
 { pkgs }:
-pkgs.stdenv.mkDerivation rec {
+pkgs.stdenv.mkDerivation {
   name = "falcon-sensor";
   version = "1.0";
   arch = "amd64";

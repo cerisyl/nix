@@ -1,7 +1,7 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: let
+{ pkgMap, ... }: let
 
   # Define colors
-  # TODO: Define other themes
+  # NOTE: Define other themes
   colors = {
     bg        = "#1a1a1f";
     bgBrite   = "#25252e";

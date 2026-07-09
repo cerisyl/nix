@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ pkgMap, theme, getThemeFile, ... }: {
   home.file = {
     ".config/kitty/${theme}.conf".text = builtins.readFile (getThemeFile "kitty.conf");
   };

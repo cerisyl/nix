@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: {
+{ pkgMap, ... }: {
   services.picom = {
     enable  = true;
     package = pkgMap.picom;

@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, myHostname, lib, ... }: let
+{ pkgMap, myHostname, ... }: let
 
   trayIcon = {
     aero    = "";

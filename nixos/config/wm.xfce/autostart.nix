@@ -1,7 +1,7 @@
 # Automatically reads in anything in extra/autostart
-{ config, pkgMap, theme, getThemeFile, myHostname, lib, ... }: let
+{ myHostname, lib, ... }: let
   baseDir = ../../../extra/autostart;
-  
+
   # Launcher exclusions
   exclude = {
     work    = [ "floorp-work" "slack" "teams" ];

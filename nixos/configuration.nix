@@ -1,15 +1,7 @@
-{ inputs, myHostname, config, pkgs, pkgsUnstable, pkgsGit, lib, ... }: let
-  # Utility functions to translate 
-  # TODO: Move this in its own file.
-  getAttrByList = set: pathList:
-    if pathList == [] then set
-    else getAttrByList (set.${builtins.head pathList}) (builtins.tail pathList) ;
-  getAttrByStr = set: pathStr:
-    let
-      _path = builtins.split "\\." pathStr;
-      path = builtins.filter (x: x != []) _path;
-    in
-      getAttrByList set path;
+{ inputs, myHostname, config, libutils, pkgs, pkgsUnstable, pkgsGit, lib, ... }: let
+
+  # Get host ID
+  hostID = libutils.getHostId myHostname;
 
   # Variable + utility function to determine what theme file should be loaded
   themeFallback = "ceres";
@@ -28,18 +20,7 @@
       else ../themes + "/${themeFallback}/${file}"
   );
 
-  # Package management
-  # Determine what packages we should download
-  hostMap = {
-    "lux"     = "l";
-    "nova"    = "n";
-    "vm"      = "n";
-    "astore"  = "a";
-    "medea"   = "m";
-    "engrit"  = "e";
-  };
-  hostID = hostMap.${myHostname};
-
+  # Package management - determine what packages we should download
   # Load and parse our pkgs.csv
   pkgsCsv = builtins.readFile ./pkgs.csv;
   pkgsClean = builtins.filter (entry:
@@ -60,44 +41,21 @@
     lib.strings.hasInfix hostID entry.init
   ) allPkgs;
 
-  # Load additional packages from the /customs directory
-  loadRecursive = dir:
-    let
-      dirSet = builtins.readDir dir;
-      entries = builtins.attrNames dirSet;
-      paths = builtins.concatMap (name:
-        let
-          path = dir + "/${name}";
-          type = dirSet."${name}";
-        in
-          if type == "directory"
-            then loadRecursive path
-          else if builtins.match ".*\\.nix$" name != null && name != "default.nix"
-            then [ path ]
-          else
-            []
-      ) entries;
-    in
-      paths;
-
-  # TODO: Would be cool if we can combine these two blocks into
-  # a single call- research later.
-
   # Get our packages using the specified channel of choice
   systemPkgs = map (entry:
     if entry.isUnstable == true
-      then getAttrByStr pkgsUnstable entry.pkg
+      then libutils.getAttrByStr pkgsUnstable entry.pkg
     else if entry.isCustom == true
       then pkgs.callPackage ./customs/${entry.pkg}.nix {}
     else
-      getAttrByStr pkgs entry.pkg
+      libutils.getAttrByStr pkgs entry.pkg
   ) enabledPkgs;
 
   # Also spawn an object to use in loading proper packages in config
   pkgMap = builtins.listToAttrs (map (entry:
     if entry.isUnstable == true
-    then { name = entry.pkg; value = getAttrByStr pkgsUnstable entry.pkg; }
-    else { name = entry.pkg; value = getAttrByStr pkgs entry.pkg; }
+    then { name = entry.pkg; value = libutils.getAttrByStr pkgsUnstable entry.pkg; }
+    else { name = entry.pkg; value = libutils.getAttrByStr pkgs entry.pkg; }
   ) enabledPkgs);
 in {
   # Main params
@@ -154,7 +112,7 @@ in {
     };
     # Packages, etc.
     extraSpecialArgs = {
-      inherit pkgMap theme getThemeFile myHostname;
+      inherit libutils pkgMap theme getThemeFile myHostname;
       homedir  = "/home/ceri";
       timezone = config.time.timeZone;
       zmod = pkgsGit.zmod;

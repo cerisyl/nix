@@ -1,4 +1,4 @@
-{ config, lib, myHostname, ... }:
+{ myHostname, ... }:
 if (myHostname != "engrit" && myHostname != "astore") then {
   services.udev.extraRules = ''
     ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04*", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, myHostname, ... }: let
+{ ... }: let
   bypass = [
     "nix"
     "nixos-rebuild"

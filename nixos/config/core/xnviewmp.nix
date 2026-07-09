@@ -1,4 +1,4 @@
-{ config, pkgMap, lib, ... }:
+{ pkgMap, ... }:
 if pkgMap ? "xnviewmp" then {
   home.file.".config/xnviewmp/xnview.ini".text = ''
     [Appearance]

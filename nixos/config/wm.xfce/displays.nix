@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, homedir, myHostname, lib, ... }: let
+{ myHostname, ... }: let
   displays = {
     lux = {
       "Default/DP-1/RefreshRate" = 99.95;

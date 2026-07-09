@@ -1,5 +1,5 @@
 # Shoutouts mimvoid@github
-{ config, pkgMap, theme, getThemeFile, timezone, homedir, myHostname, lib, ... }: let
+{ theme, timezone, homedir, myHostname, lib, ... }: let
   # Make life easier - prefixes a key in an attribute set
   prependAttrs = prefix:
     lib.attrsets.mapAttrs' (name: value:

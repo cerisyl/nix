@@ -1,4 +1,4 @@
-{ config, pkgMap, theme, getThemeFile, lib, ... }: let 
+{ getThemeFile, ... }: let
   gtkExtras = {
     gtk-application-prefer-dark-theme = true;
     gtk-enable-event-sounds           = 1;
