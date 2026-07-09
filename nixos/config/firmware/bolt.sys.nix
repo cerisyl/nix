@@ -1,4 +1,4 @@
-{ config, lib, pkgs, myHostname, ... }:
+{ pkgs, myHostname, ... }:
 if myHostname == "engrit" then {
   services.dbus = {
     enable = true;

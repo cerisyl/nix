@@ -11,6 +11,7 @@
       "javascript-snippets"
       "log"
       "lua"
+      "nix"
       "powershell"
       "pug"
       "rainbow-csv"
