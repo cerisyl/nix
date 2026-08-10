@@ -180,6 +180,7 @@ lname |   | xfwm4
 
 # work: Work-related applications.
 ....e | @ | falcon-sensor
+....e | * | jan
 .n..e | * | networkmanager-openconnect
 ....e | * | onedrive
 ....e | * | powershell
