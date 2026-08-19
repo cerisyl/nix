@@ -1,7 +1,7 @@
-{ pkgs, myHostname, ... }:
+{ config, pkgs, myHostname, ... }:
 let
   falcon = pkgs.callPackage ../../customs/falcon-sensor.nix { };
-  cid = "";
+  cid = config.sops.secrets.falcon.path;
   startPreScript = pkgs.writeScript "init-falcon" ''
     #! ${pkgs.bash}/bin/sh
     /run/current-system/sw/bin/mkdir -p /opt/CrowdStrike

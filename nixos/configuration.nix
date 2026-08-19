@@ -71,16 +71,16 @@ in {
     ./hosts/${myHostname}/hardware-configuration.nix
   ] ++ import ./config { role = "system"; };
 
-  # Sops config
-  sops = if myHostname == "lux" then {
-    # Set up secrets
-    defaultSopsFile = ../secrets/secrets.yaml;
+  # Sops secrets config/import
+  sops = {
+    defaultSopsFile   = ../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
-    age.keyFile = "/home/ceri/.config/sops/age/keys.txt";
-
-    # Import secrets
-    secrets.samba = {};
-  } else {};
+    age.keyFile       = "/home/ceri/.config/sops/age/keys.txt";
+    secrets = {
+      samba   = {};
+      falcon  = {};
+    };
+  };
 
   # Users
   programs.zsh.enable = true;
