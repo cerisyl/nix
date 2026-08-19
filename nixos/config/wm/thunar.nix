@@ -80,12 +80,12 @@ in {
         <directories/>
       </action>
       <action>
-        <icon>zed</icon>
-        <name>Open Folder as Zed Project</name>
+        <icon>codium</icon>
+        <name>Open Folder as VSCodium Project</name>
         <submenu></submenu>
         <unique-id>1725554266135535-1</unique-id>
-        <command>zed %f</command>
-        <description>Opens folder in Zed</description>
+        <command>codium %f</command>
+        <description>Opens folder in VSCodium</description>
         <range>*</range>
         <patterns>*</patterns>
         <directories/>

@@ -5,7 +5,7 @@
 { role }: let
   # Exlude specific .nix configurations
   excludedFiles = [
-    "vscode.nix"
+    "zed.nix"
     "tauon.nix"
     #"autostart.nix"
     #"battery.nix"

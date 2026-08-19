@@ -1,7 +1,9 @@
 keys:
   - &lux age1efucu8zsr7fmw8ymh29ffnj4w56x0wpd42kvwcv24ja5tzy0fghqlw90x8
+  - &nova age1xlh3acx272lauhzm4adgfk7f7rt70sv2tss2uh75cy3tx4ydsu4qpuqjv0
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
     - age:
       - *lux
+      - *nova

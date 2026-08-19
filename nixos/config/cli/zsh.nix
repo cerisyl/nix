@@ -52,7 +52,7 @@
       bindkey '^[w' kill-region
 
       # Forward/backward word + wordchars
-      local WORDCHARS='*?_[]~=&;!#$%^(){}<>'
+      local WORDCHARS='*?_[]~=&;!#$%^(){}<>/'
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
 
@@ -129,7 +129,6 @@
 
       # Instant run
       chatter = "cd ~/code/sites/chatter && npm run dev";
-      dalle   = "for file in *; do mv \"$file\" \"${file:0:26}.png\"; done";
 
       # Bun
       bi    = "bun i";
