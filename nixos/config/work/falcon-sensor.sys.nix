@@ -1,12 +1,12 @@
 { config, pkgs, myHostname, ... }:
 let
   falcon = pkgs.callPackage ../../customs/falcon-sensor.nix { };
-  cid = config.sops.secrets.falcon.path;
+  cidPath = config.sops.secrets.falcon.path;
   startPreScript = pkgs.writeScript "init-falcon" ''
     #! ${pkgs.bash}/bin/sh
     /run/current-system/sw/bin/mkdir -p /opt/CrowdStrike
     ln -sf ${falcon}/opt/CrowdStrike/* /opt/CrowdStrike
-    ${pkgs.bash}/bin/bash -c "${falcon}/opt/CrowdStrike/falconctl -s --cid=${cid} -f --trace=debug"
+    ${pkgs.bash}/bin/bash -c "${falcon}/opt/CrowdStrike/falconctl -s --cid=$(cat ${cidPath}) -f --trace=debug"
   '';
 in if myHostname == "engrit" then {
   systemd.services.falcon-sensor = {
