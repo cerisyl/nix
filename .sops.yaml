@@ -1,9 +1,13 @@
 keys:
   - &lux age1efucu8zsr7fmw8ymh29ffnj4w56x0wpd42kvwcv24ja5tzy0fghqlw90x8
   - &nova age1xlh3acx272lauhzm4adgfk7f7rt70sv2tss2uh75cy3tx4ydsu4qpuqjv0
+  - &astore age1cyykymfm259ucu3s6lz2qc08g0ps3u0we52f534hsx773flwhcsseq7nz0
+  - &engrit age19rzhys7lwszee448u38nvprrpemw7t3jnek6dsj07xfm0dyw0sussufd7v
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
     - age:
       - *lux
       - *nova
+      - *astore
+      - *engrit
