@@ -119,6 +119,8 @@ in {
     };
     # Handle backup files
     backupFileExtension = "63a4305d";
+    # Fix issues with unfree extensions
+    useGlobalPkgs = true;
   };
 
   # Garbage collection
@@ -134,10 +136,7 @@ in {
 
   # Allow dynamically linked executables
   programs.nix-ld.enable    = true;
-  programs.nix-ld.libraries = with pkgs; [
-    stdenv.cc.cc.lib
-    zlib
-  ];
+  programs.nix-ld.libraries = [];
 
   # Fonts
   fonts.fontDir.enable = true;

@@ -1,10 +1,34 @@
-{ pkgMap, theme, getThemeFile, ... }: {
+{ pkgMap, pkgs, theme, getThemeFile, ... }: let
+  # Using a custom icon for kitty, because the default one isn't my favorite
+  kittyIcon = pkgs.fetchFromGitHub {
+    owner = "igrmk";
+    repo  = "whiskers";
+    rev   = "0501cfc9ee877c2ef3d20a3fe639da0505f774b1";
+    hash  = "sha256-1dkCFajtF+JAM2mn2dLWFiOdyg3d0wysS9mhkb7O9rw=";
+  };
+  kitty-patched = pkgMap.kitty.overrideAttrs (oldAttrs: {
+    postInstall = (oldAttrs.postInstall or "") + ''
+      # Remove existing icons
+      rm -rf $out/share/icons/hicolor
+      rm -f $out/share/icons/logo/kitty-128.png
+      rm -f $out/share/icons/logo/kitty.png
+      mkdir -p $out/share/icons/hicolor/scalable/apps
+
+      # Copy icons & update cache
+      cp -f ${kittyIcon}/whiskers.svg $out/share/icons/hicolor/scalable/apps/kitty.svg
+      cp -f ${kittyIcon}/whiskers.svg $out/lib/kitty/logo/kitty.svg
+      cp -f ${kittyIcon}/whiskers_256x256.png $out/lib/kitty/logo/kitty.png
+      cp -f ${kittyIcon}/whiskers_128x128.png $out/lib/kitty/logo/kitty-128.png
+      ${pkgs.gtk3.out}/bin/gtk-update-icon-cache -f -t $out/share/icons/hicolor
+    '';
+  });
+in {
   home.file = {
     ".config/kitty/${theme}.conf".text = builtins.readFile (getThemeFile "kitty.conf");
   };
   programs.kitty = {
     enable    = true;
-    package   = pkgMap.kitty;
+    package   = kitty-patched;
     font.name = "JetBrainsMono Nerd Font";
     font.size = 10;
     shellIntegration.enableZshIntegration = true;

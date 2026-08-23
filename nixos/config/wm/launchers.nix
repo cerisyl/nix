@@ -175,33 +175,7 @@ in {
   # Create custom launchers here
   xdg.desktopEntries = mappedRemovals;
   home.file = {
-    # Floorp
-    ".local/share/applications/floorp.desktop".text = ''
-      [Desktop Entry]
-      Actions=new-private-window;new-window;profile-manager-window
-      Categories=Network;WebBrowser
-      Exec=floorp --enable-blink-features=MiddleClickAutoscroll %U
-      GenericName=Web Browser
-      Icon=ceri-web
-      MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;x-scheme-handler/http;x-scheme-handler/https
-      Name=Floorp
-      StartupNotify=true
-      StartupWMClass=floorp
-      Terminal=false
-      Type=Application
-      Version=1.4
-      X-XFCE-Category=WebBrowser
-      X-XFCE-Commands=floorp --enable-blink-features=MiddleClickAutoscroll
-      X-XFCE-CommandsWithParameter=floorp --enable-blink-features=MiddleClickAutoscroll "%s"
-
-      [Desktop Action new-private-window]
-      Exec=floorp --private-window --enable-blink-features=MiddleClickAutoscroll %U
-      Name=New Private Window
-
-      [Desktop Action new-window]
-      Exec=floorp --new-window --enable-blink-features=MiddleClickAutoscroll %U
-      Name=New Window
-    '';
+    ".local/share/applications/floorp.desktop".source = ../../../extra/launchers/floorp.desktop;
     ".local/share/applications/win11.desktop".text = winLauncher;
   } // mappedOverwrites // mappedCustoms;
 }
