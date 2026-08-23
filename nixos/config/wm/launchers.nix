@@ -87,7 +87,6 @@
   srun = (sound: (cmd: ''sh -c "canberra-gtk-play -i ${sound} && ${cmd}"''));
 
   # Misc
-  avPath = "${homedir}/games/ArrowVortex";
   codeSync = "${homedir}/sync/main/code";
   discordArgs = "--enable-blink-features=MiddleClickAutoscroll --disable-smooth-scrolling";
 
@@ -111,7 +110,6 @@
     (custom "ln..."   "Kdenlive"              "org.kde.kdenlive"                (gpuCmd "kdenlive")                             "ceri-kden")
     (custom "ln..."   "OBS Studio"            "com.obsproject.Studio"           "obs"                                           "ceri-obs")
     # ent
-    (custom "ln..."   "ArrowVortex"           "av"                              "umu-run ${avPath}/ArrowVortex.exe"             "${avPath}/av.ico")
     (custom "lnam."   "Deluge"                "deluge"                          true                                            "ceri-deluge")
     (custom "ln..."   "Dolphin Emulator"      "dolphin-emu"                     true                                            true)
     (custom "ln..."   "ITGmania"              "itgmania"                        (gpuCmd "itgmania")                             "ceri-itg")

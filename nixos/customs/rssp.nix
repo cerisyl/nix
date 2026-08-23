@@ -1,7 +1,7 @@
 { lib, rustPlatform, fetchFromGitHub }: let
   name    = "rssp";
   version = "8a57847fed6e6aaf7f55a194b2f6f5a38195ea87";
-  lockfile = ./rssp.lock;
+  lockfile = ./deps/rssp.lock;
 in rustPlatform.buildRustPackage {
   inherit name version;
   arch = "amd64";
