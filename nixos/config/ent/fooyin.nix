@@ -1,6 +1,6 @@
 { pkgMap, theme, getThemeFile, homedir, lib, ... }:
 if pkgMap ? "fooyin" then {
-  home.file.".config/fooyin/layouts/${theme}.fyi".source = (getThemeFile "fooyin.fyi");
+  home.file.".config/fooyin/layouts/${theme}.fyl".source = (getThemeFile "fooyin.fyl");
   home.file.".config/fooyin/fooyin.conf".text = ''
     [General]
     LogLevel=4
