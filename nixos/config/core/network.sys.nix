@@ -4,12 +4,12 @@
   # 50951  ssh
   # 50952  mc
   ports = {
-    lux     = { tcp = [ 445 ]; };
+    lux     = { tcp = [ 445 3389 ]; };
     nova    = { tcp = [ ]; };
     vm      = { tcp = [ ]; };
     astore  = { tcp = [ 445 3389 50951 50952 ]; };
     medea   = { tcp = [ ]; };
-    engrit  = { tcp = [ ]; };
+    engrit  = { tcp = [ 3389 ]; };
   };
 in {
   networking.firewall = {
