@@ -22,7 +22,6 @@
         ms-python.vscode-python-envs
         mechatroner.rainbow-csv
         svelte.svelte-vscode
-        gruntfuggly.todo-tree
         tomoki1207.pdf
         # --- packages below this line do not exist in nixpkgs ----
         # jeff-hykin.better-shellscript-syntax
@@ -41,7 +40,6 @@
         "window.commandCenter"  = false;
 
         # Editor settings
-        "breadcrumbs.enabled"       = false;
         "editor.fontFamily"         = "'JetBrainsMono Nerd Font'";
         "editor.fontSize"           = 13.5;
         "editor.tabSize"            = 2;
@@ -50,6 +48,8 @@
         "editor.letterSpacing"      = -0.5;
         "editor.renderWhitespace"   = "trailing";
         "editor.selectionClipboard" = false;
+        "breadcrumbs.enabled"       = false;
+        "workbench.browser.showInTitleBar" = false;
 
         # Terminal settings
         "terminal.integrated.fontSize"        = 14;
@@ -61,9 +61,11 @@
         "git.enableSmartCommit" = true;
         "git.confirmSync"       = false;
 
+        # Language settings
+        "svelte.enable-ts-plugin"           = true;
+
         # Misc.
         "security.workspace.trust.enabled"  = false;
-        "workbench.browser.showInTitleBar"  = false;
       };
     };
   };
