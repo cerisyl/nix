@@ -105,12 +105,10 @@
       wolfram = "wolframalpha";
 
       # Package management
-      rebuild = ''(sudo nh os switch . &> ~/.switch.log ||
-      (cat ~/.switch.log | grep --color error && false)) && xfce4-panel -r'';
+      rebuild = ''nh os switch && xfce4-panel -r'';
       # (cat ~/.switch.log | grep --color error && false))'';
       rbl     = "rebuild";
-      upgrade = ''cd ~/.nix && (sudo nix flake update && git commit -am "Update flake" && rebuild) ||
-      (echo "Some error occured! Check ~/.switch.log!")'';
+      upgrade = ''cd ~/.nix && (sudo nix flake update && git commit -am "Update flake" && rebuild)'';
       homelog = "journalctl -xe --unit home-manager-ceri";
 
       # Virtual machine + GPU management

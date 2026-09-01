@@ -1,5 +1,6 @@
 { ... }: let
   bypass = [
+    "nh"
     "nix"
     "nixos-rebuild"
     "virsh"
