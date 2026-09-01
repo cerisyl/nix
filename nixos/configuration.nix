@@ -79,6 +79,7 @@ in {
     secrets = {
       samba   = {};
       falcon  = {};
+      nanachi = {};
     };
   };
 
@@ -91,9 +92,12 @@ in {
         isNormalUser  = true;
         shell         = pkgsUnstable.zsh;
         extraGroups   = [ "wheel" "input" "networkmanager" "deluge" "libvirtd" "share" ];
+        openssh.authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICMbifXjZuftTzyhVQwVZ0KuC2B2i7lUXDl5R9AyCosj ceri"
+        ]
       };
     # Only add mang as a secondary user on lux host
-    } // (if myHostname == "lux" || myHostname == "astore" then {
+    } // (if myHostname == "astore" then {
       mang = {
         isSystemUser  = true;
         shell         = pkgsUnstable.zsh;

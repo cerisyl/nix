@@ -4,9 +4,10 @@ if myHostname == "lux" || myHostname == "astore" then {
     enable  = true;
     ports   = [ 50951 ];
     settings = {
-      PasswordAuthentication  = true;
-      PubkeyAuthentication    = false;
-      AllowUsers      = [ "ceri" "mang" ];
+      PasswordAuthentication        = false;
+      KbdInteractiveAuthentication  = false;
+      PubkeyAuthentication          = true;
+      AllowUsers      = [ "ceri" ];
       UseDns          = true;
       X11Forwarding   = false;
       PermitRootLogin = "no";

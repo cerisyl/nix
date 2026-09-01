@@ -36,6 +36,7 @@
         "gid=${toString config.users.groups.users.gid}"
         "x-systemd.automount"
         "noauto"
+        "_netdev"
       ];
     };
     "/mnt/share" = {
@@ -47,6 +48,7 @@
         "gid=${toString config.users.groups.users.gid}"
         "x-systemd.automount"
         "noauto"
+        "_netdev"
       ];
     };
   };

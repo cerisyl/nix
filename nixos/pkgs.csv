@@ -1,4 +1,4 @@
-# cli: Essential/system commands and CLI tools.
+# cli: Essential/system commands + CLI tools.
 lname |   | bat
 lname |   | btop
 lname |   | fastfetch
@@ -13,7 +13,6 @@ lname |   | libnotify
 lname |   | micro
 lname | * | nix-output-monitor
 lname | * | oh-my-posh
-l.a.. |   | openssh
 lname |   | pciutils |-> lspci
 lname |   | p7zip
 lname |   | sops
@@ -44,6 +43,7 @@ lna.e | * | syncthing
 lna.e | * | syncthingtray
 lname |   | thunar
 ln..e | * | thunderbird
+lname |   | vlc
 lname | * | xnviewmp
 
 # create: Programs for creative output.
@@ -79,11 +79,9 @@ ln... | @ | rssp
 ln... | * | steam
 ln... | * | steam-unwrapped
 ln... | * | steam-run
-# ln..e |   | tauon
 ln... |   | umu-launcher
-lname |   | vlc
 
-# firmware: Firmware/drivers and applications to interact with them.
+# firmware: Firmware/drivers + applications to interact with them.
 .n.me |   | blueman
 ....e |   | bolt
 .n.me |   | brightnessctl
@@ -97,11 +95,16 @@ l.... |   | grive2
 l.... |   | dropbox
 l.... |   | thunar-dropbox-plugin
 
-# soc: Social media and other messaging programs.
+# net: Non-essential network services + share methods
+l.a.. |   | frp
+l.a.. |   | openssh
+l.a.. |   | samba
+
+# soc: Social media + other messaging programs.
 ln... | * | discord
 ln... | * | telegram-desktop
 
-# tools: Mixed tools and utilities; typically lesser-used.
+# tools: Mixed tools + utilities; typically lesser-used.
 l.a.e |   | dd_rescue
 ln... | * | discordchatexporter-desktop
 l...e |   | dmg2img
@@ -138,12 +141,10 @@ lna.e |   | spice-protocol
 lna.e |   | qemu_full
 lna.e |   | virt-manager
 lna.e |   | virtio-win
-lna.e |   | win-spice
-# VM share methods
-l.a.. |   | samba
 .na.e |   | virtiofsd
+lna.e |   | win-spice
 
-# wm: Window manager tools and add-ins.
+# wm: Window manager tools + add-ins.
 lname |   | gvfs
 lname |   | haskellPackages.greenclip
 lname |   | networkmanager
