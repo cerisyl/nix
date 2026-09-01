@@ -105,7 +105,7 @@
       wolfram = "wolframalpha";
 
       # Package management
-      rebuild = ''(sudo nixos-rebuild switch --flake ~/.nix/. &> ~/.switch.log ||
+      rebuild = ''(sudo nh os switch . &> ~/.switch.log ||
       (cat ~/.switch.log | grep --color error && false)) && xfce4-panel -r'';
       # (cat ~/.switch.log | grep --color error && false))'';
       rbl     = "rebuild";

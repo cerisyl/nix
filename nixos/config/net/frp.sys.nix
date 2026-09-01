@@ -1,8 +1,5 @@
-{ pkgs, myHostname, ... }:
+{ pkgs, config, myHostname, ... }:
 if myHostname == "astore" then {
-  systemd.services.frp.serviceConfig.EnvironmentFile = [
-    config.sops.secrets.nanachi.path
-  ]
   services.frp = {
     package = pkgs.frp;
     instaces.default = {

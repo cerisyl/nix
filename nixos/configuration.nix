@@ -94,7 +94,7 @@ in {
         extraGroups   = [ "wheel" "input" "networkmanager" "deluge" "libvirtd" "share" ];
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICMbifXjZuftTzyhVQwVZ0KuC2B2i7lUXDl5R9AyCosj ceri"
-        ]
+        ];
       };
     # Only add mang as a secondary user on lux host
     } // (if myHostname == "astore" then {

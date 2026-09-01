@@ -11,7 +11,7 @@ lname |   | killall
 lname |   | inotify-tools
 lname |   | libnotify
 lname |   | micro
-lname | * | nix-output-monitor
+lname | * | nh
 lname | * | oh-my-posh
 lname |   | pciutils |-> lspci
 lname |   | p7zip
