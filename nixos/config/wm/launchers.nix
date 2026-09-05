@@ -97,6 +97,7 @@
     # core
     (custom "ln..e"   "Email"                 "thunderbird"                     true                                            "ceri-email")
     (custom "lname"   "KeePassXC"             "org.keepassxc.KeePassXC"         "keepassxc"                                     "ceri-pass")
+    (custom "lname"   "Log Off"               "logout"                          (srun "desktop-logout" "logout")                "ceri-logout")
     (custom "lname"   "Lock"                  "lock"                            (srun "desktop-logout" "xflock4")               "ceri-lock")
     (custom "lname"   "Restart"               "restart"                         (srun "system-shutdown" "reboot")               "ceri-reboot")
     (custom "lname"   "Shutdown"              "shutdown"                        (srun "system-shutdown" "shutdown now")         "ceri-shutdown")

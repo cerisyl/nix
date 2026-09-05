@@ -8,7 +8,7 @@
   aubio, ffmpeg, freetype, iir1, libmad, libogg, libGL, sdl3, stb, libvorbis
 }: let
   name    = "arrowvortex";
-  version = "300b0e67fd8a50b2e73f65a9589f59634f858d5d";
+  version = "728daa6accec46a3c8417fb396f39b5123a13940";
 in stdenv.mkDerivation rec {
   inherit name version;
   arch = "amd64";
@@ -33,9 +33,6 @@ in stdenv.mkDerivation rec {
     "-DPRESET_NAME=linux-release"
     "-DCMAKE_TOOLCHAIN_FILE=${./deps/arrowvortex/blank.cmake}"
   ];
-
-  # Patch SIMFILE_NEXT/_PREVIOUS (commit 5a08874), not upstream yet
-  patches = [ ./deps/arrowvortex/Editor.cpp.patch ];
 
   # Patch cmake files to work with Nix
   postPatch = ''

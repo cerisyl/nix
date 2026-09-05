@@ -77,9 +77,10 @@ in {
     defaultSopsFormat = "yaml";
     age.keyFile       = "/home/ceri/.config/sops/age/keys.txt";
     secrets = {
-      samba   = {};
-      falcon  = {};
-      nanachi = {};
+      samba           = {};
+      falcon          = {};
+      "nanachi/ip"    = {};
+      "nanachi/token" = {};
     };
   };
 

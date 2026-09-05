@@ -1,16 +1,22 @@
 { pkgs, config, myHostname, ... }:
 if myHostname == "astore" then {
+  sops.templates.frp = {
+    content = ''
+      FRP_IP=${config.sops.secrets."nanachi/ip".path}
+      FRP_TOKEN=${config.sops.secrets."nanachi/token".path}
+    '';
+  };
   services.frp = {
     package = pkgs.frp;
     instances.default = {
       enable    = true;
       role      = "client";
       settings  = {
-        serverAddr  = "51.83.161.40";
+        serverAddr  = "{{ .Envs.FRP_IP }}";
         serverPort  = 7000;
         auth.tokenSource = {
-          type      = "file";
-          file.path = config.sops.secrets.nanachi.path;
+          method  = "token";
+          token   = "{{ .Envs.FRP_TOKEN }}";
         };
         proxies = [
           {
@@ -31,4 +37,5 @@ if myHostname == "astore" then {
       };
     };
   };
+  systemd.services.frp.serviceConfig.EnvironmentFile = config.sops.templates.frp.path;
 } else {}

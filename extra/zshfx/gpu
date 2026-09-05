@@ -1,5 +1,5 @@
 # Get current driver in use
-cur_driver=$(lspci -nnk | grep "GeForce RTX 3070 Ti" -A 2 | grep -oP "(?<=Kernel driver in use: ).*")
+cur_driver=$(lspci -nnk | grep "GeForce RTX 2080" -A 2 | grep -oP "(?<=Kernel driver in use: ).*")
 
 # Function to call when there is an unknown driver loaded
 unknown_driver() {
