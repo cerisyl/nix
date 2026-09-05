@@ -1,9 +1,10 @@
 { pkgs, config, myHostname, ... }:
 if myHostname == "astore" then {
   sops.templates.frp = {
+    mode = "0400";
     content = ''
-      FRP_IP=${config.sops.secrets."nanachi/ip".path}
-      FRP_TOKEN=${config.sops.secrets."nanachi/token".path}
+      FRP_IP=${config.sops.placeholder."nanachi/ip"}
+      FRP_TOKEN=${config.sops.placeholder."nanachi/token"}
     '';
   };
   services.frp = {
@@ -11,6 +12,7 @@ if myHostname == "astore" then {
     instances.default = {
       enable    = true;
       role      = "client";
+      environmentFiles = [ config.sops.templates.frp.path ];
       settings  = {
         serverAddr  = "{{ .Envs.FRP_IP }}";
         serverPort  = 7000;
@@ -37,5 +39,4 @@ if myHostname == "astore" then {
       };
     };
   };
-  systemd.services.frp.serviceConfig.EnvironmentFile = config.sops.templates.frp.path;
 } else {}
