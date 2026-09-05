@@ -26,7 +26,7 @@ in stdenv.mkDerivation rec {
     owner = "uvcat7";
     repo  = name;
     rev   = version;
-    hash  = "sha256-YchJR98UAfwzxPcOUKO8md6MDxWag9V0eQoqwANSAzk=";
+    hash  = "sha256-RSuWz5Ny6BMO1ri0AKlEth3mJT50+2jNwGK3xz/SXw8=";
   };
 
   cmakeFlags = [

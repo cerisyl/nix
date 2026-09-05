@@ -14,7 +14,7 @@ if myHostname == "astore" then {
       settings  = {
         serverAddr  = "{{ .Envs.FRP_IP }}";
         serverPort  = 7000;
-        auth.tokenSource = {
+        auth = {
           method  = "token";
           token   = "{{ .Envs.FRP_TOKEN }}";
         };
