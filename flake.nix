@@ -1,5 +1,5 @@
 {
-  description = "My system configuration";
+  description = "ceri's nix";
 
   inputs = {
     # main repos
