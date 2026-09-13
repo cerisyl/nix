@@ -8,7 +8,7 @@
   aubio, ffmpeg, freetype, iir1, libmad, libogg, libGL, sdl3, stb, libvorbis
 }: let
   name    = "arrowvortex";
-  version = "728daa6accec46a3c8417fb396f39b5123a13940";
+  version = "f2ec7a4d1f2db5d189a192fa5202ddd44f30ee05";
 in stdenv.mkDerivation rec {
   inherit name version;
   arch = "amd64";
@@ -26,7 +26,7 @@ in stdenv.mkDerivation rec {
     owner = "uvcat7";
     repo  = name;
     rev   = version;
-    hash  = "sha256-RSuWz5Ny6BMO1ri0AKlEth3mJT50+2jNwGK3xz/SXw8=";
+    hash  = "sha256-Jgj5PmJmfP2wjJT9u2wm7wY034wcdbDXhWbGTni7aAI=";
   };
 
   cmakeFlags = [
