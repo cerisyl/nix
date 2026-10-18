@@ -15,13 +15,17 @@
       url = "github:zarzob/Simply-Love-SM5/itgmania-release";
       flake = false;
     };
+    craftapps = {
+      url = "github:olafkfreund/nix-craftapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, zmod, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, zmod, craftapps, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     defHost = myHostname: let
@@ -29,7 +33,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-      pkgsGit = { inherit zmod; };
+      pkgsGit = { inherit zmod craftapps; };
       libutils = import ./nixos/utils.nix { inherit (nixpkgs) lib; };
     in nixpkgs.lib.nixosSystem {
       specialArgs = {
@@ -40,7 +44,10 @@
         inputs.home-manager.nixosModules.home-manager
         inputs.sops-nix.nixosModules.sops
         {
-          home-manager.sharedModules = [ inputs.nixcord.homeModules.nixcord ];
+          home-manager.sharedModules = [ 
+            inputs.nixcord.homeModules.nixcord
+            inputs.craftapps.homeManagerModules.default
+          ];
           system.configurationRevision = self.rev or null;
           system.nixos.label =
             if (self.sourceInfo ? lastModifiedDate) && (self.sourceInfo ? shortRev)

@@ -46,6 +46,7 @@
         "editor.fontWeight"         = 400;
         "editor.lineHeight"         = 1.25;
         "editor.letterSpacing"      = -0.5;
+        "editor.fontLigatures"      = true;
         "editor.renderWhitespace"   = "trailing";
         "editor.selectionClipboard" = false;
         "breadcrumbs.enabled"       = false;

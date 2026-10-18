@@ -5,6 +5,7 @@ lname |   | fastfetch
 lname | * | fd
 lname | * | fzf
 lname | * | git
+lname | * | git-annex
 lna.e | * | git-lfs
 lname |   | home-manager
 lname |   | killall
@@ -192,4 +193,4 @@ lname |   | xfwm4
 ....e | * | powershell
 ....e | * | slack
 ....e | * | teams-for-linux
-....e | * | zoom-us
+l...e | * | zoom-us
