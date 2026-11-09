@@ -20,6 +20,22 @@
         "type": "github"
       }
     },
+    "datum": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794000171,
+        "narHash": "sha256-KECrBFgi6vyJtwzhh9dSU1twHYtvcsqCmpwXFjq5bSc=",
+        "owner": "mangoafterdawn",
+        "repo": "Datum-ITGm",
+        "rev": "58d812aac04e602386a20a67abc2815f4a9eb47d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mangoafterdawn",
+        "repo": "Datum-ITGm",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -187,6 +203,7 @@
     "root": {
       "inputs": {
         "craftapps": "craftapps",
+        "datum": "datum",
         "home-manager": "home-manager",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs",

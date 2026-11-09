@@ -15,6 +15,10 @@
       url = "github:zarzob/Simply-Love-SM5/itgmania-release";
       flake = false;
     };
+    datum = {
+      url = "github:mangoafterdawn/Datum-ITGm";
+      flake = false;
+    };
     craftapps = {
       url = "github:olafkfreund/nix-craftapps";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +29,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, zmod, craftapps, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, zmod, datum, craftapps, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     defHost = myHostname: let
@@ -33,7 +37,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-      pkgsGit = { inherit zmod craftapps; };
+      pkgsGit = { inherit zmod datum craftapps; };
       libutils = import ./nixos/utils.nix { inherit (nixpkgs) lib; };
     in nixpkgs.lib.nixosSystem {
       specialArgs = {

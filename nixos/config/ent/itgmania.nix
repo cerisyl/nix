@@ -1,4 +1,4 @@
-{ pkgs, pkgMap, homedir, zmod, lib, myHostname, ... }: let
+{ pkgs, pkgMap, homedir, zmod, datum, lib, myHostname, ... }: let
   # Get commit shortstring
   zmodRev = "zmod_${builtins.substring 0 8 zmod.rev}";
   itgShare = if myHostname == "lux" then "/home/ceri/itg/play/songs-share/" else "";
@@ -7,14 +7,30 @@
   zmodPatched = pkgs.runCommand "zmod-patched" {} ''
     cp -r ${zmod} $out
     chmod -R u+w $out
-    sed -i "11a\  Datum = 'everglow'," "$out/Sounds/_common menu music/default.lua"
-    # sed -i "s/fold.ogg/Forza/" "$out/Sounds/ScreenGameOver music.lua"
-    sed -i 's/"🖲/"💾", "🖲/' "$out/Scripts/99 SL-ThemePrefs.lua"
+    cp -r ${datum} $out/tmp
+    chmod -R u+w $out/tmp
+
+    BG_ANIMATIONS="$out/BGAnimations/_shared background"
+
+    cp -r "$out/tmp/BGAnimations/" "$out/"
+    cp -r "$out/tmp/Graphics/" "$out/"
+    cp -r "$out/tmp/Sounds/" "$out/"
+    cp -rf "$out/tmp/Sounds/_overwrites" "$out/Sounds/"
+    rm -rf $out/tmp
+
+    sed -i '33a\af[#af+1] = LoadActor("./Datum/Datum.lua", file)' "$BG_ANIMATIONS/default.lua"
+    sed -i 's/Technique" and/Technique" and style ~= "Datum" and/' "$BG_ANIMATIONS/Normal.lua"
+    sed -i 's/Technique" or/Technique" or style == "Datum" or/' "$BG_ANIMATIONS/Normal.lua"
     sed -i 's/"Transistor/"Datum", "Transistor/' "$out/Scripts/99 SL-ThemePrefs.lua"
-    sed -i 's/Technique" and/Technique" and style ~= "Datum" and/' "$out/BGAnimations/_shared background/Normal.lua"
-    sed -i 's/Technique" or/Technique" or style == "Datum" or/' "$out/BGAnimations/_shared background/Normal.lua"
-    sed -i '33a\af[#af+1] = LoadActor("./Datum/Datum.lua", file)' "$out/BGAnimations/_shared background/default.lua"
-    cp -r "$out/Graphics/_VisualStyles/Technique" "$out/Graphics/_VisualStyles/Datum"
+    sed -i 's/"🖲/"💾", "🖲/' "$out/Scripts/99 SL-ThemePrefs.lua"
+    sed -i "11a\  Datum = 'everglow'," "$out/Sounds/_common menu music/default.lua"
+    sed -i 's/_2/_1/' "$out/Graphics/ScreenTitleMenu scroll.lua"
+
+    sed -i 's/DATUM_OPACITY = 85/DATUM_OPACITY = 95/' "$BG_ANIMATIONS/Datum/DatumOptions.lua"
+    sed -i 's/SHIFT_AMOUNT = 32/SHIFT_AMOUNT = 16/' "$BG_ANIMATIONS/Datum/DatumOptions.lua"
+    sed -i 's/SINE_WIDTH = 1.5/SINE_WIDTH = 2/' "$BG_ANIMATIONS/Datum/DatumOptions.lua"
+    sed -i 's/GAY_MODE_ENABLED = false/GAY_MODE_ENABLED = true/' "$BG_ANIMATIONS/Datum/DatumOptions.lua"
+    sed -i 's/GAY_MODE_SPEED = 40/GAY_MODE_SPEED = 30/' "$BG_ANIMATIONS/Datum/DatumOptions.lua"
   '';
 in if pkgMap ? "itgmania" then {
   home.file = {
@@ -421,8 +437,5 @@ in if pkgMap ? "itgmania" then {
 
     mkdir -p "$noteskinDir"
     ${unzip} -qq -o "$patchDir/noteskins.zip" -d "$noteskinDir"
-    ${unzip} -qq -o "$patchDir/datum.zip" -d "$theme/BGAnimations/_shared background"
-    cp "$patchDir/everglow (loop).ogg" "$theme/Sounds/_common menu music"
-    # cp "$patchDir/Forza (loop).ogg" "$theme/Sounds"
   '';
 } else {}

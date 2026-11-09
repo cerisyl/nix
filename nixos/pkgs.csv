@@ -54,7 +54,7 @@ ln... | @ | fade-in
 ln... |   | kdePackages.kdenlive
 ln... |   | libxcomposite |-> relies on obs
 ln... |   | obs-studio
-l.... |   | reaper
+ln... |   | reaper
 
 # dev : Development tools.
 lna.e | * | bun
@@ -63,7 +63,6 @@ lna.e |   | nixd
 ln..e | * | nodejs_26
 ln... |   | python311 |-> 9ornull
 lna.e |   | python314
-ln..e | * | t3code
 lna.e | * | vscodium-fhs
 
 # ent: Entertainment / gaming programs.
@@ -192,5 +191,4 @@ lname |   | xfwm4
 ....e | * | onedrive
 ....e | * | powershell
 ....e | * | slack
-....e | * | teams-for-linux
 l...e | * | zoom-us

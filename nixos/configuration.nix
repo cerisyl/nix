@@ -121,6 +121,7 @@ in {
       homedir  = "/home/ceri";
       timezone = config.time.timeZone;
       zmod = pkgsGit.zmod;
+      datum = pkgsGit.datum;
     };
     # Handle backup files
     backupFileExtension = "63a4305d";
