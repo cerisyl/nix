@@ -23,11 +23,11 @@
       modules = [
         "break"
         "title"
-        { type = "custom";    format = "::::::::::::::::::::::::::::::::"; }
+        "break" # { type = "custom";    format = "::::::::::::::::::::::::::::::::"; }
         { type = "os";        key = "system";     format = "{name} {version}"; }
         { type = "host";      key = "mainboard"; }
         { type = "uptime";    key = "uptime"; }
-        { type = "packages";  key = "pkgs";       format = "{all} 󱄅 {nix-all}"; }
+        { type = "packages";  key = "pkgs";       format = "{all}"; }
         { type = "display";   key = "display/{index}"; }
         { type = "wm";        key = "wm";         format = "{pretty-name}"; }
         { type = "shell";     key = "shell"; }
