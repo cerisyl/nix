@@ -53,6 +53,7 @@ l.... |   | blender
 ln... | @ | fade-in
 ln... |   | kdePackages.kdenlive
 ln... |   | libxcomposite |-> relies on obs
+ln... | * | losslesscut
 ln... |   | obs-studio
 ln... |   | reaper
 
