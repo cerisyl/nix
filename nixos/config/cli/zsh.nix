@@ -108,7 +108,7 @@
       rebuild = ''nh os switch && xfce4-panel -r'';
       # (cat ~/.switch.log | grep --color error && false))'';
       rbl     = "rebuild";
-      upgrade = ''cd ~/.nix && (sudo nix flake update && git commit -am "Update flake" && rebuild)'';
+      upgrade = ''cd ~/.nix && (sudo nix flake update && git commit -am "bump: flake [$(date --rfc-3339 date)]" && rebuild)'';
       homelog = "journalctl -xe --unit home-manager-ceri";
 
       # Virtual machine + GPU management

@@ -132,7 +132,7 @@
     (custom "lname"   "File Manager"          "xfce4-file-manager"              "exo-open --launch FileManager %u"                      "ceri-files")
     # ________________________________________________________________________________________________________________________________________________________________
     # projects
-    (custom "ln..."   "cering.dev"            "webdev"                          "codium ${codeSync}/cering_dev-sv_V2"                   "${codeSync}/cering_dev-sv_V2/src/img/favicon.svg")
+    (custom "ln..."   "cering.dev"            "webdev"                          "codium ${codeSync}/cering_dev"                         "${codeSync}/cering_dev/static/img/favicon.svg")
     (custom "ln..."   "neobudget"             "neobudget"                       "codium ${codeSync}/neobudget"                          "${codeSync}/neobudget/static/favicon.svg")
     (custom "lname"   "NixOS Config"          "nixconf"                         "codium ${homedir}/.nix"                                "ceri-start")
   ];
